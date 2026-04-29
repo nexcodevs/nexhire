@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nexhire — Contrate melhor. Mais rápido. Sem esforço operacional.</title>
-<meta name="description" content="A Nexhire conecta sua vaga a uma rede de recrutadores especialistas e usa IA para ranquear candidatos, reduzir ruído e entregar apenas perfis prontos para entrevista.">
+<meta name="description" content="Hunters especialistas enviam candidatos. IA ranqueia e resume. HR Manager curadoria antes de chegar até você. Sem mensalidade. Sem risco antecipado. Pague quando contratar.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 /* ═══════════════════════════
    DESIGN TOKENS — v2 COLOR SYSTEM
 ═══════════════════════════ */
-:root{
+:root{--r-sm:12px;--r-md:16px;--r-lg:24px;--r-xl:28px;
   /* Brand greens */
   --f950: #041B0B;
   --f900: #052E16;
@@ -274,10 +274,10 @@ body{background:#FAFAFA;color:var(--text);font-family:var(--sans);font-size:15px
 .seg-tag:hover{border-color:var(--border-g);color:var(--f900);background:var(--m100)}
 
 /* ─── SECTION BASE ─── */
-.section{padding:100px 0}
+.section{padding:96px 0}
 @media(max-width:767px){.section{padding:72px 0}}
 .s-white{background:var(--surf)}
-.s-cream{background:#FAFAFA}
+.s-cream{background:var(--cream)}
 .s-dark{background:var(--f900)}
 
 .eye{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--g600);margin-bottom:.875rem}
@@ -308,7 +308,7 @@ body{background:#FAFAFA;color:var(--text);font-family:var(--sans);font-size:15px
 .flow-row{display:flex;align-items:flex-start;gap:0;margin-top:3.5rem;overflow-x:auto;padding-bottom:.5rem;-ms-overflow-style:none;scrollbar-width:none}
 .flow-row::-webkit-scrollbar{display:none}
 .flow-step{display:flex;flex-direction:column;align-items:center;min-width:96px;flex:1}
-.flow-ico{width:48px;height:48px;border-radius:14px;border:1px solid var(--border);background:var(--surf);display:grid;place-items:center;margin-bottom:.875rem;box-shadow:var(--s1);transition:all .2s;flex-shrink:0}
+.flow-ico{width:48px;height:48px;border-radius:16px;border:1px solid var(--border);background:var(--surf);display:grid;place-items:center;margin-bottom:.875rem;box-shadow:var(--s1);transition:all .2s;flex-shrink:0}
 .flow-ico svg{width:20px;height:20px;stroke:var(--f700);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .flow-step:hover .flow-ico{border-color:var(--border-g);box-shadow:var(--s2);transform:translateY(-2px)}
 .flow-label{font-size:12.5px;font-weight:500;color:var(--text);text-align:center;line-height:1.3}
@@ -365,7 +365,7 @@ body{background:#FAFAFA;color:var(--text);font-family:var(--sans);font-size:15px
 @media(min-width:1024px){.plat-cards{grid-template-columns:repeat(4,1fr)}}
 .plat-card{background:var(--surf);border:1px solid var(--border);border-radius:24px;padding:2rem;text-align:left;transition:all .2s;box-shadow:var(--s1)}
 .plat-card:hover{box-shadow:var(--s3);transform:translateY(-2px);border-color:var(--border-g)}
-.plat-ico{width:40px;height:40px;border-radius:11px;border:1px solid var(--border);background:var(--cream);display:grid;place-items:center;margin-bottom:1.25rem;box-shadow:var(--s1)}
+.plat-ico{width:40px;height:40px;border-radius:12px;border:1px solid var(--border);background:var(--cream);display:grid;place-items:center;margin-bottom:1.25rem;box-shadow:var(--s1)}
 .plat-ico svg{width:18px;height:18px;stroke:var(--f800);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .plat-card h3{font-size:17px;font-weight:600;color:var(--text);margin-bottom:.5rem;letter-spacing:-.2px;line-height:1.3}
 .plat-card p{font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.65}
@@ -387,7 +387,7 @@ body{background:#FAFAFA;color:var(--text);font-family:var(--sans);font-size:15px
 @media(max-width:1023px){.split.rev>*{order:unset}}
 
 .feat-list{list-style:none;display:flex;flex-direction:column;gap:.625rem;margin:2rem 0 2.25rem}
-.feat-item{display:flex;align-items:flex-start;gap:.875rem;padding:.875rem 1rem;border:1px solid var(--border);border-radius:13px;background:var(--surf);transition:all .15s}
+.feat-item{display:flex;align-items:flex-start;gap:.875rem;padding:.875rem 1rem;border:1px solid var(--border);border-radius:12px;background:var(--surf);transition:all .15s}
 .feat-item:hover{border-color:var(--border-g);background:var(--m100)}
 .feat-lett{width:32px;height:32px;border-radius:9px;background:var(--f900);color:var(--cream2);display:grid;place-items:center;font-size:12px;font-weight:700;flex-shrink:0;font-family:var(--mono)}
 .feat-body h4{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px;letter-spacing:-.01em}
@@ -431,7 +431,7 @@ body{background:#FAFAFA;color:var(--text);font-family:var(--sans);font-size:15px
 .rs-n{font-size:20px;font-weight:700;letter-spacing:-.03em;color:var(--text);line-height:1;font-family:var(--mono)}
 .rec-briefings{padding:1.25rem}
 .rb-lbl{font-size:11.5px;color:var(--muted);margin-bottom:.875rem;font-weight:400}
-.job-row{display:flex;align-items:center;justify-content:space-between;padding:.875rem 1rem;border:1px solid var(--border);border-radius:11px;margin-bottom:.5rem;cursor:pointer;transition:all .15s;text-decoration:none}
+.job-row{display:flex;align-items:center;justify-content:space-between;padding:.875rem 1rem;border:1px solid var(--border);border-radius:12px;margin-bottom:.5rem;cursor:pointer;transition:all .15s;text-decoration:none}
 .job-row:last-child{margin-bottom:0}
 .job-row:hover{border-color:var(--border-g);background:var(--m100);transform:translateX(2px)}
 .job-left{display:flex;align-items:center;gap:.75rem}
@@ -440,7 +440,7 @@ body{background:#FAFAFA;color:var(--text);font-family:var(--sans);font-size:15px
 .job-meta{font-size:10.5px;color:var(--subtle)}
 .job-fee{font-size:12.5px;font-weight:700;color:var(--f700);white-space:nowrap;font-family:var(--mono)}
 .rec-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:.875rem;margin-top:2rem}
-.rb-card{background:var(--surf);border:1px solid var(--border);border-radius:13px;padding:1.125rem}
+.rb-card{background:var(--surf);border:1px solid var(--border);border-radius:12px;padding:1.125rem}
 .rbc-t{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:.375rem;letter-spacing:-.01em}
 .rbc-d{font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.55}
 
@@ -450,7 +450,7 @@ body{background:#FAFAFA;color:var(--text);font-family:var(--sans);font-size:15px
 @media(min-width:1024px){.ia-grid{grid-template-columns:repeat(3,1fr)}}
 .ia-card{background:var(--surf);border:1px solid var(--border);border-radius:24px;padding:2rem;transition:all .2s;box-shadow:var(--s1)}
 .ia-card:hover{box-shadow:var(--s2);transform:translateY(-2px)}
-.ia-ico{width:40px;height:40px;border-radius:11px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.28);display:grid;place-items:center;margin-bottom:1.125rem}
+.ia-ico{width:40px;height:40px;border-radius:12px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.28);display:grid;place-items:center;margin-bottom:1.125rem}
 .ia-ico svg{width:18px;height:18px;stroke:var(--f900);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .ia-card h3{font-size:16px;font-weight:600;color:var(--text);margin-bottom:.5rem;letter-spacing:-.2px;line-height:1.3}
 .ia-card p{font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.65}
@@ -463,7 +463,7 @@ body{background:#FAFAFA;color:var(--text);font-family:var(--sans);font-size:15px
 @media(min-width:768px){.trust-grid{grid-template-columns:repeat(3,1fr)}}
 .trust-card{background:var(--surf);border:1px solid var(--border);border-radius:24px;padding:2rem;box-shadow:var(--s1);transition:all .2s}
 .trust-card:hover{box-shadow:var(--s2);transform:translateY(-2px);border-color:var(--border-g)}
-.trust-ico{width:40px;height:40px;border-radius:11px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.28);display:grid;place-items:center;margin-bottom:1.25rem}
+.trust-ico{width:40px;height:40px;border-radius:12px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.28);display:grid;place-items:center;margin-bottom:1.25rem}
 .trust-ico svg{width:18px;height:18px;stroke:var(--f900);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .trust-card h3{font-size:17px;font-weight:600;color:var(--text);margin-bottom:.5rem;letter-spacing:-.2px;line-height:1.3}
 .trust-card p{font-size:14px;color:var(--muted);font-weight:300;line-height:1.68}
@@ -536,15 +536,15 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
 <path d="M0 27.098V15.708C0 13.9627 0.351333 12.4553 1.054 11.186C1.77933 9.91667 2.79933 8.94201 4.114 8.26201C5.42867 7.55934 6.98133 7.20801 8.772 7.20801C10.5627 7.20801 12.1153 7.55934 13.43 8.26201C14.7447 8.94201 15.7533 9.91667 16.456 11.186C17.1813 12.4553 17.544 13.9627 17.544 15.708V27.098H12.036V15.776C12.036 14.552 11.73 13.6113 11.118 12.954C10.5287 12.2967 9.74667 11.968 8.772 11.968C7.82 11.968 7.038 12.2967 6.426 12.954C5.814 13.6113 5.508 14.552 5.508 15.776V27.098H0Z" fill="currentColor"/></svg>
     </a>
     <ul class="nav-links" role="navigation" aria-label="Navegação principal">
-      <li><a href="index.html#como-funciona">Como funciona</a></li>
       <li><a href="empresas.html">Para empresas</a></li>
       <li><a href="recrutadores.html">Para recrutadores</a></li>
       <li><a href="vagas.html">Vagas</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="faq.html">FAQ</a></li>
     </ul>
     <div class="nav-end">
       <a class="btn btn-out btn-sm" href="empresas.html">Entrar</a>
-      <a class="btn btn-dark btn-sm" href="empresas.html">Abrir vaga <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn btn-dark btn-sm" href="empresas.html">Começar a contratar <span class="arr" aria-hidden="true">→</span></a>
       <button class="nav-burger" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -561,23 +561,23 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
     <!-- LEFT -->
     <div>
       <div style="animation:fadeUp .4s ease both">
-        <div class="hero-kicker"><div class="kicker-dot"></div>Rede de recrutamento potencializada por IA</div>
+        <div class="hero-kicker"><div class="kicker-dot"></div>IA · Hunters especialistas · Curadoria humana</div>
       </div>
       <h1 class="hero-h1" style="animation:fadeUp .5s .08s ease both">
-        Contrate melhor.<br>Mais rápido.<br>Sem esforço <span class="it">operacional.</span>
+        Uma rede inteira trabalhando<br>pela sua próxima <span class="it">contratação.</span>
       </h1>
       <p class="hero-sub" style="animation:fadeUp .5s .16s ease both">
-        A Nexhire conecta sua vaga a uma rede de recrutadores especialistas e usa IA para ranquear candidatos, reduzir ruído e entregar apenas perfis prontos para entrevista.
+        Hunters especialistas enviam candidatos. IA ranqueia e resume. HR Manager curadoria antes de chegar até você. Sem mensalidade. Sem risco antecipado. Pague quando contratar.
       </p>
       <div class="hero-btns" style="animation:fadeUp .5s .22s ease both">
         <a class="btn btn-dark btn-lg" href="empresas.html">Começar a contratar <span class="arr">→</span></a>
-        <a class="btn btn-out btn-lg" href="empresas.html">Quero ser recrutador parceiro</a>
+        <a class="btn btn-out btn-lg" href="recrutadores.html">Quero ser hunter parceiro</a>
       </div>
       <div class="hero-micro" style="animation:fadeUp .5s .28s ease both">
         <div class="micro-check">
           <svg viewBox="0 0 10 10" fill="none" width="9" height="9"><path d="M2 5.5 4 7.5 8 3" stroke="#00E676" stroke-width="1.8" stroke-linecap="round"/></svg>
         </div>
-        Pague apenas quando contratar.
+        Sem mensalidade. Sem risco antecipado. Pague quando contratar.
       </div>
     </div>
 
@@ -587,8 +587,8 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
       <div class="fc fc-a">
         <div class="fc-label">Velocidade média</div>
         <div class="fc-val">3×</div>
-        <div class="fc-sub">mais rápido que agências tradicionais</div>
-        <div class="fc-badge">↑ vs mercado</div>
+        <div class="fc-sub">redução média de tempo até shortlist</div>
+        <div class="fc-badge">indicador da plataforma</div>
       </div>
       <!-- Float B -->
       <div class="fc fc-b">
@@ -690,7 +690,7 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
 
   <!-- Logos -->
   <div class="logos-strip" style="margin-top:5rem">
-    <div class="logos-lbl">Empresas que confiam na Nexhire para contratar com velocidade e precisão</div>
+    <div class="logos-lbl">Empresas que usam a Nexhire para escalar contratação</div>
     <div class="marquee-wrap"><div class="marquee-track" id="mtrack"></div></div>
   </div>
 </section>
@@ -702,7 +702,7 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
     <span class="ticker-dot"></span>
     <span class="ticker-item">IA para reduzir ruído. Humanos para decidir melhor.</span>
     <span class="ticker-dot"></span>
-    <span class="ticker-item">Pague apenas quando contratar.</span>
+    <span class="ticker-item">Sem mensalidade. Sem risco antecipado. Pague quando contratar.</span>
     <span class="ticker-dot"></span>
     <span class="ticker-item">Uma rede inteira trabalhando pela sua vaga.</span>
     <span class="ticker-dot"></span>
@@ -714,7 +714,7 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
     <span class="ticker-dot"></span>
     <span class="ticker-item">IA para reduzir ruído. Humanos para decidir melhor.</span>
     <span class="ticker-dot"></span>
-    <span class="ticker-item">Pague apenas quando contratar.</span>
+    <span class="ticker-item">Sem mensalidade. Sem risco antecipado. Pague quando contratar.</span>
     <span class="ticker-dot"></span>
     <span class="ticker-item">Uma rede inteira trabalhando pela sua vaga.</span>
     <span class="ticker-dot"></span>
@@ -745,7 +745,7 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
 <!-- PROBLEMA -->
 <section class="section s-white" id="problem">
   <div class="wrap">
-    <div class="eye reveal">O problema</div>
+    <div class="eye reveal">Por que existe</div>
     <h2 class="h2 reveal d1">Contratar ainda exige esforço<br>demais para <span class="it">entregar pouco resultado.</span></h2>
     <p class="lead reveal d2">As mesmas dores. Em todo crescimento. Quanto mais vagas, mais o processo trava.</p>
     <div class="prob-grid">
@@ -753,19 +753,19 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
         <div class="prob-n">01 /</div>
         <h3>Muitos CVs, pouco fit</h3>
         <p>Seu time perde horas avaliando perfis que nunca deveriam chegar à etapa de análise. Ruído operacional que consome quem decide.</p>
-        <div class="prob-stat">80% dos CVs são irrelevantes</div>
+        <div class="prob-stat">indicador do setor · 80% de ruído médio</div>
       </div>
       <div class="prob-cell reveal d2">
         <div class="prob-n">02 /</div>
         <h3>Operação lenta e manual</h3>
         <p>Entre briefing, busca, triagem e follow-up, semanas desaparecem antes da primeira entrevista relevante. Sem dados, sem visibilidade.</p>
-        <div class="prob-stat">Média: 45 dias para fechar</div>
+        <div class="prob-stat">média de mercado · 45 dias por posição</div>
       </div>
       <div class="prob-cell reveal d3">
         <div class="prob-n">03 /</div>
         <h3>Escalar contratação custa caro</h3>
         <p>Mais vagas normalmente significam mais equipe, mais fornecedores e mais complexidade — sem garantia de qualidade ou previsibilidade.</p>
-        <div class="prob-stat">Até 30% de retainer</div>
+        <div class="prob-stat">custo real inclui retainer + headcount</div>
       </div>
     </div>
   </div>
@@ -776,7 +776,7 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
   <div class="wrap">
     <div style="text-align:center;max-width:640px;margin:0 auto">
       <div class="eye c reveal">O modelo Nexhire</div>
-      <h2 class="h2 center reveal d1">Uma rede inteira<br>trabalhando na <span class="it">sua vaga.</span></h2>
+      <h2 class="h2 center reveal d1">Do briefing à shortlist<br>em um <span class="it">fluxo coordenado.</span></h2>
       <p class="lead center reveal d2">Hunters especialistas buscam talentos. A IA ranqueia, resume e identifica gaps. HR Managers fazem curadoria. Sua empresa entrevista apenas quem faz sentido.</p>
     </div>
     <div class="flow-row reveal d2">
@@ -837,7 +837,7 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
     <div style="text-align:center;max-width:600px;margin:0 auto">
       <div class="eye c reveal">Como funciona</div>
       <h2 class="h2 center reveal d1">Do briefing à contratação<br>em um <span class="it">fluxo simples.</span></h2>
-      <p class="lead center reveal d2">Quatro passos. IA e humanos em cada etapa.</p>
+      <p class="lead center reveal d2">A IA reduz ruído. Hunters buscam candidatos. HR Manager garante qualidade. Você decide.</p>
     </div>
     <div class="how-grid">
       <div class="how-card reveal d1">
@@ -906,7 +906,7 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
   <div class="wrap">
     <div class="eye c reveal">Plataforma</div>
     <h2 class="h2 center reveal d1" style="max-width:600px;margin:0 auto .875rem">IA para reduzir ruído.<br><span class="it">Humanos para decidir melhor.</span></h2>
-    <p class="lead center reveal d2" style="max-width:500px">A IA lida com o volume. Humanos lidam com o julgamento. Você recebe uma shortlist que realmente converte.</p>
+    <p class="lead center reveal d2" style="max-width:500px">Score de aderência. Resumo de CV. Ranking automático. Curadoria do HR Manager. Você vê apenas quem passou por tudo isso.</p>
     <div class="plat-cards">
       <div class="plat-card reveal d1">
         <div class="plat-ico"><svg viewBox="0 0 20 20"><path d="M4 14l3-3 2 2 7-7"/></svg></div>
@@ -930,13 +930,14 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
         <div class="plat-ico"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><path d="M10 2a8 8 0 0 1 0 16M2 10h16"/></svg></div>
         <h3>Rede de hunters validados</h3>
         <p>Recrutadores especializados por segmento, aprovados antes de acessar a plataforma. Qualidade garantida na entrada, não na saída.</p>
-        <span class="plat-tag">600+ hunters ativos</span>
+        <span class="plat-tag">rede seletiva e validada</span>
       </div>
     </div>
     <div class="stats-row reveal">
       <div class="stat-cell"><span class="stat-n"><em>12</em> dias</span><p class="stat-l">tempo médio até shortlist</p></div>
       <div class="stat-cell"><span class="stat-n"><em>94</em>%</span><p class="stat-l">score médio dos perfis enviados</p></div>
       <div class="stat-cell"><span class="stat-n"><em>600</em>+</span><p class="stat-l">talentos mapeados em ciclos ativos</p></div>
+    <p style="font-size:12px;color:var(--subtle);text-align:center;margin-top:1.25rem;font-style:italic">Indicadores acompanhados na plataforma. Resultados variam por contexto e tipo de vaga.</p>
       <div class="stat-cell"><span class="stat-n"><em>40</em>+</span><p class="stat-l">hunters especializados na rede</p></div>
     </div>
   </div>
@@ -1059,7 +1060,7 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
           </div>
         </div>
         <div class="btn-row reveal d4" style="margin-top:2.25rem">
-          <a class="btn btn-dark" href="empresas.html">Quero ser hunter parceiro <span class="arr">→</span></a>
+          <a class="btn btn-dark" href="recrutadores.html">Quero ser hunter parceiro <span class="arr">→</span></a>
           <a class="text-cta" href="vagas.html">Ver briefings abertos</a>
         </div>
       </div>
@@ -1071,7 +1072,7 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
 <section class="section s-white" id="ai">
   <div class="wrap">
     <div class="eye reveal">IA aplicada</div>
-    <h2 class="h2 reveal d1">IA onde ela realmente<br><span class="it">aumenta qualidade.</span></h2>
+    <h2 class="h2 reveal d1">IA que trabalha antes<br>de você <span class="it">ver um candidato.</span></h2>
     <p class="lead reveal d2" style="margin-bottom:0">A IA da Nexhire estrutura vagas, sugere perguntas, analisa CVs, identifica gaps, detecta duplicidades e ranqueia candidatos. Humanos continuam responsáveis pelas decisões críticas.</p>
     <div class="ia-grid">
       <div class="ia-card reveal d1">
@@ -1114,9 +1115,9 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
 <!-- CONFIANÇA OPERACIONAL -->
 <section class="section s-cream" id="trust">
   <div class="wrap">
-    <div class="eye reveal">Confiança operacional</div>
-    <h2 class="h2 reveal d1">Regras claras para um marketplace<br>de recrutamento <span class="it">confiável.</span></h2>
-    <p class="lead reveal d2">O que diferencia a Nexhire de uma consultoria comum não é só a IA — é a estrutura operacional que garante qualidade em cada etapa.</p>
+    <div class="eye reveal">Como funciona o marketplace</div>
+    <h2 class="h2 reveal d1">Regras claras em cada<br>etapa do <span class="it">processo.</span></h2>
+    <p class="lead reveal d2">Limite de candidatos por hunter. Prazo de envio. Ownership do candidato. SLA de feedback. Garantia configurável. Tudo documentado, tudo aplicado.</p>
     <div class="trust-grid">
       <div class="trust-card reveal d1">
         <div class="trust-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
@@ -1163,6 +1164,7 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
   <div class="wrap">
     <div class="eye reveal">Quem usa, recomenda</div>
     <h2 class="h2 reveal d1">Times que contratam bem<br><span class="it">avançam mais rápido.</span></h2>
+    <p style="font-size:12px;color:var(--subtle);margin-bottom:1.5rem;font-style:italic">Depoimentos de usuários da plataforma em fase inicial.</p>
     <div class="testi-grid">
       <figure class="testi-card reveal d1">
         <span class="testi-qq">"</span>
@@ -1200,12 +1202,12 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
   <div class="cta-box">
     <div class="cta-glow"></div>
     <div class="cta-dots"></div>
-    <div class="cta-badge"><div class="cta-badge-dot"></div>Publicação grátis · pague só na contratação</div>
-    <h2 class="cta-h2">Sua próxima contratação<br>pode estar na <span class="it">nossa rede.</span></h2>
-    <p class="cta-p">Abra uma vaga, ative uma rede de especialistas e receba candidatos curados com apoio de IA.</p>
+    <div class="cta-badge"><div class="cta-badge-dot"></div>Sem mensalidade · pagamento por contratação</div>
+    <h2 class="cta-h2">Pronto para contratar com<br>uma rede que <span class="it">trabalha por você?</span></h2>
+    <p class="cta-p">Abra sua primeira vaga. Hunters especializados recebem o briefing, IA ranqueia, HR Manager curadoria. Você entrevista apenas quem vale o seu tempo.</p>
     <div class="cta-btns">
       <a class="btn btn-mint btn-lg" href="empresas.html">Começar a contratar <span class="arr">→</span></a>
-      <a class="btn btn-inv btn-lg" href="recrutadores.html">Seja recrutador parceiro</a>
+      <a class="btn btn-inv btn-lg" href="recrutadores.html">Quero ser hunter parceiro</a>
     </div>
   </div>
 </div>
@@ -1224,7 +1226,7 @@ footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5re
 <path d="M28.7324 27.608C26.7604 27.608 25.0491 27.2 23.5984 26.384C22.1477 25.5453 21.0144 24.3667 20.1984 22.848C19.4051 21.3067 19.0084 19.4933 19.0084 17.408C19.0084 15.3227 19.4051 13.5207 20.1984 12.002C20.9917 10.4833 22.1024 9.30467 23.5304 8.46601C24.9811 7.62734 26.6811 7.20801 28.6304 7.20801C30.6477 7.20801 32.3591 7.66134 33.7644 8.56801C35.1924 9.47468 36.2577 10.7893 36.9604 12.512C37.6857 14.2347 37.9917 16.3087 37.8784 18.734H24.5504C24.7317 20.1847 25.2077 21.318 25.9784 22.134C26.7491 22.95 27.7464 23.358 28.9704 23.358C29.9677 23.358 30.7837 23.12 31.4184 22.644C32.0531 22.1453 32.4497 21.5447 32.6084 20.842H37.7424C37.5157 22.2473 36.9831 23.46 36.1444 24.48C35.3284 25.4773 34.2857 26.248 33.0164 26.792C31.7471 27.336 30.3191 27.608 28.7324 27.608ZM28.6644 11.424C27.5537 11.424 26.6357 11.7867 25.9104 12.512C25.1851 13.2147 24.7317 14.1667 24.5504 15.368H32.4384C32.3477 13.94 31.9284 12.9313 31.1804 12.342C30.4324 11.73 29.5937 11.424 28.6644 11.424Z" fill="currentColor"/>
 <path d="M0 27.098V15.708C0 13.9627 0.351333 12.4553 1.054 11.186C1.77933 9.91667 2.79933 8.94201 4.114 8.26201C5.42867 7.55934 6.98133 7.20801 8.772 7.20801C10.5627 7.20801 12.1153 7.55934 13.43 8.26201C14.7447 8.94201 15.7533 9.91667 16.456 11.186C17.1813 12.4553 17.544 13.9627 17.544 15.708V27.098H12.036V15.776C12.036 14.552 11.73 13.6113 11.118 12.954C10.5287 12.2967 9.74667 11.968 8.772 11.968C7.82 11.968 7.038 12.2967 6.426 12.954C5.814 13.6113 5.508 14.552 5.508 15.776V27.098H0Z" fill="currentColor"/></svg>
         </a>
-        <p class="fb-desc">Rede de recrutamento potencializada por IA. Hunters especialistas, curadoria humana e tecnologia — a nova forma de contratar melhor e mais rápido.</p>
+        <p class="fb-desc">IA · Hunters especialistas · Curadoria humana. Hunters especialistas, curadoria humana e tecnologia — a nova forma de contratar melhor e mais rápido.</p>
         <div class="fb-social">
           <a class="social-btn" href="https://linkedin.com/company/nexhire" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a>
           <a class="social-btn" href="https://x.com/nexhire" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
