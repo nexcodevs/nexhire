@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Nexhire | Perguntas frequentes</title>
+<meta name="description" content="Entenda como funciona a Nexhire: modelo de contratação, rede de hunters, uso de IA, regras do processo e informações comerciais.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --f900:#052E16;--f800:#064E1F;--f700:#0F6B35;
+  --g600:#16A34A;--neon:#00E676;
+  --m100:#ECFDF5;
+  --bg:#FAFAFA;--cream:#F7F6F2;--bg-mint:#F0FDF4;--surf:#FFFFFF;
+  --text:#052E16;--text2:#374151;--muted:#6B7280;--subtle:#9CA3AF;
+  --border:#E5E7EB;--border2:#D1D5DB;--border-g:#BBF7D0;
+  --grad-ai:linear-gradient(135deg,#16A34A 0%,#00E676 100%);
+  --s1:0 1px 2px rgba(5,46,22,.05);
+  --s2:0 4px 16px rgba(5,46,22,.08),0 2px 6px rgba(5,46,22,.04);
+  --s3:0 12px 40px rgba(5,46,22,.10),0 4px 12px rgba(5,46,22,.05);
+  --sg:0 8px 24px rgba(5,46,22,.12);
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --max:1180px;
+  --r-lg:24px;--r-xl:28px;
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden}
+
+.it{font-family:var(--serif);font-style:italic}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.container{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
+@media(min-width:768px){.container{padding:0 2.5rem}}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;inset-x:0;z-index:200;padding:.75rem 0;background:rgba(250,250,250,.96);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:var(--s1)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
+@media(min-width:768px){.nav-inner{padding:0 2.5rem;gap:1.5rem}}
+.logo{display:flex;align-items:center;text-decoration:none}
+.logo:focus-visible{outline:2px solid var(--neon);outline-offset:3px;border-radius:4px}
+.nav-links{display:none;list-style:none;gap:0;justify-content:center}
+@media(min-width:1024px){.nav-links{display:flex}}
+.nav-links a{padding:7px 12px;border-radius:8px;text-decoration:none;font-size:13.5px;color:var(--muted);transition:all .14s}
+.nav-links a:hover{color:var(--text);background:rgba(5,46,22,.06)}
+.nav-links a.active{color:var(--f900);font-weight:500}
+.nav-links a:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+.nav-end{display:flex;gap:8px;align-items:center;justify-content:flex-end}
+.nav-burger{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;border-radius:8px}
+@media(min-width:1024px){.nav-burger{display:none}}
+.nav-burger span{display:block;width:20px;height:2px;background:var(--text);border-radius:2px}
+.nav-burger:focus-visible{outline:2px solid var(--neon)}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:46px;padding:0 22px;border-radius:999px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:all .18s;border:none;font-family:var(--sans);white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.btn:focus-visible{outline:2px solid var(--neon);outline-offset:3px}
+.btn:active{transform:scale(.975)}
+.btn-dark{background:var(--f900);color:#F7F6F2;box-shadow:var(--sg)}
+.btn-dark:hover{background:var(--f800);transform:translateY(-1px);box-shadow:0 12px 36px rgba(5,46,22,.25)}
+.btn-out{background:transparent;color:var(--text);border:1.5px solid var(--border2)}
+.btn-out:hover{background:var(--m100);border-color:var(--border-g);transform:translateY(-1px)}
+.btn-sm{height:36px;padding:0 14px;font-size:13px}
+.btn-lg{height:52px;padding:0 28px;font-size:15px}
+.arr{display:inline-block;transition:transform .18s}
+.btn:hover .arr{transform:translateX(3px)}
+
+/* ══════════════════════════════════════════
+   HERO — compacto, utilitário
+   Sem dark hero, sem grande tipografia.
+   A função é orientar, não impressionar.
+══════════════════════════════════════════ */
+.hero{padding:108px 0 0;background:var(--surf);border-bottom:1px solid var(--border)}
+@media(max-width:767px){.hero{padding:88px 0 0}}
+.hero-inner{max-width:var(--max);margin:0 auto;padding:0 1.5rem 2.25rem;display:grid;gap:2.5rem;align-items:start}
+@media(min-width:768px){.hero-inner{padding:0 2.5rem 3rem;grid-template-columns:1fr 1fr;gap:4rem}}
+
+.hero-left{}
+.hero-eye{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--g600);margin-bottom:.875rem;display:flex;align-items:center;gap:6px}
+.hero-eye::before{content:'/ ';color:var(--border2)}
+.hero-h1{font-size:clamp(26px,4vw,48px);font-weight:700;line-height:1.1;letter-spacing:-.035em;color:var(--text);margin-bottom:.875rem}
+.hero-h1 .it{color:var(--f900)}
+.hero-sub{font-size:16px;font-weight:300;color:var(--muted);line-height:1.72;max-width:480px}
+@media(max-width:767px){.hero-sub{font-size:15px}}
+
+/* Search hero */
+.hero-search{display:flex;flex-direction:column;gap:.875rem;padding-top:1rem}
+.search-wrap{position:relative}
+.search-ico{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:17px;height:17px;stroke:var(--subtle);fill:none;stroke-width:1.8;stroke-linecap:round;pointer-events:none}
+.search-input{width:100%;background:var(--cream);border:1.5px solid var(--border);border-radius:12px;color:var(--text);font-family:var(--sans);font-size:15px;padding:12px 14px 12px 44px;outline:none;transition:border-color .18s,box-shadow .18s;-webkit-appearance:none;min-height:50px}
+@media(max-width:767px){.search-input{font-size:16px}}
+.search-input::placeholder{color:var(--subtle)}
+.search-input:focus{border-color:var(--g600);box-shadow:0 0 0 3px rgba(22,163,74,.1);background:var(--surf)}
+.search-hint{font-size:12.5px;color:var(--subtle);font-weight:300}
+
+/* Quick links */
+.quick-links{display:flex;gap:.5rem;flex-wrap:wrap}
+.ql{padding:5px 14px;border:1px solid var(--border);border-radius:999px;font-size:13px;color:var(--muted);text-decoration:none;transition:all .15s;white-space:nowrap;-webkit-tap-highlight-color:transparent;min-height:34px;display:inline-flex;align-items:center}
+.ql:hover{border-color:var(--border-g);color:var(--f900);background:var(--m100)}
+.ql:focus-visible{outline:2px solid var(--neon);outline-offset:2px;border-radius:999px}
+
+/* ══════════════════════════════════════════
+   PAGE BODY — sidebar + conteúdo
+══════════════════════════════════════════ */
+.page-body{max-width:var(--max);margin:0 auto;padding:3rem 1.5rem 5rem;display:grid;gap:3rem}
+@media(min-width:768px){.page-body{padding:3rem 2.5rem 5rem}}
+@media(min-width:1024px){.page-body{grid-template-columns:220px 1fr;gap:4rem}}
+
+/* ── SIDEBAR NAV ── */
+.faq-sidebar{display:none}
+@media(min-width:1024px){.faq-sidebar{display:block}}
+.faq-sidebar-sticky{position:sticky;top:76px}
+.faq-sidebar-label{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--subtle);margin-bottom:1rem;display:block;font-family:var(--mono)}
+.faq-nav{display:flex;flex-direction:column;gap:2px}
+.faq-nav-item{display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding:.625rem .875rem;border-radius:10px;font-size:14px;font-weight:400;color:var(--muted);text-decoration:none;cursor:pointer;transition:all .14s;background:none;border:none;font-family:var(--sans);width:100%;text-align:left;-webkit-tap-highlight-color:transparent}
+.faq-nav-item:hover{color:var(--text);background:var(--cream)}
+.faq-nav-item.active{color:var(--f900);background:var(--m100);font-weight:500}
+.faq-nav-item:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+.faq-nav-count{font-family:var(--mono);font-size:11px;color:var(--subtle);background:var(--cream);border:1px solid var(--border);border-radius:999px;padding:1px 7px;min-width:22px;text-align:center;transition:all .14s}
+.faq-nav-item.active .faq-nav-count{background:rgba(0,230,118,.1);border-color:rgba(0,230,118,.3);color:var(--f900)}
+
+/* Divider sidebar */
+.faq-sidebar-sep{height:1px;background:var(--border);margin:1rem 0}
+.faq-sidebar-cta{padding:.875rem;background:var(--bg-mint);border:1px solid var(--border-g);border-radius:12px;margin-top:1.25rem}
+.faq-sidebar-cta p{font-size:13px;color:var(--muted);font-weight:300;margin-bottom:.75rem;line-height:1.55}
+.faq-sidebar-cta a{font-size:13px;font-weight:500;color:var(--f900);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .14s;display:inline-flex;align-items:center;gap:4px;padding-bottom:1px}
+.faq-sidebar-cta a:hover{border-color:var(--g600)}
+.faq-sidebar-cta a:focus-visible{outline:2px solid var(--neon);outline-offset:2px;border-radius:3px}
+
+/* Mobile tabs */
+.faq-mobile-tabs{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:.375rem;padding-bottom:.25rem;margin-bottom:1.5rem}
+.faq-mobile-tabs::-webkit-scrollbar{display:none}
+@media(min-width:1024px){.faq-mobile-tabs{display:none}}
+.fmt{padding:6px 15px;border:1px solid var(--border);border-radius:999px;font-size:13px;color:var(--muted);background:var(--surf);cursor:pointer;white-space:nowrap;transition:all .15s;font-family:var(--sans);border:none;-webkit-tap-highlight-color:transparent;min-height:36px}
+.fmt.active{background:var(--f900);color:#F7F6F2;font-weight:500}
+.fmt:focus-visible{outline:2px solid var(--neon);outline-offset:2px;border-radius:999px}
+
+/* ── FAQ CONTENT ── */
+.faq-content{}
+
+/* Section header */
+.faq-section{margin-bottom:3.5rem;padding-top:2.5rem;border-top:1px solid var(--border)}.faq-section:first-child{border-top:none;padding-top:0}.faq-section.js-hidden{display:none}
+.faq-section:last-child{margin-bottom:0}
+.faq-section-head{display:flex;align-items:flex-start;gap:1rem;margin-bottom:2rem;padding-bottom:1.375rem;border-bottom:1px solid var(--border)}
+.fsh-num{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--subtle);flex-shrink:0;margin-top:6px;display:none}@media(min-width:640px){.fsh-num{display:block}}
+.fsh-body{}
+.fsh-tag{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--g600);margin-bottom:.375rem;display:block}
+.fsh-title{font-size:clamp(18px,2.5vw,26px);font-weight:700;color:var(--text);letter-spacing:-.025em;line-height:1.2}
+.fsh-title .it{color:var(--f900)}
+.fsh-sub{font-size:14px;color:var(--muted);font-weight:300;margin-top:.375rem;line-height:1.6}
+
+/* Accordion */
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:first-child{border-top:1px solid var(--border)}
+
+.faq-q{width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:1.25rem;padding:1.25rem 0;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--sans);font-size:14.5px;font-weight:500;color:var(--text);transition:color .14s;-webkit-tap-highlight-color:transparent;line-height:1.45}@media(min-width:768px){.faq-q{font-size:15px}}
+.faq-q:hover{color:var(--f900)}
+.faq-q:focus-visible{outline:none;color:var(--f900)}
+.faq-q-text{flex:1}
+.faq-q-num{font-family:var(--mono);font-size:10px;color:var(--subtle);flex-shrink:0;margin-top:4px;letter-spacing:.06em;display:none}@media(min-width:640px){.faq-q-num{display:block}}
+
+.faq-icon{width:26px;height:26px;border-radius:50%;flex-shrink:0;border:1px solid var(--border);background:var(--cream);display:grid;place-items:center;transition:all .2s;margin-top:1px}
+.faq-icon svg{width:11px;height:11px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;transition:transform .25s,stroke .2s}
+.faq-item.open .faq-icon{background:var(--f900);border-color:var(--f900)}
+.faq-item.open .faq-icon svg{stroke:var(--neon);transform:rotate(45deg)}
+
+.faq-a{font-size:14.5px;color:var(--muted);font-weight:300;line-height:1.75;max-height:0;overflow:hidden;transition:max-height .35s ease,opacity .25s ease,padding .3s ease;opacity:0;padding-bottom:0}
+.faq-item.open .faq-a{max-height:600px;opacity:1;padding-bottom:1.375rem}
+.faq-a p+p{margin-top:.875rem}
+.faq-a strong{font-weight:600;color:var(--text2)}
+/* Link dentro do FAQ */
+.faq-a a{color:var(--g600);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .14s}
+.faq-a a:hover{border-color:var(--g600)}
+.faq-a a:focus-visible{outline:2px solid var(--neon);outline-offset:2px;border-radius:3px}
+
+/* Nota especial dentro do FAQ */
+.faq-note{display:flex;align-items:flex-start;gap:.75rem;padding:.875rem 1rem;background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.2);border-radius:10px;margin-top:.875rem}
+.faq-note svg{width:14px;height:14px;stroke:var(--g600);fill:none;stroke-width:1.7;stroke-linecap:round;flex-shrink:0;margin-top:2px}
+.faq-note p{font-size:13px;color:var(--f900);font-weight:400;line-height:1.6}
+
+/* No-results */
+.no-results{text-align:center;padding:3rem 1rem;color:var(--muted)}
+.no-results h3{font-size:17px;font-weight:600;color:var(--text);margin-bottom:.5rem}
+.no-results p{font-size:14px;font-weight:300;max-width:280px;margin:0 auto;line-height:1.6}
+
+/* ── CTA FINAL ── */
+.cta-final{background:var(--f900);border-radius:var(--r-xl);padding:3.5rem 4rem;position:relative;overflow:hidden;box-shadow:var(--sg);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:4rem}
+@media(max-width:1023px){.cta-final{padding:3rem 2.5rem;flex-direction:column;align-items:flex-start}}
+@media(max-width:767px){.cta-final{padding:2.5rem 1.75rem}}
+.cta-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 12% 30%,rgba(0,230,118,.16),transparent 40%)}
+.cta-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(221,245,234,.08) 1px,transparent 1px);background-size:14px 14px}
+.cta-text{position:relative;z-index:1}
+.cta-final h2{font-size:clamp(20px,3vw,34px);font-weight:700;line-height:1.1;letter-spacing:-.03em;color:#F7F6F2;margin-bottom:.625rem}
+.cta-final h2 .it{color:var(--neon)}
+.cta-final p{font-size:15px;font-weight:300;color:rgba(251,248,241,.55);max-width:380px;line-height:1.65}
+.cta-actions{display:flex;gap:.75rem;flex-wrap:wrap;position:relative;z-index:1;flex-shrink:0}
+
+/* ── FOOTER ── */
+.footer{background:var(--cream);border-top:1px solid var(--border);padding:4rem 1.5rem 2.25rem;margin-top:0}
+@media(min-width:768px){.footer{padding:4.5rem 2.5rem 2.25rem}}
+.footer-inner{max-width:var(--max);margin:0 auto}
+.footer-top{display:grid;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border);margin-bottom:2rem}
+@media(min-width:1024px){.footer-top{grid-template-columns:1.8fr repeat(4,1fr)}}
+@media(min-width:640px) and (max-width:1023px){.footer-top{grid-template-columns:1fr 1fr}}
+.footer-brand p{font-size:13px;color:var(--muted);font-weight:300;line-height:1.7;max-width:210px;margin-top:.875rem}
+.footer-social{display:flex;gap:.5rem;margin-top:1.25rem}
+.fsb{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);display:grid;place-items:center;font-family:var(--mono);font-size:9.5px;color:var(--muted);text-decoration:none;transition:all .12s}
+.fsb:hover{color:var(--text);border-color:var(--border2)}
+.fsb:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+.footer-col h5{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--text);margin-bottom:.875rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.footer-col a{font-size:13.5px;color:var(--muted);text-decoration:none;font-weight:300;transition:color .12s}
+.footer-col a:hover{color:var(--text)}
+.footer-col a:focus-visible{outline:2px solid var(--neon);outline-offset:2px;border-radius:3px}
+.footer-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-bot p{font-size:12px;color:var(--subtle);font-weight:300}
+.footer-links{display:flex;gap:1.25rem}
+.footer-links a{font-size:12px;color:var(--subtle);text-decoration:none}
+.footer-links a:hover{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html" aria-label="Nexhire">
+      <svg width="91" height="22" viewBox="0 0 116 28" fill="none" style="display:block;color:var(--f900)" aria-hidden="true"><path d="M106.766 27.608C104.794 27.608 103.083 27.2 101.632 26.384C100.182 25.5453 99.0484 24.3667 98.2324 22.848C97.439 21.3067 97.0424 19.4933 97.0424 17.408C97.0424 15.3227 97.439 13.5207 98.2324 12.002C99.0257 10.4833 100.136 9.30467 101.564 8.46601C103.015 7.62734 104.715 7.20801 106.664 7.20801C108.682 7.20801 110.393 7.66134 111.798 8.56801C113.226 9.47468 114.292 10.7893 114.994 12.512C115.72 14.2347 116.026 16.3087 115.912 18.734H102.584C102.766 20.1847 103.242 21.318 104.012 22.134C104.783 22.95 105.78 23.358 107.004 23.358C108.002 23.358 108.818 23.12 109.452 22.644C110.087 22.1453 110.484 21.5447 110.642 20.842H115.776C115.55 22.2473 115.017 23.46 114.178 24.48C113.362 25.4773 112.32 26.248 111.05 26.792C109.781 27.336 108.353 27.608 106.766 27.608ZM106.698 11.424C105.588 11.424 104.67 11.7867 103.944 12.512C103.219 13.2147 102.766 14.1667 102.584 15.368H110.472C110.382 13.94 109.962 12.9313 109.214 12.342C108.466 11.73 107.628 11.424 106.698 11.424Z" fill="currentColor"/>
+<path d="M85.3766 27.098V15.878C85.3766 13.09 86.1247 10.948 87.6207 9.45201C89.1393 7.95601 91.304 7.20801 94.1147 7.20801C94.4093 7.20801 94.874 7.23067 95.5087 7.27601C96.1433 7.29867 96.778 7.37801 97.4127 7.51401V12.24C96.982 12.172 96.574 12.1153 96.1887 12.07C95.8033 12.002 95.3727 11.968 94.8967 11.968C94.194 11.968 93.5367 12.07 92.9247 12.274C92.3127 12.478 91.814 12.8633 91.4286 13.43C91.066 13.9967 90.8847 14.824 90.8847 15.912V27.098H85.3766Z" fill="currentColor"/>
+<path d="M80.4894 5.61C79.6054 5.61 78.8574 5.34933 78.2454 4.828C77.6561 4.30667 77.3614 3.62667 77.3614 2.788C77.3614 1.972 77.6561 1.30333 78.2454 0.782C78.8574 0.260666 79.6054 0 80.4894 0C81.3508 0 82.0761 0.260666 82.6654 0.782C83.2774 1.30333 83.5834 1.972 83.5834 2.788C83.5834 3.62667 83.2774 4.30667 82.6654 4.828C82.0761 5.34933 81.3508 5.61 80.4894 5.61ZM77.7354 27.098V7.718H83.2434V27.098H77.7354Z" fill="currentColor"/>
+<path d="M57.4502 27.098V1.59802H62.9582V9.96202C63.5702 9.07802 64.3182 8.39802 65.2022 7.92202C66.0862 7.44602 67.0722 7.20802 68.1602 7.20802C69.6108 7.20802 70.8688 7.51402 71.9342 8.12602C72.9995 8.73802 73.8155 9.58802 74.3822 10.676C74.9715 11.764 75.2662 13.022 75.2662 14.45V27.098H69.7582V15.572C69.7582 14.4614 69.4522 13.5774 68.8402 12.92C68.2508 12.2627 67.4348 11.934 66.3922 11.934C65.3268 11.934 64.4882 12.3194 63.8762 13.09C63.2642 13.838 62.9582 14.8354 62.9582 16.082V27.098H57.4502Z" fill="currentColor"/>
+<path d="M37.235 27.098L43.525 17.544L36.589 7.71802H42.879L46.857 13.498L50.495 7.71802H56.411L49.781 17.714L56.241 27.098H50.257L46.449 21.692L43.049 27.098H37.235Z" fill="currentColor"/>
+<path d="M28.7324 27.608C26.7604 27.608 25.0491 27.2 23.5984 26.384C22.1477 25.5453 21.0144 24.3667 20.1984 22.848C19.4051 21.3067 19.0084 19.4933 19.0084 17.408C19.0084 15.3227 19.4051 13.5207 20.1984 12.002C20.9917 10.4833 22.1024 9.30467 23.5304 8.46601C24.9811 7.62734 26.6811 7.20801 28.6304 7.20801C30.6477 7.20801 32.3591 7.66134 33.7644 8.56801C35.1924 9.47468 36.2577 10.7893 36.9604 12.512C37.6857 14.2347 37.9917 16.3087 37.8784 18.734H24.5504C24.7317 20.1847 25.2077 21.318 25.9784 22.134C26.7491 22.95 27.7464 23.358 28.9704 23.358C29.9677 23.358 30.7837 23.12 31.4184 22.644C32.0531 22.1453 32.4497 21.5447 32.6084 20.842H37.7424C37.5157 22.2473 36.9831 23.46 36.1444 24.48C35.3284 25.4773 34.2857 26.248 33.0164 26.792C31.7471 27.336 30.3191 27.608 28.7324 27.608ZM28.6644 11.424C27.5537 11.424 26.6357 11.7867 25.9104 12.512C25.1851 13.2147 24.7317 14.1667 24.5504 15.368H32.4384C32.3477 13.94 31.9284 12.9313 31.1804 12.342C30.4324 11.73 29.5937 11.424 28.6644 11.424Z" fill="currentColor"/>
+<path d="M0 27.098V15.708C0 13.9627 0.351333 12.4553 1.054 11.186C1.77933 9.91667 2.79933 8.94201 4.114 8.26201C5.42867 7.55934 6.98133 7.20801 8.772 7.20801C10.5627 7.20801 12.1153 7.55934 13.43 8.26201C14.7447 8.94201 15.7533 9.91667 16.456 11.186C17.1813 12.4553 17.544 13.9627 17.544 15.708V27.098H12.036V15.776C12.036 14.552 11.73 13.6113 11.118 12.954C10.5287 12.2967 9.74667 11.968 8.772 11.968C7.82 11.968 7.038 12.2967 6.426 12.954C5.814 13.6113 5.508 14.552 5.508 15.776V27.098H0Z" fill="currentColor"/></svg>
+    </a>
+    <ul class="nav-links" role="navigation" aria-label="Navegação principal">
+      <li><a href="index.html#como-funciona">Como funciona</a></li>
+      <li><a href="empresas.html">Para empresas</a></li>
+      <li><a href="recrutadores.html">Para recrutadores</a></li>
+      <li><a href="vagas.html">Vagas</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <div class="nav-end">
+      <a class="btn btn-out btn-sm" href="empresas.html">Entrar</a>
+      <a class="btn btn-dark btn-sm" href="empresas.html">Abrir vaga <span class="arr" aria-hidden="true">→</span></a>
+      <button class="nav-burger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="faq-title">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eye" role="note">FAQ</div>
+      <h1 class="hero-h1" id="faq-title">
+        Perguntas frequentes<br>sobre a <span class="it">Nexhire.</span>
+      </h1>
+      <p class="hero-sub">
+        Entenda o modelo de contratação, a rede de hunters, o uso de IA e as regras do processo — organizados por público.
+      </p>
+    </div>
+    <div class="hero-search">
+      <div class="search-wrap" role="search" aria-label="Buscar no FAQ">
+        <svg class="search-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input class="search-input" id="faq-search" type="search" placeholder="Buscar uma pergunta..." aria-label="Buscar no FAQ" autocomplete="off">
+      </div>
+      <p class="search-hint" id="search-hint" aria-live="polite"></p>
+      <div class="quick-links" role="group" aria-label="Ir para categoria">
+        <a class="ql" href="#empresas">Empresas</a>
+        <a class="ql" href="#recrutadores">Recrutadores</a>
+        <a class="ql" href="#candidatos">Candidatos</a>
+        <a class="ql" href="#ia-dados">IA e dados</a>
+        <a class="ql" href="#comercial">Comercial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE BODY -->
+<div class="page-body">
+
+  <!-- SIDEBAR -->
+  <aside class="faq-sidebar" aria-label="Categorias do FAQ">
+    <div class="faq-sidebar-sticky">
+      <span class="faq-sidebar-label">Categorias</span>
+      <nav class="faq-nav" aria-label="Navegação por categoria">
+        <button class="faq-nav-item active" data-target="empresas" aria-pressed="true">
+          Para empresas
+          <span class="faq-nav-count">7</span>
+        </button>
+        <button class="faq-nav-item" data-target="recrutadores" aria-pressed="false">
+          Para recrutadores
+          <span class="faq-nav-count">8</span>
+        </button>
+        <button class="faq-nav-item" data-target="candidatos" aria-pressed="false">
+          Para candidatos
+          <span class="faq-nav-count">6</span>
+        </button>
+        <button class="faq-nav-item" data-target="ia-dados" aria-pressed="false">
+          IA e dados
+          <span class="faq-nav-count">6</span>
+        </button>
+        <button class="faq-nav-item" data-target="comercial" aria-pressed="false">
+          Comercial
+          <span class="faq-nav-count">6</span>
+        </button>
+      </nav>
+      <div class="faq-sidebar-sep" aria-hidden="true"></div>
+      <div class="faq-sidebar-cta" role="complementary">
+        <p>Não encontrou o que procura?</p>
+        <a href="faq.html" class="active" aria-current="page">Falar com a equipe <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main aria-label="Conteúdo do FAQ">
+
+    <!-- Mobile tabs -->
+    <div class="faq-mobile-tabs" role="group" aria-label="Filtrar por categoria">
+      <button class="fmt active" data-target="empresas">Empresas</button>
+      <button class="fmt" data-target="recrutadores">Recrutadores</button>
+      <button class="fmt" data-target="candidatos">Candidatos</button>
+      <button class="fmt" data-target="ia-dados">IA e dados</button>
+      <button class="fmt" data-target="comercial">Comercial</button>
+    </div>
+
+    <!-- ══ EMPRESAS ══ -->
+    <section class="faq-section" id="empresas" aria-labelledby="sec-emp">
+      <div class="faq-section-head">
+        <div class="fsh-num" aria-hidden="true">01 /</div>
+        <div class="fsh-body">
+          <span class="fsh-tag">Para empresas</span>
+          <h2 class="fsh-title" id="sec-emp">Contratação, modelo e <span class="it">processo.</span></h2>
+          <p class="fsh-sub">O que as empresas mais perguntam antes de abrir a primeira vaga.</p>
+        </div>
+      </div>
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="eq1">
+            <div class="faq-q-text">A empresa paga para abrir uma vaga?</div>
+            <div class="faq-q-num" aria-hidden="true">01</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="eq1" role="region"><p>O modelo inicial opera com baixa fricção: o pagamento acontece principalmente por contratação, não por abertura de vaga. As condições comerciais podem variar conforme o acordo firmado com cada cliente. Não há mensalidade obrigatória no modelo padrão.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="eq2">
+            <div class="faq-q-text">Como funciona o success fee?</div>
+            <div class="faq-q-num" aria-hidden="true">02</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="eq2" role="region"><p>A empresa paga quando uma posição é fechada com candidato aprovado no processo — após confirmação de contratação. O valor é definido no contrato comercial e pode variar por nível de senioridade e condições acordadas.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="eq3">
+            <div class="faq-q-text">Quem seleciona os candidatos que chegam ao cliente?</div>
+            <div class="faq-q-num" aria-hidden="true">03</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="eq3" role="region">
+            <p>O processo tem três camadas: hunters enviam candidatos para a vaga dentro do limite e prazo definidos; a IA ranqueia e resume cada perfil por aderência; o HR Manager Nexhire faz a curadoria final antes de qualquer perfil ser enviado ao cliente.</p>
+            <div class="faq-note" role="note">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <p>O cliente nunca recebe candidatos que não foram validados internamente pelo HR Manager Nexhire.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="eq4">
+            <div class="faq-q-text">A IA decide quem será contratado?</div>
+            <div class="faq-q-num" aria-hidden="true">04</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="eq4" role="region"><p>Não. A IA apoia com score de aderência, resumo de CV, ranking e sugestão de perguntas. Mas todas as decisões críticas — aprovação pelo HR Manager, envio ao cliente, agendamento de entrevista e contratação — são humanas. A IA é um apoio, não um árbitro.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="eq5">
+            <div class="faq-q-text">O cliente fala diretamente com os hunters?</div>
+            <div class="faq-q-num" aria-hidden="true">05</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="eq5" role="region"><p>Não. Toda comunicação com hunters é gerenciada pelo HR Manager Nexhire. Isso garante processo centralizado, sem conflito de informações, e com visibilidade total sobre o andamento de cada vaga. O cliente interage com a Nexhire, não diretamente com a rede.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="eq6">
+            <div class="faq-q-text">Como funciona o prazo de feedback para candidatos?</div>
+            <div class="faq-q-num" aria-hidden="true">06</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="eq6" role="region"><p>Cada cliente pode ter um SLA de feedback configurável — o prazo dentro do qual a empresa precisa se manifestar sobre cada candidato recebido. O padrão é 3 dias úteis. A plataforma envia notificações e lembretes automáticos quando o prazo se aproxima.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="eq7">
+            <div class="faq-q-text">Como funciona a garantia se o candidato sair logo após a contratação?</div>
+            <div class="faq-q-num" aria-hidden="true">07</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="eq7" role="region"><p>A garantia é configurável por cliente e definida no contrato comercial. Se o candidato sair dentro do período de garantia por razões previstas no contrato, a Nexhire mobiliza novamente a rede para reposição sem custo adicional de success fee.</p></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ RECRUTADORES ══ -->
+    <section class="faq-section" id="recrutadores" aria-labelledby="sec-rec">
+      <div class="faq-section-head">
+        <div class="fsh-num" aria-hidden="true">02 /</div>
+        <div class="fsh-body">
+          <span class="fsh-tag">Para recrutadores</span>
+          <h2 class="fsh-title" id="sec-rec">Rede, ranking e <span class="it">remuneração.</span></h2>
+          <p class="fsh-sub">Como entrar, como ganhar e como evoluir na rede Nexhire.</p>
+        </div>
+      </div>
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="rq1">
+            <div class="faq-q-text">Qualquer recrutador pode participar da rede?</div>
+            <div class="faq-q-num" aria-hidden="true">01</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="rq1" role="region"><p>Não. A Nexhire opera uma rede seletiva. Todo hunter passa por um processo de validação antes de acessar as vagas: análise de perfil, verificação de especialidades e entrevista com o HR Partner. O objetivo é proteger a qualidade para todos os participantes — incluindo os hunters que já fazem parte da rede.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="rq2">
+            <div class="faq-q-text">Como funciona o processo de aprovação?</div>
+            <div class="faq-q-num" aria-hidden="true">02</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="rq2" role="region">
+            <p>O processo tem 5 etapas: preenchimento do formulário → envio de dados profissionais → entrevista com HR Partner (30 minutos) → assinatura do contrato de parceiro → acesso à plataforma.</p>
+            <p>O prazo médio de resposta após o formulário é de 3 dias úteis.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="rq3">
+            <div class="faq-q-text">Quantos candidatos posso enviar por vaga?</div>
+            <div class="faq-q-num" aria-hidden="true">03</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="rq3" role="region"><p>O limite padrão é de 3 candidatos por hunter por vaga, em até 7 dias após a publicação. O HR Manager pode configurar esse número para mais ou para menos em vagas específicas. Após o prazo, novos envios são bloqueados automaticamente. O limite existe para forçar seleção cuidadosa, não volume.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="rq4">
+            <div class="faq-q-text">Como funciona a remuneração do hunter?</div>
+            <div class="faq-q-num" aria-hidden="true">04</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="rq4" role="region"><p>A remuneração acontece quando o candidato que você indicou é contratado pela empresa. O valor e as condições são definidos por vaga, de acordo com o contrato de parceiro firmado na aprovação. Não há taxas de inscrição nem custos para participar da rede.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="rq5">
+            <div class="faq-q-text">O que é um Top Hunter e como me torno um?</div>
+            <div class="faq-q-num" aria-hidden="true">05</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="rq5" role="region"><p>Top Hunter é o nível mais alto do ranking Nexhire. Para chegar lá, você precisa acumular histórico positivo de aprovação pelo HR Manager, entrevistas agendadas e contratações confirmadas. O ranking é calculado automaticamente — taxa de aprovação, taxa de entrevista, taxa de contratação, qualidade dos resumos e cumprimento de prazo são os principais critérios.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="rq6">
+            <div class="faq-q-text">Como funciona o ranking de hunters?</div>
+            <div class="faq-q-num" aria-hidden="true">06</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="rq6" role="region"><p>A Nexhire classifica hunters em três níveis: Iniciante → Especialista → Top Hunter. A progressão é baseada em qualidade dos envios, não em volume. Alto índice de duplicidade penaliza o score. Hunters que violam as regras da plataforma podem ser suspensos.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="rq7">
+            <div class="faq-q-text">Posso falar diretamente com o cliente?</div>
+            <div class="faq-q-num" aria-hidden="true">07</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="rq7" role="region"><p>Não. A comunicação com o cliente é gerenciada exclusivamente pelo HR Manager Nexhire. Isso protege o processo, evita conflito de informações e garante que o cliente tenha uma experiência consistente — o que, por consequência, aumenta a taxa de aprovação dos candidatos enviados.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="rq8">
+            <div class="faq-q-text">Como sei se meu candidato avançou no processo?</div>
+            <div class="faq-q-num" aria-hidden="true">08</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="rq8" role="region"><p>A plataforma envia notificações em cada etapa: curadoria do HR Manager, aprovação ou reprovação pelo cliente, entrevista agendada e contratação confirmada. Você tem visibilidade completa do status de cada candidato que enviou, em tempo real.</p></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ CANDIDATOS ══ -->
+    <section class="faq-section" id="candidatos" aria-labelledby="sec-cand">
+      <div class="faq-section-head">
+        <div class="fsh-num" aria-hidden="true">03 /</div>
+        <div class="fsh-body">
+          <span class="fsh-tag">Para candidatos</span>
+          <h2 class="fsh-title" id="sec-cand">Candidatura, dados e <span class="it">processo.</span></h2>
+          <p class="fsh-sub">O que você precisa saber antes de se candidatar ou enviar seu CV.</p>
+        </div>
+      </div>
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="cq1">
+            <div class="faq-q-text">Preciso pagar para me candidatar?</div>
+            <div class="faq-q-num" aria-hidden="true">01</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="cq1" role="region"><p>Não. A candidatura é gratuita para todos os candidatos. A Nexhire cobra das empresas contratantes — não dos profissionais que buscam oportunidades.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="cq2">
+            <div class="faq-q-text">Posso enviar meu CV sem me candidatar a uma vaga específica?</div>
+            <div class="faq-q-num" aria-hidden="true">02</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="cq2" role="region"><p>Sim. Você pode enviar seu CV para o banco de talentos da Nexhire sem se candidatar a uma vaga específica. Quando surgir uma oportunidade genuinamente compatível com seu perfil, você será contactado. Não há spam — o contato acontece apenas quando houver fit real.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="cq3">
+            <div class="faq-q-text">Meu perfil pode ser indicado para outras vagas sem eu saber?</div>
+            <div class="faq-q-num" aria-hidden="true">03</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="cq3" role="region"><p>Ao enviar seu CV, você autoriza a Nexhire a analisar seu perfil para oportunidades compatíveis — o que inclui que hunters e HR Managers possam visualizá-lo na plataforma. O repasse a empresas contratantes segue critérios de compatibilidade e é controlado pelo HR Manager. Você pode solicitar a remoção dos seus dados a qualquer momento.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="cq4">
+            <div class="faq-q-text">A IA decide se vou avançar no processo?</div>
+            <div class="faq-q-num" aria-hidden="true">04</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="cq4" role="region"><p>Não. A IA analisa aderência e ranqueia perfis, mas as decisões sobre quem avança são sempre humanas — tomadas por hunters, HR Managers e, em última instância, pela empresa contratante. A IA é um apoio à análise, não um filtro autônomo.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="cq5">
+            <div class="faq-q-text">Como meus dados são usados?</div>
+            <div class="faq-q-num" aria-hidden="true">05</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="cq5" role="region">
+            <p>Seus dados são usados exclusivamente para processos seletivos compatíveis com seu perfil. Nenhuma informação é compartilhada com empresas sem critério de compatibilidade e sem o controle do HR Manager Nexhire.</p>
+            <p>O tratamento de dados segue a LGPD. Você pode solicitar remoção, atualização ou portabilidade a qualquer momento através da <a href="faq.html#ia-dados">Política de Privacidade</a>.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="cq6">
+            <div class="faq-q-text">Posso me candidatar a mais de uma vaga ao mesmo tempo?</div>
+            <div class="faq-q-num" aria-hidden="true">06</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="cq6" role="region"><p>Sim. A recomendação é candidatar-se às posições onde há real aderência de experiência, senioridade e interesse. Candidaturas em vagas claramente incompatíveis com seu perfil tendem a ter baixa taxa de aprovação — o que não ajuda nenhum dos lados.</p></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ IA E DADOS ══ -->
+    <section class="faq-section" id="ia-dados" aria-labelledby="sec-ia">
+      <div class="faq-section-head">
+        <div class="fsh-num" aria-hidden="true">04 /</div>
+        <div class="fsh-body">
+          <span class="fsh-tag">IA e dados</span>
+          <h2 class="fsh-title" id="sec-ia">Como a tecnologia funciona<br>na <span class="it">Nexhire.</span></h2>
+          <p class="fsh-sub">Respostas honestas sobre o que a IA faz, onde ela erra e como protegemos seus dados.</p>
+        </div>
+      </div>
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="iq1">
+            <div class="faq-q-text">Como a IA é usada na Nexhire?</div>
+            <div class="faq-q-num" aria-hidden="true">01</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="iq1" role="region">
+            <p>A IA atua em seis pontos do processo: <strong>estruturação de job descriptions</strong> — transforma requisitos soltos em vagas claras; <strong>resumo de CVs</strong> — extrai experiência, senioridade e pontos de atenção; <strong>score de aderência</strong> — 0 a 100 por fit técnico, comportamental e de senioridade; <strong>ranking de candidatos</strong> — ordena por aderência com justificativa; <strong>detecção de duplicidade</strong> — identifica candidatos repetidos por e-mail, telefone e LinkedIn; <strong>sugestão de perguntas</strong> — roteiro personalizado por candidato e vaga.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="iq2">
+            <div class="faq-q-text">A IA substitui os recrutadores humanos?</div>
+            <div class="faq-q-num" aria-hidden="true">02</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="iq2" role="region"><p>Não. A IA organiza dados, reduz ruído e acelera análise. Mas conduzir conversas, avaliar cultura, perceber motivação e decidir quem avança — essas etapas continuam humanas por design. O modelo da Nexhire combina os dois: IA onde ela é mais eficiente, humanos onde contexto importa mais que algoritmo.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="iq3">
+            <div class="faq-q-text">Como a Nexhire lida com viés nos algoritmos de IA?</div>
+            <div class="faq-q-num" aria-hidden="true">03</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="iq3" role="region">
+            <p>O score de aderência é baseado em critérios técnicos declarados pela empresa — experiência, habilidades, senioridade — e não em dados demográficos. O HR Manager valida os resultados da IA antes de qualquer ação, funcionando como camada de revisão humana.</p>
+            <p>Reconhecemos que nenhum sistema de IA é isento de viés. Por isso mantemos auditabilidade dos critérios e revisão humana obrigatória em todas as etapas críticas.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="iq4">
+            <div class="faq-q-text">A IA pode errar na análise de um candidato?</div>
+            <div class="faq-q-num" aria-hidden="true">04</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="iq4" role="region"><p>Sim. A IA analisa com base nas informações disponíveis no CV e no resumo de entrevista do hunter. Lacunas de informação, formatação não convencional ou contextos atípicos podem afetar o resultado. É por isso que o HR Manager revisa os scores antes de qualquer decisão — a IA é um ponto de partida, não uma sentença.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="iq5">
+            <div class="faq-q-text">Como funciona o score de aderência?</div>
+            <div class="faq-q-num" aria-hidden="true">05</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="iq5" role="region"><p>O score vai de 0 a 100 e é calculado por três dimensões: fit técnico (experiência e habilidades declaradas vs. requisitos da vaga), fit de senioridade (nível de experiência vs. expectativa da posição) e fit comportamental (sinais do resumo de entrevista). O resultado é acompanhado de justificativa, pontos fortes, gaps identificados e recomendação de avanço, revisão ou rejeição.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="iq6">
+            <div class="faq-q-text">Como é tratada a privacidade dos dados na plataforma?</div>
+            <div class="faq-q-num" aria-hidden="true">06</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="iq6" role="region">
+            <p>Os dados de candidatos são usados exclusivamente para processos seletivos na plataforma. O tratamento segue a LGPD. Empresas veem apenas candidatos aprovados pelo HR Manager — não têm acesso a candidatos reprovados internamente ou a dados de outros processos.</p>
+            <p>Hunters veem apenas suas próprias submissões. HR Managers têm acesso operacional completo. Cada perfil de acesso tem permissões definidas por Row Level Security no banco de dados.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ COMERCIAL ══ -->
+    <section class="faq-section" id="comercial" aria-labelledby="sec-com">
+      <div class="faq-section-head">
+        <div class="fsh-num" aria-hidden="true">05 /</div>
+        <div class="fsh-body">
+          <span class="fsh-tag">Comercial</span>
+          <h2 class="fsh-title" id="sec-com">Valores, contratos e <span class="it">condições.</span></h2>
+          <p class="fsh-sub">Transparência sobre como o modelo financeiro funciona.</p>
+        </div>
+      </div>
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="mq1">
+            <div class="faq-q-text">Existe mensalidade para usar a Nexhire?</div>
+            <div class="faq-q-num" aria-hidden="true">01</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="mq1" role="region"><p>Não existe mensalidade obrigatória no modelo inicial. O pagamento é orientado principalmente por resultado — success fee quando há contratação. Condições específicas podem variar conforme o acordo comercial firmado com cada cliente.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="mq2">
+            <div class="faq-q-text">Como são definidos os valores do success fee?</div>
+            <div class="faq-q-num" aria-hidden="true">02</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="mq2" role="region"><p>Os valores são negociados e definidos no contrato comercial antes do início das operações. Fatores que podem influenciar incluem nível de senioridade da posição, área de atuação e volume de vagas. As condições ficam registradas no contrato firmado entre a empresa e a Nexhire.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="mq3">
+            <div class="faq-q-text">O pagamento é por candidato contratado ou por processo?</div>
+            <div class="faq-q-num" aria-hidden="true">03</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="mq3" role="region"><p>Por candidato contratado. Se uma vaga é aberta mas não resulta em contratação de um candidato indicado pela Nexhire, não há cobrança de success fee. O pagamento acontece quando a posição é fechada com candidato vindo da plataforma.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="mq4">
+            <div class="faq-q-text">Existe um contrato formal com a Nexhire?</div>
+            <div class="faq-q-num" aria-hidden="true">04</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="mq4" role="region"><p>Sim. Antes do início das operações, é firmado um contrato comercial com a empresa. Para hunters, existe um contrato de parceiro. Os contratos formalizam as condições de success fee, garantia, SLA de feedback, prazo e demais regras do processo.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="mq5">
+            <div class="faq-q-text">Como funciona a remuneração dos hunters no modelo?</div>
+            <div class="faq-q-num" aria-hidden="true">05</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="mq5" role="region"><p>Os hunters são remunerados por performance: quando o candidato que indicaram é contratado pela empresa. O valor é definido por vaga, conforme as condições do contrato de parceiro firmado no processo de aprovação. Não há custos para entrar na rede nem comissões pagas antecipadamente.</p></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="mq6">
+            <div class="faq-q-text">O que acontece se uma vaga for cancelada durante o processo?</div>
+            <div class="faq-q-num" aria-hidden="true">06</div>
+            <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+          </button>
+          <div class="faq-a" id="mq6" role="region"><p>Se uma vaga for cancelada antes de gerar contratação, não há cobrança de success fee. Os hunters que já enviaram candidatos são notificados automaticamente. As condições específicas de cancelamento e suas implicações estão descritas no contrato comercial de cada cliente.</p></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- No results (hidden) -->
+    <div class="no-results" id="no-results" style="display:none" aria-live="polite" role="status">
+      <h3>Nenhuma pergunta encontrada</h3>
+      <p>Tente outros termos ou fale com a equipe Nexhire diretamente.</p>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="cta-final">
+      <div class="cta-glow" aria-hidden="true"></div>
+      <div class="cta-dots" aria-hidden="true"></div>
+      <div class="cta-text">
+        <h2>Ainda tem <span class="it">dúvidas?</span></h2>
+        <p>Fale com a Nexhire e entenda como aplicar o modelo à sua operação de contratação.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-mint btn-lg" href="faq.html">Falar com a Nexhire <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-inv btn-lg" href="empresas.html">Abrir uma vaga</a>
+      </div>
+    </div>
+
+  </main>
+</div><!-- /page-body -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" aria-label="Nexhire — Início">
+          <svg width="83" height="20" viewBox="0 0 116 28" fill="none" style="display:block;color:var(--f900)" aria-hidden="true"><path d="M106.766 27.608C104.794 27.608 103.083 27.2 101.632 26.384C100.182 25.5453 99.0484 24.3667 98.2324 22.848C97.439 21.3067 97.0424 19.4933 97.0424 17.408C97.0424 15.3227 97.439 13.5207 98.2324 12.002C99.0257 10.4833 100.136 9.30467 101.564 8.46601C103.015 7.62734 104.715 7.20801 106.664 7.20801C108.682 7.20801 110.393 7.66134 111.798 8.56801C113.226 9.47468 114.292 10.7893 114.994 12.512C115.72 14.2347 116.026 16.3087 115.912 18.734H102.584C102.766 20.1847 103.242 21.318 104.012 22.134C104.783 22.95 105.78 23.358 107.004 23.358C108.002 23.358 108.818 23.12 109.452 22.644C110.087 22.1453 110.484 21.5447 110.642 20.842H115.776C115.55 22.2473 115.017 23.46 114.178 24.48C113.362 25.4773 112.32 26.248 111.05 26.792C109.781 27.336 108.353 27.608 106.766 27.608ZM106.698 11.424C105.588 11.424 104.67 11.7867 103.944 12.512C103.219 13.2147 102.766 14.1667 102.584 15.368H110.472C110.382 13.94 109.962 12.9313 109.214 12.342C108.466 11.73 107.628 11.424 106.698 11.424Z" fill="currentColor"/>
+<path d="M85.3766 27.098V15.878C85.3766 13.09 86.1247 10.948 87.6207 9.45201C89.1393 7.95601 91.304 7.20801 94.1147 7.20801C94.4093 7.20801 94.874 7.23067 95.5087 7.27601C96.1433 7.29867 96.778 7.37801 97.4127 7.51401V12.24C96.982 12.172 96.574 12.1153 96.1887 12.07C95.8033 12.002 95.3727 11.968 94.8967 11.968C94.194 11.968 93.5367 12.07 92.9247 12.274C92.3127 12.478 91.814 12.8633 91.4286 13.43C91.066 13.9967 90.8847 14.824 90.8847 15.912V27.098H85.3766Z" fill="currentColor"/>
+<path d="M80.4894 5.61C79.6054 5.61 78.8574 5.34933 78.2454 4.828C77.6561 4.30667 77.3614 3.62667 77.3614 2.788C77.3614 1.972 77.6561 1.30333 78.2454 0.782C78.8574 0.260666 79.6054 0 80.4894 0C81.3508 0 82.0761 0.260666 82.6654 0.782C83.2774 1.30333 83.5834 1.972 83.5834 2.788C83.5834 3.62667 83.2774 4.30667 82.6654 4.828C82.0761 5.34933 81.3508 5.61 80.4894 5.61ZM77.7354 27.098V7.718H83.2434V27.098H77.7354Z" fill="currentColor"/>
+<path d="M57.4502 27.098V1.59802H62.9582V9.96202C63.5702 9.07802 64.3182 8.39802 65.2022 7.92202C66.0862 7.44602 67.0722 7.20802 68.1602 7.20802C69.6108 7.20802 70.8688 7.51402 71.9342 8.12602C72.9995 8.73802 73.8155 9.58802 74.3822 10.676C74.9715 11.764 75.2662 13.022 75.2662 14.45V27.098H69.7582V15.572C69.7582 14.4614 69.4522 13.5774 68.8402 12.92C68.2508 12.2627 67.4348 11.934 66.3922 11.934C65.3268 11.934 64.4882 12.3194 63.8762 13.09C63.2642 13.838 62.9582 14.8354 62.9582 16.082V27.098H57.4502Z" fill="currentColor"/>
+<path d="M37.235 27.098L43.525 17.544L36.589 7.71802H42.879L46.857 13.498L50.495 7.71802H56.411L49.781 17.714L56.241 27.098H50.257L46.449 21.692L43.049 27.098H37.235Z" fill="currentColor"/>
+<path d="M28.7324 27.608C26.7604 27.608 25.0491 27.2 23.5984 26.384C22.1477 25.5453 21.0144 24.3667 20.1984 22.848C19.4051 21.3067 19.0084 19.4933 19.0084 17.408C19.0084 15.3227 19.4051 13.5207 20.1984 12.002C20.9917 10.4833 22.1024 9.30467 23.5304 8.46601C24.9811 7.62734 26.6811 7.20801 28.6304 7.20801C30.6477 7.20801 32.3591 7.66134 33.7644 8.56801C35.1924 9.47468 36.2577 10.7893 36.9604 12.512C37.6857 14.2347 37.9917 16.3087 37.8784 18.734H24.5504C24.7317 20.1847 25.2077 21.318 25.9784 22.134C26.7491 22.95 27.7464 23.358 28.9704 23.358C29.9677 23.358 30.7837 23.12 31.4184 22.644C32.0531 22.1453 32.4497 21.5447 32.6084 20.842H37.7424C37.5157 22.2473 36.9831 23.46 36.1444 24.48C35.3284 25.4773 34.2857 26.248 33.0164 26.792C31.7471 27.336 30.3191 27.608 28.7324 27.608ZM28.6644 11.424C27.5537 11.424 26.6357 11.7867 25.9104 12.512C25.1851 13.2147 24.7317 14.1667 24.5504 15.368H32.4384C32.3477 13.94 31.9284 12.9313 31.1804 12.342C30.4324 11.73 29.5937 11.424 28.6644 11.424Z" fill="currentColor"/>
+<path d="M0 27.098V15.708C0 13.9627 0.351333 12.4553 1.054 11.186C1.77933 9.91667 2.79933 8.94201 4.114 8.26201C5.42867 7.55934 6.98133 7.20801 8.772 7.20801C10.5627 7.20801 12.1153 7.55934 13.43 8.26201C14.7447 8.94201 15.7533 9.91667 16.456 11.186C17.1813 12.4553 17.544 13.9627 17.544 15.708V27.098H12.036V15.776C12.036 14.552 11.73 13.6113 11.118 12.954C10.5287 12.2967 9.74667 11.968 8.772 11.968C7.82 11.968 7.038 12.2967 6.426 12.954C5.814 13.6113 5.508 14.552 5.508 15.776V27.098H0Z" fill="currentColor"/></svg>
+        </a>
+        <p>Rede de recrutamento potencializada por IA. Hunters especialistas, curadoria humana e tecnologia.</p>
+        <div class="footer-social" aria-label="Redes sociais">
+          <a class="fsb" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a>
+          <a class="fsb" href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+          <a class="fsb" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Produto</h5><ul><li><a href="index.html#plataforma">Plataforma</a></li><li><a href="sobre.html">IA e Scoring</a></li><li><a href="index.html">Integrações</a></li></ul></div>
+      <div class="footer-col"><h5>Soluções</h5><ul><li><a href="empresas.html">Para empresas</a></li><li><a href="recrutadores.html">Para recrutadores</a></li><li><a href="vagas.html">Vagas</a></li></ul></div>
+      <div class="footer-col"><h5>Empresa</h5><ul><li><a href="sobre.html">Sobre</a></li><li><a href="blog.html">Blog</a></li><li><a href="faq.html">Contato</a></li></ul></div>
+      <div class="footer-col"><h5>Legal</h5><ul><li><a href="faq.html#ia-dados">Privacidade</a></li><li><a href="faq.html">Termos</a></li><li><a href="faq.html#ia-dados">LGPD</a></li></ul></div>
+    </div>
+    <div class="footer-bot">
+      <p>© 2026 Nexhire AI, Inc. · Todos os direitos reservados.</p>
+      <nav class="footer-links" aria-label="Links legais">
+        <a href="faq.html#ia-dados">Privacidade</a>
+        <a href="faq.html">Termos</a>
+        <a href="faq.html#ia-dados">LGPD</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(()=>{
+  // ── FAQ ACCORDION ──
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    const toggle = () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // close all in same list
+      btn.closest('.faq-list').querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    };
+    btn.addEventListener('click', toggle);
+    btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+
+  // ── CATEGORY FILTER (sidebar + mobile tabs) ──
+  const sections = document.querySelectorAll('.faq-section');
+  const allNavItems = document.querySelectorAll('.faq-nav-item, .fmt');
+
+  const setActiveCategory = (target) => {
+    allNavItems.forEach(btn => {
+      const isActive = btn.dataset.target === target;
+      btn.classList.toggle('active', isActive);
+      if (btn.getAttribute('aria-pressed') !== null) {
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      }
+    });
+  };
+
+  const showAll = () => {
+    sections.forEach(s => s.classList.remove('js-hidden'));
+  };
+
+  allNavItems.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.target;
+      setActiveCategory(target);
+      // In search mode: clear search and show all in that category
+      if (searchEl.value) {
+        searchEl.value = '';
+        document.getElementById('search-hint').textContent = '';
+        showAll();
+        sections.forEach(s => { if (s.id === target) s.classList.remove('js-hidden'); else s.classList.add('js-hidden'); });
+      } else {
+        sections.forEach(s => { if (s.id === target) s.classList.remove('js-hidden'); else s.classList.add('js-hidden'); });
+      }
+      openFirstItem(target);
+      // Scroll to section
+      const targetEl = document.getElementById(target);
+      if (targetEl) {
+        const top = targetEl.getBoundingClientRect().top + window.scrollY - 100;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Hide sections before any interaction (prevents flash)
+  // On desktop: show only 'empresas' by default
+  // On mobile: show all
+  const initView = () => {
+    if (window.innerWidth >= 1024) {
+      setActiveCategory('empresas');
+      sections.forEach(s => {
+        if (s.id !== 'empresas') s.classList.add('js-hidden');
+        else s.classList.remove('js-hidden');
+      });
+    } else {
+      sections.forEach(s => s.classList.remove('js-hidden'));
+    }
+  };
+  // Run immediately — before paint if possible
+  initView();
+
+  // Scroll spy for sidebar active state
+  if (window.innerWidth >= 1024) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const id = e.target.id;
+          allNavItems.forEach(btn => {
+            const isActive = btn.dataset.target === id;
+            btn.classList.toggle('active', isActive);
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    sections.forEach(s => io.observe(s));
+  }
+
+  // ── SEARCH ──
+  const searchEl = document.getElementById('faq-search');
+  const hintEl = document.getElementById('search-hint');
+  const noResults = document.getElementById('no-results');
+  const allItems = document.querySelectorAll('.faq-item');
+
+  searchEl && searchEl.addEventListener('input', () => {
+    const q = searchEl.value.trim().toLowerCase();
+    if (!q) {
+      allItems.forEach(i => i.style.display = '');
+      sections.forEach(s => {
+        if (window.innerWidth >= 1024 && s.id !== 'empresas') s.classList.add('js-hidden');
+        else s.classList.remove('js-hidden');
+      });
+      if (window.innerWidth >= 1024) {
+        setActiveCategory('empresas');
+        sections.forEach(s => { if (s.id === 'empresas') s.classList.remove('js-hidden'); else s.classList.add('js-hidden'); });
+      }
+      hintEl.textContent = '';
+      noResults.style.display = 'none';
+      return;
+    }
+    // Show all sections during search
+    sections.forEach(s => s.classList.remove('js-hidden'));
+    allNavItems.forEach(btn => btn.classList.remove('active'));
+
+    let visible = 0;
+    allItems.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      const show = text.includes(q);
+      item.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    // Hide sections with no visible items
+    sections.forEach(s => {
+      const hasVisible = [...s.querySelectorAll('.faq-item')].some(i => i.style.display !== 'none');
+      if (hasVisible) s.classList.remove('js-hidden'); else s.classList.add('js-hidden');
+    });
+
+    hintEl.textContent = visible
+      ? visible + ' resultado' + (visible > 1 ? 's' : '') + ' para "' + searchEl.value.trim() + '"'
+      : '';
+    noResults.style.display = visible === 0 ? '' : 'none';
+  });
+
+  // Quick link anchors
+  document.querySelectorAll('.ql').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const id = a.getAttribute('href').slice(1);
+      // activate category
+      allNavItems.forEach(btn => {
+        const isActive = btn.dataset.target === id;
+        btn.classList.toggle('active', isActive);
+      });
+      sections.forEach(s => { if (window.innerWidth < 1024 || s.id === id) s.classList.remove('js-hidden'); else s.classList.add('js-hidden'); });
+      const target = document.getElementById(id);
+      if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
+    });
+  });
+
+  // Open first item in active section
+  const openFirstItem = (sectionId) => {
+    const sec = document.getElementById(sectionId);
+    if (!sec) return;
+    const first = sec.querySelector('.faq-item');
+    if (first && !first.classList.contains('open')) {
+      first.classList.add('open');
+      const btn = first.querySelector('.faq-q');
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+    }
+  };
+  openFirstItem('empresas');
+
+  // Resize handler
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024) {
+      const activeBtn = document.querySelector('.faq-nav-item.active');
+      if (activeBtn) {
+        const id = activeBtn.dataset.target;
+        sections.forEach(s => { if (s.id === id) s.classList.remove('js-hidden'); else s.classList.add('js-hidden'); });
+      } else {
+        initView();
+      }
+    } else {
+      sections.forEach(s => s.classList.remove('js-hidden'));
+    }
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Designer Sênior — Nexhire | Vagas</title>
+<meta name="description" content="Vaga de Product Designer Sênior — Remoto, CLT ou PJ. Candidate-se ou envie seu CV para a Nexhire.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root{
+  --f900:#052E16;--f800:#064E1F;--f700:#0F6B35;
+  --g600:#16A34A;--g500:#22C55E;--neon:#00E676;
+  --m100:#ECFDF5;--m200:#D1FAE5;
+  --bg:#FAFAFA;--cream:#F7F6F2;--bg-mint:#F0FDF4;--surf:#FFFFFF;
+  --text:#052E16;--text2:#374151;--muted:#6B7280;--subtle:#9CA3AF;
+  --border:#E5E7EB;--border2:#D1D5DB;--border-g:#BBF7D0;
+  --grad-ai:linear-gradient(135deg,#16A34A 0%,#00E676 100%);
+  --s1:0 1px 2px rgba(5,46,22,.05);
+  --s2:0 4px 16px rgba(5,46,22,.08),0 2px 6px rgba(5,46,22,.04);
+  --s3:0 12px 40px rgba(5,46,22,.10),0 4px 12px rgba(5,46,22,.05);
+  --s4:0 24px 60px rgba(5,46,22,.12),0 8px 24px rgba(5,46,22,.06);
+  --sg:0 8px 24px rgba(5,46,22,.12);
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --max:1180px;--narrow:860px;
+  --r-lg:24px;--r-xl:28px;
+  --sidebar:340px;
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden}
+
+.it{font-family:var(--serif);font-style:italic}
+.mono{font-family:var(--mono)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ── LAYOUT ── */
+.container{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
+@media(min-width:768px){.container{padding:0 2.5rem}}
+
+/* ── ANIMATIONS ── */
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;inset-x:0;z-index:200;padding:.75rem 0;background:rgba(250,250,250,.96);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:var(--s1)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
+@media(min-width:768px){.nav-inner{padding:0 2.5rem;gap:1.5rem}}
+.logo{display:flex;align-items:center;text-decoration:none}
+.logo:focus-visible{outline:2px solid var(--neon);outline-offset:3px;border-radius:4px}
+.nav-links{display:none;list-style:none;gap:0;justify-content:center}
+@media(min-width:1024px){.nav-links{display:flex}}
+.nav-links a{padding:7px 12px;border-radius:8px;text-decoration:none;font-size:13.5px;color:var(--muted);transition:all .14s}
+.nav-links a:hover{color:var(--text);background:rgba(5,46,22,.06)}
+.nav-links a.active{color:var(--f900);font-weight:500}
+.nav-links a:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+.nav-end{display:flex;gap:8px;align-items:center;justify-content:flex-end}
+.nav-burger{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;border-radius:8px}
+@media(min-width:1024px){.nav-burger{display:none}}
+.nav-burger span{display:block;width:20px;height:2px;background:var(--text);border-radius:2px}
+.nav-burger:focus-visible{outline:2px solid var(--neon)}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:46px;padding:0 22px;border-radius:999px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:all .18s;border:none;font-family:var(--sans);white-space:nowrap;-webkit-tap-highlight-color:transparent;letter-spacing:-.01em}
+.btn:focus-visible{outline:2px solid var(--neon);outline-offset:3px}
+.btn:active{transform:scale(.975)}
+.btn-dark{background:var(--f900);color:#F7F6F2;box-shadow:var(--sg)}
+.btn-dark:hover{background:var(--f800);transform:translateY(-1px);box-shadow:0 12px 36px rgba(5,46,22,.25)}
+.btn-out{background:transparent;color:var(--text);border:1.5px solid var(--border2)}
+.btn-out:hover{background:var(--m100);border-color:var(--border-g);transform:translateY(-1px)}
+.btn-mint{background:var(--neon);color:var(--f900);font-weight:600}
+.btn-mint:hover{background:#00d166;transform:translateY(-1px)}
+.btn-inv{background:rgba(255,255,255,.12);color:#F7F6F2;border:1.5px solid rgba(255,255,255,.2)}
+.btn-inv:hover{background:rgba(255,255,255,.2)}
+.btn-lg{height:52px;padding:0 28px;font-size:15px}
+.btn-sm{height:36px;padding:0 14px;font-size:13px}
+.btn-full{width:100%;justify-content:center}
+.arr{display:inline-block;transition:transform .18s}
+.btn:hover .arr{transform:translateX(3px)}
+
+/* ── BREADCRUMB ── */
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);padding:1.375rem 0 0;flex-wrap:wrap}
+.breadcrumb a{color:var(--muted);text-decoration:none;transition:color .14s}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb a:focus-visible{outline:2px solid var(--neon);outline-offset:2px;border-radius:3px}
+.breadcrumb-sep{color:var(--border2);flex-shrink:0}
+
+/* ── PAGE LAYOUT (main content + sidebar) ── */
+.page-wrap{padding-top:60px}/* compensa nav fixo */
+.page-body{max-width:var(--max);margin:0 auto;padding:0 1.5rem;display:grid;gap:2.5rem;padding-bottom:5rem}
+@media(min-width:768px){.page-body{padding:0 2.5rem;padding-bottom:5rem}}
+@media(min-width:1024px){.page-body{grid-template-columns:1fr var(--sidebar);gap:4rem;align-items:start}}
+
+/* ── JOB HEADER ── */
+.job-header{padding:2rem 0 2.25rem;border-bottom:1px solid var(--border)}
+.jh-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.jh-logo{width:56px;height:56px;border-radius:14px;border:1px solid var(--border);background:var(--cream);display:grid;place-items:center;font-size:16px;font-weight:700;color:var(--muted);font-family:var(--mono);flex-shrink:0}
+.jh-title-block{flex:1;min-width:200px}
+.jh-company{font-size:14px;color:var(--muted);font-weight:300;margin-bottom:.375rem;display:flex;align-items:center;gap:.5rem}
+.jh-company-conf{font-size:11px;font-style:italic;color:var(--subtle)}
+.jh-title{font-size:clamp(22px,3.5vw,34px);font-weight:700;line-height:1.1;letter-spacing:-.03em;color:var(--text);margin-bottom:.875rem}
+.jh-chips{display:flex;gap:.5rem;flex-wrap:wrap}
+.jh-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:999px;font-size:12.5px;border:1px solid var(--border);background:var(--surf);color:var(--text2);font-weight:400}
+.jh-chip svg{width:12px;height:12px;stroke:var(--subtle);fill:none;stroke-width:1.7;stroke-linecap:round;flex-shrink:0}
+.jh-right{display:flex;flex-direction:column;align-items:flex-end;gap:.625rem;flex-shrink:0}
+.jh-salary{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--text);line-height:1}
+.jh-salary-label{font-size:11.5px;color:var(--subtle);margin-top:2px;text-align:right}
+.jh-date{font-size:12px;color:var(--subtle)}
+.jh-badges{display:flex;gap:.375rem;flex-wrap:wrap;justify-content:flex-end}
+.jh-badge{padding:3px 10px;border-radius:999px;font-size:10.5px;font-weight:600}
+.jh-badge-ai{background:rgba(0,230,118,.12);color:var(--f900);border:1px solid rgba(0,230,118,.35);display:inline-flex;align-items:center;gap:4px}
+.jh-badge-ai::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--neon);animation:blink 2s infinite;flex-shrink:0}
+.jh-badge-new{background:var(--f900);color:var(--neon)}
+
+/* Mobile CTA strip */
+.mobile-cta{display:flex;gap:.75rem;flex-wrap:wrap}
+@media(min-width:1024px){.mobile-cta{display:none}}
+
+/* ── CONTENT SECTIONS ── */
+.section-title{font-size:18px;font-weight:600;color:var(--text);letter-spacing:-.02em;margin-bottom:1.125rem}
+
+.job-about{padding:2rem 0}
+.about-text{font-size:15.5px;color:var(--text2);font-weight:300;line-height:1.78;max-width:640px}
+
+.job-section{padding:2rem 0;border-top:1px solid var(--border)}
+
+/* Listas de responsabilidades e requisitos */
+.job-list{list-style:none;display:flex;flex-direction:column;gap:.625rem}
+.job-list li{display:flex;align-items:flex-start;gap:.875rem;font-size:14.5px;color:var(--text2);font-weight:300;line-height:1.6}
+.jl-dot{width:6px;height:6px;border-radius:50%;background:var(--g600);flex-shrink:0;margin-top:.55rem}
+.jl-check{width:18px;height:18px;border-radius:50%;flex-shrink:0;margin-top:1px;background:rgba(0,230,118,.12);border:1px solid rgba(0,230,118,.3);display:grid;place-items:center}
+.jl-check svg{width:8px;height:8px;stroke:var(--f900);stroke-width:2.2;fill:none;stroke-linecap:round}
+.jl-optional{width:18px;height:18px;border-radius:50%;flex-shrink:0;margin-top:1px;background:var(--cream);border:1px solid var(--border);display:grid;place-items:center}
+.jl-optional svg{width:8px;height:8px;stroke:var(--subtle);stroke-width:2;fill:none;stroke-linecap:round}
+
+/* Req columns */
+.req-split{display:grid;gap:1.5rem;margin-top:0}
+@media(min-width:640px){.req-split{grid-template-columns:1fr 1fr}}
+.req-group{background:var(--surf);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.5rem}
+.req-group.required{border-color:var(--border-g);background:var(--bg-mint)}
+.req-group-label{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--g600);margin-bottom:1rem;display:block}
+.req-group.optional .req-group-label{color:var(--subtle)}
+
+/* Process steps */
+.process-steps{display:flex;flex-direction:column;gap:0;position:relative;padding-left:2rem}
+.process-steps::before{content:'';position:absolute;left:9px;top:12px;bottom:12px;width:1px;background:var(--border)}
+.ps-step{position:relative;padding-bottom:1.5rem;padding-left:.375rem}
+.ps-step:last-child{padding-bottom:0}
+.ps-step::before{content:'';position:absolute;left:-2rem;top:5px;width:11px;height:11px;border-radius:50%;background:var(--surf);border:2px solid var(--border);transition:all .2s;z-index:1}
+.ps-step.done::before{background:var(--f900);border-color:var(--f900)}
+.ps-step.active::before{background:var(--neon);border-color:var(--neon);box-shadow:0 0 0 4px rgba(0,230,118,.15)}
+.ps-n{font-family:var(--mono);font-size:10px;color:var(--subtle);letter-spacing:.12em;margin-bottom:.375rem}
+.ps-step h4{font-size:15px;font-weight:600;color:var(--text);margin-bottom:.25rem;letter-spacing:-.01em}
+.ps-step p{font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.6;max-width:500px}
+
+/* Ideal match block */
+.match-block{background:var(--bg-mint);border:1px solid var(--border-g);border-radius:var(--r-lg);padding:1.75rem;margin-top:0}
+.match-label{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--g600);margin-bottom:.875rem;display:block}
+.match-title{font-size:17px;font-weight:600;color:var(--text);margin-bottom:1.25rem;letter-spacing:-.02em;line-height:1.3}
+.match-list{list-style:none;display:flex;flex-direction:column;gap:.625rem}
+.match-list li{display:flex;align-items:flex-start;gap:.875rem;font-size:14.5px;color:var(--text2);font-weight:300;line-height:1.55}
+.match-check{width:18px;height:18px;border-radius:50%;flex-shrink:0;margin-top:1px;background:rgba(0,230,118,.15);border:1px solid rgba(0,230,118,.35);display:grid;place-items:center}
+.match-check svg{width:8px;height:8px;stroke:var(--f900);stroke-width:2.2;fill:none;stroke-linecap:round}
+
+/* ══════════════════════════════════════════
+   SIDEBAR DE CANDIDATURA
+   sticky, premium, com form completo
+══════════════════════════════════════════ */
+.sidebar{display:none}
+@media(min-width:1024px){.sidebar{display:block}}
+.sidebar-sticky{position:sticky;top:80px}
+
+.apply-card{background:var(--surf);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--s3)}
+
+/* Card header */
+.ac-head{padding:1.375rem 1.5rem;border-bottom:1px solid var(--border);background:var(--f900);position:relative;overflow:hidden}
+.ac-head-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.055) 1px,transparent 1px);background-size:16px 16px;pointer-events:none}
+.ac-head-job{font-size:13px;font-weight:600;color:rgba(251,248,241,.7);margin-bottom:3px;position:relative}
+.ac-head-title{font-size:17px;font-weight:700;color:#F7F6F2;letter-spacing:-.02em;line-height:1.2;position:relative;margin-bottom:.625rem}
+.ac-head-chips{display:flex;gap:.375rem;flex-wrap:wrap;position:relative}
+.ac-head-chip{padding:2px 8px;border-radius:999px;font-size:10.5px;background:rgba(255,255,255,.12);color:rgba(251,248,241,.8);border:1px solid rgba(255,255,255,.18)}
+
+/* Salary highlight */
+.ac-salary{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);background:var(--cream)}
+.ac-salary-n{font-family:var(--mono);font-size:18px;font-weight:700;color:var(--text)}
+.ac-salary-l{font-size:12px;color:var(--subtle);font-weight:300}
+.ac-salary-pill{padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;background:rgba(0,230,118,.12);color:var(--f900);border:1px solid rgba(0,230,118,.3)}
+
+/* Form body */
+.ac-body{padding:1.375rem 1.5rem}
+.ac-section-lbl{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--subtle);margin-bottom:.875rem;margin-top:1.125rem;display:block}
+.ac-section-lbl:first-child{margin-top:0}
+
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:.75rem}
+.fg label{font-size:12.5px;font-weight:500;color:var(--text2)}
+.fg .req{color:var(--g600);font-size:11px}
+.fi{width:100%;background:var(--bg);border:1.5px solid var(--border);border-radius:9px;color:var(--text);font-family:var(--sans);font-size:14px;padding:9px 12px;outline:none;transition:border-color .18s,box-shadow .18s;-webkit-appearance:none}
+@media(max-width:1023px){.fi{font-size:16px}}
+.fi::placeholder{color:var(--subtle)}
+.fi:focus{border-color:var(--g600);box-shadow:0 0 0 3px rgba(22,163,74,.1)}
+.fi-sel{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%239CA3AF' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:32px;cursor:pointer}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:.625rem;margin-bottom:.75rem}
+
+/* Upload zone */
+.upload-zone{display:flex;align-items:center;gap:.75rem;padding:.875rem 1rem;border:1.5px dashed var(--border);border-radius:9px;background:var(--bg);cursor:pointer;transition:all .18s;-webkit-tap-highlight-color:transparent}
+.upload-zone:hover,.upload-zone:focus-visible{border-color:var(--border-g);background:var(--m100);outline:none}
+.upload-ico{width:34px;height:34px;border-radius:9px;background:var(--cream);border:1px solid var(--border);display:grid;place-items:center;flex-shrink:0}
+.upload-ico svg{width:15px;height:15px;stroke:var(--muted);fill:none;stroke-width:1.7;stroke-linecap:round}
+.upload-lbl{font-size:13px;color:var(--text2);font-weight:400}
+.upload-hint{font-size:11px;color:var(--subtle);margin-top:1px}
+
+/* LinkedIn alternative */
+.alt-divider{display:flex;align-items:center;gap:.75rem;margin:.875rem 0}
+.alt-line{flex:1;height:1px;background:var(--border)}
+.alt-text{font-size:11.5px;color:var(--subtle)}
+
+.li-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:.75rem;height:40px;border-radius:9px;border:1.5px solid var(--border);background:var(--surf);font-family:var(--sans);font-size:13.5px;font-weight:500;color:var(--text2);cursor:pointer;transition:all .18s}
+.li-btn:hover{border-color:var(--border2);background:var(--cream)}
+.li-btn svg{width:16px;height:16px;flex-shrink:0}
+.li-btn:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+
+/* Privacy checkbox */
+.check-row{display:flex;align-items:flex-start;gap:.625rem;font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.5;cursor:pointer;margin-top:.625rem}
+.check-row input{appearance:none;-webkit-appearance:none;width:17px;height:17px;border-radius:4px;border:1.5px solid var(--border2);background:var(--bg);cursor:pointer;flex-shrink:0;margin-top:1px;transition:all .15s}
+.check-row input:checked{background:var(--f900);border-color:var(--f900);background-image:url("data:image/svg+xml,%3Csvg width='9' height='7' viewBox='0 0 9 7' fill='none'%3E%3Cpath d='M1 3.5l2.5 2.5L8 1' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.check-row input:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+
+.ac-submit{margin-top:1.125rem}
+.ac-note{font-size:11.5px;color:var(--subtle);text-align:center;margin-top:.875rem;line-height:1.55;font-weight:300}
+
+/* Footer aside card */
+.aside-info{margin-top:1rem;background:var(--cream);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.25rem;display:flex;flex-direction:column;gap:.75rem}
+.aside-row{display:flex;align-items:center;justify-content:space-between;gap:.5rem;font-size:13.5px}
+.aside-row-l{color:var(--muted);font-weight:300;display:flex;align-items:center;gap:.5rem}
+.aside-row-l svg{width:13px;height:13px;stroke:var(--subtle);fill:none;stroke-width:1.7;stroke-linecap:round;flex-shrink:0}
+.aside-row-v{color:var(--text);font-weight:500;text-align:right}
+.aside-sep{height:1px;background:var(--border)}
+.aside-nexhire-note{display:flex;align-items:flex-start;gap:.625rem;padding:.875rem 1rem;background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.2);border-radius:10px}
+.aside-nexhire-note svg{width:14px;height:14px;stroke:var(--g600);fill:none;stroke-width:1.7;stroke-linecap:round;flex-shrink:0;margin-top:1px}
+.aside-nexhire-note p{font-size:12px;color:var(--f900);font-weight:400;line-height:1.55}
+
+/* ── MOBILE BOTTOM CTA (sticky) ── */
+.mobile-bottom-cta{display:flex;position:fixed;bottom:0;inset-x:0;z-index:150;padding:.875rem 1.5rem;background:rgba(250,250,250,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border);gap:.75rem;align-items:center}
+@media(min-width:1024px){.mobile-bottom-cta{display:none}}
+.mbc-info{flex:1;min-width:0}
+.mbc-title{font-size:14px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mbc-sub{font-size:12px;color:var(--muted);font-weight:300}
+/* Compensa na página o CTA fixo mobile */
+@media(max-width:1023px){.page-body{padding-bottom:90px}}
+
+/* ── MOBILE APPLY MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(5,46,22,.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.modal-overlay.open{display:flex;align-items:flex-end;justify-content:center}
+@media(min-width:640px){.modal-overlay.open{align-items:center}}
+.modal{background:var(--surf);border-radius:20px 20px 0 0;padding:1.5rem;width:100%;max-height:92vh;overflow-y:auto;overscroll-behavior:contain;animation:slideUpModal .28s cubic-bezier(.16,1,.3,1)}
+@media(min-width:640px){.modal{border-radius:20px;max-width:480px;max-height:88vh}}
+@keyframes slideUpModal{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.modal-handle{width:40px;height:4px;border-radius:2px;background:var(--border);margin:0 auto 1.25rem;display:block}
+@media(min-width:640px){.modal-handle{display:none}}
+.modal-close{position:absolute;top:1.25rem;right:1.25rem;width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:var(--cream);display:grid;place-items:center;cursor:pointer;font-size:16px;color:var(--muted);font-family:var(--sans);transition:all .14s;z-index:1}
+.modal-close:hover{background:var(--border);color:var(--text)}
+.modal-close:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+.modal-inner{position:relative}
+.modal-title{font-size:19px;font-weight:700;color:var(--text);margin-bottom:.25rem;letter-spacing:-.02em}
+.modal-sub{font-size:13px;color:var(--muted);font-weight:300;margin-bottom:1.5rem}
+
+/* ── RELATED JOBS ── */
+.related-section{padding:4rem 0 0;border-top:1px solid var(--border)}
+.related-grid{display:grid;gap:.875rem;margin-top:1.5rem}
+@media(min-width:640px){.related-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.related-grid{grid-template-columns:repeat(3,1fr)}}
+
+.rjc{background:var(--surf);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.375rem;text-decoration:none;display:block;transition:all .18s;position:relative;overflow:hidden}
+.rjc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-ai);opacity:0;transition:opacity .18s}
+.rjc:hover{border-color:var(--border-g);box-shadow:var(--s2);transform:translateY(-2px)}
+.rjc:hover::before{opacity:1}
+.rjc:focus-visible{outline:2px solid var(--neon);outline-offset:2px;border-radius:var(--r-lg)}
+.rjc-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px;letter-spacing:-.015em;line-height:1.3}
+.rjc-company{font-size:13px;color:var(--muted);font-weight:300;margin-bottom:.875rem}
+.rjc-meta{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.875rem}
+.rjc-chip{font-size:12px;padding:3px 10px;border-radius:999px;background:var(--cream);border:1px solid var(--border);color:var(--text2)}
+.rjc-bottom{display:flex;align-items:baseline;justify-content:space-between}
+.rjc-salary{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--text)}
+.rjc-cta{font-size:13px;color:var(--g600);font-weight:500;opacity:0;transition:opacity .16s;display:flex;align-items:center;gap:3px}
+.rjc:hover .rjc-cta{opacity:1}
+@media(max-width:639px){.rjc-cta{opacity:1}}
+
+/* ── CTA FINAL ── */
+.cta-final{margin-top:4rem;padding:3.5rem 4rem;background:var(--f900);border-radius:var(--r-xl);position:relative;overflow:hidden;box-shadow:var(--sg);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+@media(max-width:1023px){.cta-final{padding:3rem 2.5rem;flex-direction:column;align-items:flex-start}}
+@media(max-width:767px){.cta-final{padding:2.5rem 1.75rem}}
+.cta-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 10% 40%,rgba(0,230,118,.15),transparent 40%)}
+.cta-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(221,245,234,.08) 1px,transparent 1px);background-size:14px 14px}
+.cta-text{position:relative;z-index:1}
+.cta-final h2{font-size:clamp(20px,3vw,34px);font-weight:700;line-height:1.1;letter-spacing:-.03em;color:#F7F6F2;margin-bottom:.625rem}
+.cta-final h2 .it{color:var(--neon)}
+.cta-final p{font-size:15px;font-weight:300;color:rgba(251,248,241,.55);max-width:380px;line-height:1.65}
+.cta-actions{display:flex;gap:.75rem;flex-wrap:wrap;position:relative;z-index:1;flex-shrink:0}
+
+/* ── FOOTER ── */
+.footer{background:var(--cream);border-top:1px solid var(--border);padding:4rem 1.5rem 2.25rem}
+@media(min-width:768px){.footer{padding:4.5rem 2.5rem 2.25rem}}
+.footer-inner{max-width:var(--max);margin:0 auto}
+.footer-top{display:grid;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border);margin-bottom:2rem}
+@media(min-width:1024px){.footer-top{grid-template-columns:1.8fr repeat(4,1fr)}}
+@media(min-width:640px) and (max-width:1023px){.footer-top{grid-template-columns:1fr 1fr}}
+.footer-brand p{font-size:13px;color:var(--muted);font-weight:300;line-height:1.7;max-width:210px;margin-top:.875rem}
+.footer-social{display:flex;gap:.5rem;margin-top:1.25rem}
+.fsb{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);display:grid;place-items:center;font-family:var(--mono);font-size:9.5px;color:var(--muted);text-decoration:none;transition:all .12s}
+.fsb:hover{color:var(--text);border-color:var(--border2)}
+.fsb:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+.footer-col h5{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--text);margin-bottom:.875rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.footer-col a{font-size:13.5px;color:var(--muted);text-decoration:none;font-weight:300;transition:color .12s}
+.footer-col a:hover{color:var(--text)}
+.footer-col a:focus-visible{outline:2px solid var(--neon);outline-offset:2px;border-radius:3px}
+.footer-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-bot p{font-size:12px;color:var(--subtle);font-weight:300}
+.footer-links{display:flex;gap:1.25rem}
+.footer-links a{font-size:12px;color:var(--subtle);text-decoration:none}
+.footer-links a:hover{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<!-- NAV — always visible, always light (esta página não tem dark hero) -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html" aria-label="Nexhire">
+      <svg width="91" height="22" viewBox="0 0 116 28" fill="none" style="display:block;color:var(--f900)" aria-hidden="true"><path d="M106.766 27.608C104.794 27.608 103.083 27.2 101.632 26.384C100.182 25.5453 99.0484 24.3667 98.2324 22.848C97.439 21.3067 97.0424 19.4933 97.0424 17.408C97.0424 15.3227 97.439 13.5207 98.2324 12.002C99.0257 10.4833 100.136 9.30467 101.564 8.46601C103.015 7.62734 104.715 7.20801 106.664 7.20801C108.682 7.20801 110.393 7.66134 111.798 8.56801C113.226 9.47468 114.292 10.7893 114.994 12.512C115.72 14.2347 116.026 16.3087 115.912 18.734H102.584C102.766 20.1847 103.242 21.318 104.012 22.134C104.783 22.95 105.78 23.358 107.004 23.358C108.002 23.358 108.818 23.12 109.452 22.644C110.087 22.1453 110.484 21.5447 110.642 20.842H115.776C115.55 22.2473 115.017 23.46 114.178 24.48C113.362 25.4773 112.32 26.248 111.05 26.792C109.781 27.336 108.353 27.608 106.766 27.608ZM106.698 11.424C105.588 11.424 104.67 11.7867 103.944 12.512C103.219 13.2147 102.766 14.1667 102.584 15.368H110.472C110.382 13.94 109.962 12.9313 109.214 12.342C108.466 11.73 107.628 11.424 106.698 11.424Z" fill="currentColor"/>
+<path d="M85.3766 27.098V15.878C85.3766 13.09 86.1247 10.948 87.6207 9.45201C89.1393 7.95601 91.304 7.20801 94.1147 7.20801C94.4093 7.20801 94.874 7.23067 95.5087 7.27601C96.1433 7.29867 96.778 7.37801 97.4127 7.51401V12.24C96.982 12.172 96.574 12.1153 96.1887 12.07C95.8033 12.002 95.3727 11.968 94.8967 11.968C94.194 11.968 93.5367 12.07 92.9247 12.274C92.3127 12.478 91.814 12.8633 91.4286 13.43C91.066 13.9967 90.8847 14.824 90.8847 15.912V27.098H85.3766Z" fill="currentColor"/>
+<path d="M80.4894 5.61C79.6054 5.61 78.8574 5.34933 78.2454 4.828C77.6561 4.30667 77.3614 3.62667 77.3614 2.788C77.3614 1.972 77.6561 1.30333 78.2454 0.782C78.8574 0.260666 79.6054 0 80.4894 0C81.3508 0 82.0761 0.260666 82.6654 0.782C83.2774 1.30333 83.5834 1.972 83.5834 2.788C83.5834 3.62667 83.2774 4.30667 82.6654 4.828C82.0761 5.34933 81.3508 5.61 80.4894 5.61ZM77.7354 27.098V7.718H83.2434V27.098H77.7354Z" fill="currentColor"/>
+<path d="M57.4502 27.098V1.59802H62.9582V9.96202C63.5702 9.07802 64.3182 8.39802 65.2022 7.92202C66.0862 7.44602 67.0722 7.20802 68.1602 7.20802C69.6108 7.20802 70.8688 7.51402 71.9342 8.12602C72.9995 8.73802 73.8155 9.58802 74.3822 10.676C74.9715 11.764 75.2662 13.022 75.2662 14.45V27.098H69.7582V15.572C69.7582 14.4614 69.4522 13.5774 68.8402 12.92C68.2508 12.2627 67.4348 11.934 66.3922 11.934C65.3268 11.934 64.4882 12.3194 63.8762 13.09C63.2642 13.838 62.9582 14.8354 62.9582 16.082V27.098H57.4502Z" fill="currentColor"/>
+<path d="M37.235 27.098L43.525 17.544L36.589 7.71802H42.879L46.857 13.498L50.495 7.71802H56.411L49.781 17.714L56.241 27.098H50.257L46.449 21.692L43.049 27.098H37.235Z" fill="currentColor"/>
+<path d="M28.7324 27.608C26.7604 27.608 25.0491 27.2 23.5984 26.384C22.1477 25.5453 21.0144 24.3667 20.1984 22.848C19.4051 21.3067 19.0084 19.4933 19.0084 17.408C19.0084 15.3227 19.4051 13.5207 20.1984 12.002C20.9917 10.4833 22.1024 9.30467 23.5304 8.46601C24.9811 7.62734 26.6811 7.20801 28.6304 7.20801C30.6477 7.20801 32.3591 7.66134 33.7644 8.56801C35.1924 9.47468 36.2577 10.7893 36.9604 12.512C37.6857 14.2347 37.9917 16.3087 37.8784 18.734H24.5504C24.7317 20.1847 25.2077 21.318 25.9784 22.134C26.7491 22.95 27.7464 23.358 28.9704 23.358C29.9677 23.358 30.7837 23.12 31.4184 22.644C32.0531 22.1453 32.4497 21.5447 32.6084 20.842H37.7424C37.5157 22.2473 36.9831 23.46 36.1444 24.48C35.3284 25.4773 34.2857 26.248 33.0164 26.792C31.7471 27.336 30.3191 27.608 28.7324 27.608ZM28.6644 11.424C27.5537 11.424 26.6357 11.7867 25.9104 12.512C25.1851 13.2147 24.7317 14.1667 24.5504 15.368H32.4384C32.3477 13.94 31.9284 12.9313 31.1804 12.342C30.4324 11.73 29.5937 11.424 28.6644 11.424Z" fill="currentColor"/>
+<path d="M0 27.098V15.708C0 13.9627 0.351333 12.4553 1.054 11.186C1.77933 9.91667 2.79933 8.94201 4.114 8.26201C5.42867 7.55934 6.98133 7.20801 8.772 7.20801C10.5627 7.20801 12.1153 7.55934 13.43 8.26201C14.7447 8.94201 15.7533 9.91667 16.456 11.186C17.1813 12.4553 17.544 13.9627 17.544 15.708V27.098H12.036V15.776C12.036 14.552 11.73 13.6113 11.118 12.954C10.5287 12.2967 9.74667 11.968 8.772 11.968C7.82 11.968 7.038 12.2967 6.426 12.954C5.814 13.6113 5.508 14.552 5.508 15.776V27.098H0Z" fill="currentColor"/></svg>
+    </a>
+    <ul class="nav-links" role="navigation" aria-label="Navegação principal">
+      <li><a href="index.html#como-funciona">Como funciona</a></li>
+      <li><a href="empresas.html">Para empresas</a></li>
+      <li><a href="recrutadores.html">Para recrutadores</a></li>
+      <li><a href="vagas.html" class="active" aria-current="page">Vagas</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <div class="nav-end">
+      <a class="btn btn-out btn-sm" href="empresas.html">Entrar</a>
+      <a class="btn btn-dark btn-sm" href="empresas.html">Abrir vaga <span class="arr" aria-hidden="true">→</span></a>
+      <button class="nav-burger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN WRAP -->
+<div class="page-wrap">
+  <div class="container">
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="Você está em">
+      <a href="index.html">Nexhire</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <a href="vagas.html">Vagas</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <span>Product Designer Sênior</span>
+    </nav>
+
+  </div>
+
+  <!-- PAGE BODY: content + sidebar -->
+  <div class="page-body">
+
+    <!-- ═══ CONTENT COLUMN ═══ -->
+    <article aria-labelledby="job-title">
+
+      <!-- JOB HEADER -->
+      <header class="job-header" style="animation:fadeUp .45s ease both">
+        <div class="jh-top">
+          <!-- Logo + title -->
+          <div style="display:flex;gap:1rem;align-items:flex-start;flex:1;min-width:0">
+            <div class="jh-logo" aria-hidden="true">N</div>
+            <div class="jh-title-block">
+              <div class="jh-company">
+                Empresa confidencial
+                <span class="jh-company-conf" aria-label="Empresa não divulgada">· Identidade protegida</span>
+              </div>
+              <h1 class="jh-title" id="job-title">Product Designer Sênior</h1>
+              <div class="jh-chips" role="list" aria-label="Detalhes da vaga">
+                <span class="jh-chip" role="listitem">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  São Paulo, SP
+                </span>
+                <span class="jh-chip" role="listitem">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-7 10 7v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+                  Remoto
+                </span>
+                <span class="jh-chip" role="listitem">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  Sênior
+                </span>
+                <span class="jh-chip" role="listitem">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                  CLT ou PJ
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- Right: salary + badges -->
+          <div class="jh-right">
+            <div>
+              <div class="jh-salary" aria-label="Faixa salarial R$ 16 mil a R$ 22 mil">R$ 16–22k</div>
+              <div class="jh-salary-label">por mês</div>
+            </div>
+            <div class="jh-badges">
+              <span class="jh-badge jh-badge-ai">IA Match</span>
+              <span class="jh-badge jh-badge-new">Nova</span>
+            </div>
+            <div class="jh-date">Publicada hoje</div>
+          </div>
+        </div>
+
+        <!-- Mobile CTA -->
+        <div class="mobile-cta">
+          <button class="btn btn-dark btn-lg" id="btn-apply-top" aria-haspopup="dialog" aria-controls="apply-modal" style="flex:1;max-width:260px">
+            Candidatar-se <span class="arr" aria-hidden="true">→</span>
+          </button>
+          <button class="btn btn-out btn-lg" aria-label="Salvar vaga">Salvar</button>
+        </div>
+      </header>
+
+      <!-- SOBRE A VAGA -->
+      <div class="job-about reveal">
+        <h2 class="section-title">Sobre a vaga</h2>
+        <p class="about-text">
+          Buscamos uma pessoa de design de produto para liderar iniciativas de discovery e entrega em um produto SaaS B2B em crescimento. O escopo envolve colaboração direta com produto, engenharia e liderança, com autonomia real para definir direção visual e de experiência.
+        </p>
+        <p class="about-text" style="margin-top:1rem">
+          A posição é 100% remota. O time opera com rituais assíncronos e encontros semanais de alinhamento. Inglês é valorizado mas não bloqueante.
+        </p>
+      </div>
+
+      <!-- RESPONSABILIDADES -->
+      <section class="job-section reveal" aria-labelledby="resp-title">
+        <h2 class="section-title" id="resp-title">Responsabilidades</h2>
+        <ul class="job-list" aria-label="Responsabilidades da vaga">
+          <li><div class="jl-dot" aria-hidden="true"></div>Conduzir discovery com stakeholders, usuários e times de negócio para identificar problemas reais antes de propor soluções.</li>
+          <li><div class="jl-dot" aria-hidden="true"></div>Desenhar fluxos, protótipos e interfaces de alta fidelidade com Figma — do rascunho ao handoff com engenharia.</li>
+          <li><div class="jl-dot" aria-hidden="true"></div>Colaborar com produto e engenharia em um modelo de trio, participando das etapas de planejamento e refinamento.</li>
+          <li><div class="jl-dot" aria-hidden="true"></div>Usar dados e pesquisa qualitativa para orientar decisões de design e priorização de features.</li>
+          <li><div class="jl-dot" aria-hidden="true"></div>Documentar padrões e contribuir para a evolução do design system da plataforma.</li>
+          <li><div class="jl-dot" aria-hidden="true"></div>Apresentar soluções com clareza para lideranças e stakeholders de negócio.</li>
+        </ul>
+      </section>
+
+      <!-- REQUISITOS -->
+      <section class="job-section reveal" aria-labelledby="req-title">
+        <h2 class="section-title" id="req-title">Requisitos</h2>
+        <div class="req-split">
+          <div class="req-group required" aria-labelledby="req-obl">
+            <span class="req-group-label" id="req-obl">Obrigatórios</span>
+            <ul class="job-list" aria-label="Requisitos obrigatórios">
+              <li>
+                <div class="jl-check" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M1 4l2.2 2.2L7 1.5" stroke-linecap="round"/></svg></div>
+                5+ anos de experiência em design de produto digital.
+              </li>
+              <li>
+                <div class="jl-check" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M1 4l2.2 2.2L7 1.5" stroke-linecap="round"/></svg></div>
+                Domínio de Figma — design e prototipagem.
+              </li>
+              <li>
+                <div class="jl-check" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M1 4l2.2 2.2L7 1.5" stroke-linecap="round"/></svg></div>
+                Experiência trabalhando próximo a times de produto e engenharia.
+              </li>
+              <li>
+                <div class="jl-check" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M1 4l2.2 2.2L7 1.5" stroke-linecap="round"/></svg></div>
+                Portfólio com cases de produto — não apenas telas.
+              </li>
+              <li>
+                <div class="jl-check" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M1 4l2.2 2.2L7 1.5" stroke-linecap="round"/></svg></div>
+                Boa comunicação escrita para trabalho remoto e assíncrono.
+              </li>
+            </ul>
+          </div>
+          <div class="req-group optional" aria-labelledby="req-dif">
+            <span class="req-group-label" id="req-dif">Diferenciais</span>
+            <ul class="job-list" aria-label="Requisitos diferenciais">
+              <li>
+                <div class="jl-optional" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M4 2v4M2 4h4" stroke-linecap="round"/></svg></div>
+                Experiência em produto SaaS B2B.
+              </li>
+              <li>
+                <div class="jl-optional" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M4 2v4M2 4h4" stroke-linecap="round"/></svg></div>
+                Familiaridade com métricas de produto — retenção, ativação, NPS.
+              </li>
+              <li>
+                <div class="jl-optional" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M4 2v4M2 4h4" stroke-linecap="round"/></svg></div>
+                Experiência em marketplaces ou plataformas multi-sided.
+              </li>
+              <li>
+                <div class="jl-optional" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M4 2v4M2 4h4" stroke-linecap="round"/></svg></div>
+                Inglês intermediário ou avançado.
+              </li>
+              <li>
+                <div class="jl-optional" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M4 2v4M2 4h4" stroke-linecap="round"/></svg></div>
+                Experiência com pesquisa com usuários (entrevistas, testes de usabilidade).
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESSO SELETIVO -->
+      <section class="job-section reveal" aria-labelledby="proc-title">
+        <h2 class="section-title" id="proc-title">Como funciona o processo</h2>
+        <div class="process-steps" role="list" aria-label="Etapas do processo seletivo">
+          <div class="ps-step done" role="listitem">
+            <div class="ps-n">ETAPA 01</div>
+            <h4>Candidatura</h4>
+            <p>Envie seu CV e portfólio. Preencha os dados básicos. Sem formulários longos na primeira etapa.</p>
+          </div>
+          <div class="ps-step done" role="listitem">
+            <div class="ps-n">ETAPA 02</div>
+            <h4>Análise de fit</h4>
+            <p>O time Nexhire avalia compatibilidade com a posição. A IA apoia a triagem, mas a análise final é humana.</p>
+          </div>
+          <div class="ps-step active" role="listitem">
+            <div class="ps-n">ETAPA 03</div>
+            <h4>Conversa inicial</h4>
+            <p>30 minutos com o HR Manager Nexhire para entender sua experiência, expectativas e contexto da vaga.</p>
+          </div>
+          <div class="ps-step" role="listitem">
+            <div class="ps-n">ETAPA 04</div>
+            <h4>Entrevista com a empresa</h4>
+            <p>Conversa direta com a equipe contratante — foco em experiência, portfólio e cultura.</p>
+          </div>
+          <div class="ps-step" role="listitem">
+            <div class="ps-n">ETAPA 05</div>
+            <h4>Etapas finais</h4>
+            <p>Proposta, negociação e fechamento. O prazo total varia por empresa — em média 12 dias do primeiro contato à decisão.</p>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;padding:1rem 1.25rem;background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.2);border-radius:12px;max-width:560px" role="note">
+          <p style="font-size:13.5px;color:var(--f900);line-height:1.6"><strong>Sobre IA no processo:</strong> a Nexhire pode usar IA para apoiar análise de aderência inicial, mas todas as decisões do processo seletivo continuam humanas.</p>
+        </div>
+      </section>
+
+      <!-- MATCH IDEAL -->
+      <section class="job-section reveal" aria-labelledby="match-title">
+        <h2 class="section-title" id="match-title" style="margin-bottom:.875rem">Esta vaga pode ser ideal para você se...</h2>
+        <div class="match-block">
+          <ul class="match-list" aria-label="Perfil compatível com esta vaga">
+            <li>
+              <div class="match-check" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M1 4l2.2 2.2L7 1.5" stroke-linecap="round"/></svg></div>
+              Você tem experiência real como designer de produto — não apenas como UI designer — e consegue mostrar impacto nos seus cases.
+            </li>
+            <li>
+              <div class="match-check" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M1 4l2.2 2.2L7 1.5" stroke-linecap="round"/></svg></div>
+              Você se sente confortável em ambientes com autonomia e baixa estrutura — sem aguardar especificações prontas para começar.
+            </li>
+            <li>
+              <div class="match-check" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M1 4l2.2 2.2L7 1.5" stroke-linecap="round"/></svg></div>
+              Você gosta de trabalhar próximo a produto e engenharia — e entende que design não termina no handoff.
+            </li>
+            <li>
+              <div class="match-check" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M1 4l2.2 2.2L7 1.5" stroke-linecap="round"/></svg></div>
+              Você prefere trabalho remoto e tem disciplina para operar de forma assíncrona e bem documentada.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- VAGAS RELACIONADAS -->
+      <section class="related-section reveal" aria-labelledby="related-title">
+        <h2 class="section-title" id="related-title">Vagas relacionadas</h2>
+        <div class="related-grid" role="list">
+          <a class="rjc" href="vaga-detalhe.html" role="listitem" aria-label="UX Researcher — Remoto — R2–16k">
+            <div class="rjc-title">UX Researcher</div>
+            <div class="rjc-company">Empresa confidencial · Scale-up</div>
+            <div class="rjc-meta">
+              <span class="rjc-chip">Remoto</span>
+              <span class="rjc-chip">PJ</span>
+              <span class="rjc-chip">Sênior</span>
+            </div>
+            <div class="rjc-bottom">
+              <span class="rjc-salary">R$ 12–16k</span>
+              <span class="rjc-cta">Ver vaga <span style="display:inline-block;transition:transform .16s">→</span></span>
+            </div>
+          </a>
+          <a class="rjc" href="vaga-detalhe.html" role="listitem" aria-label="Product Manager Sênior — Híbrido SP — R8–25k">
+            <div class="rjc-title">Product Manager Sênior</div>
+            <div class="rjc-company">Empresa confidencial · Fintech</div>
+            <div class="rjc-meta">
+              <span class="rjc-chip">São Paulo · Híbrido</span>
+              <span class="rjc-chip">CLT</span>
+            </div>
+            <div class="rjc-bottom">
+              <span class="rjc-salary">R$ 18–25k</span>
+              <span class="rjc-cta">Ver vaga →</span>
+            </div>
+          </a>
+          <a class="rjc" href="vaga-detalhe.html" role="listitem" aria-label="Design Lead — Remoto — R2–30k">
+            <div class="rjc-title">Design Lead</div>
+            <div class="rjc-company">Empresa confidencial · Enterprise SaaS</div>
+            <div class="rjc-meta">
+              <span class="rjc-chip">Remoto</span>
+              <span class="rjc-chip">PJ</span>
+              <span class="rjc-chip">Liderança</span>
+            </div>
+            <div class="rjc-bottom">
+              <span class="rjc-salary">R$ 22–30k</span>
+              <span class="rjc-cta">Ver vaga →</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <div class="cta-final reveal">
+        <div class="cta-glow" aria-hidden="true"></div>
+        <div class="cta-dots" aria-hidden="true"></div>
+        <div class="cta-text">
+          <h2>Quer encontrar vagas mais<br>aderentes ao seu <span class="it">perfil?</span></h2>
+          <p>Envie seu CV e deixe a Nexhire identificar oportunidades compatíveis com sua experiência e objetivos.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-mint btn-lg" href="vagas.html#enviar-cv">Encontrar minha vaga ideal <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-inv btn-lg" href="vagas.html">Ver todas as vagas</a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- ═══ SIDEBAR ═══ -->
+    <aside class="sidebar" aria-label="Candidatar-se a esta vaga">
+      <div class="sidebar-sticky">
+
+        <!-- Apply card -->
+        <div class="apply-card" id="apply-card">
+          <!-- Dark header -->
+          <div class="ac-head">
+            <div class="ac-head-dots" aria-hidden="true"></div>
+            <div class="ac-head-job">Product Designer</div>
+            <div class="ac-head-title">Sênior — Empresa confidencial</div>
+            <div class="ac-head-chips">
+              <span class="ac-head-chip">Remoto</span>
+              <span class="ac-head-chip">CLT ou PJ</span>
+              <span class="ac-head-chip">Sênior</span>
+            </div>
+          </div>
+
+          <!-- Salary -->
+          <div class="ac-salary">
+            <div>
+              <div class="ac-salary-n" aria-label="Faixa salarial">R$ 16–22k</div>
+              <div class="ac-salary-l">por mês</div>
+            </div>
+            <span class="ac-salary-pill">CLT ou PJ</span>
+          </div>
+
+          <!-- Form -->
+          <div class="ac-body">
+
+            <!-- LinkedIn primeiro — menor fricção -->
+            <span class="ac-section-lbl">Candidatura rápida</span>
+            <button class="li-btn" type="button" id="btn-linkedin-apply">
+              <svg viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              Candidatar com LinkedIn
+            </button>
+
+            <div class="alt-divider" role="separator">
+              <div class="alt-line"></div>
+              <span class="alt-text">ou preencha abaixo</span>
+              <div class="alt-line"></div>
+            </div>
+
+            <!-- Upload CV -->
+            <span class="ac-section-lbl" style="margin-top:0">Seu CV</span>
+            <div class="upload-zone" tabindex="0" role="button" aria-label="Upload do currículo" id="upload-zone">
+              <div class="upload-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              </div>
+              <div>
+                <div class="upload-lbl" id="upload-lbl">Arraste ou clique para enviar</div>
+                <div class="upload-hint">PDF ou DOCX · máx. 10MB</div>
+              </div>
+            </div>
+
+            <!-- Dados pessoais -->
+            <span class="ac-section-lbl">Dados pessoais</span>
+            <div class="fg">
+              <label for="s-nome">Nome completo <span class="req">*</span></label>
+              <input class="fi" id="s-nome" type="text" placeholder="Seu nome completo" autocomplete="name" required>
+            </div>
+            <div class="fg">
+              <label for="s-email">E-mail <span class="req">*</span></label>
+              <input class="fi" id="s-email" type="email" placeholder="voce@email.com" autocomplete="email" required>
+            </div>
+            <div class="fg-row">
+              <div class="fg" style="margin-bottom:0">
+                <label for="s-tel">Telefone</label>
+                <input class="fi" id="s-tel" type="tel" placeholder="+55 11..." autocomplete="tel">
+              </div>
+              <div class="fg" style="margin-bottom:0">
+                <label for="s-pretensao">Pretensão</label>
+                <input class="fi" id="s-pretensao" type="text" placeholder="R$ / mês">
+              </div>
+            </div>
+
+            <!-- Disponibilidade -->
+            <span class="ac-section-lbl">Disponibilidade</span>
+            <div class="fg">
+              <label for="s-disp" class="sr-only">Disponibilidade para início</label>
+              <select class="fi fi-sel" id="s-disp">
+                <option value="">Quando pode começar?</option>
+                <option>Imediata</option>
+                <option>Em 2 semanas</option>
+                <option>Em 1 mês</option>
+                <option>Em 2 meses ou mais</option>
+              </select>
+            </div>
+
+            <!-- Privacy -->
+            <label class="check-row">
+              <input type="checkbox" id="s-lgpd" required>
+              <span>Autorizo a Nexhire a analisar meu perfil e compartilhá-lo com a empresa contratante para esta vaga. Concordo com a <a href="faq.html#ia-dados" style="color:var(--g600)">Política de Privacidade</a>.</span>
+            </label>
+
+            <div class="ac-submit">
+              <button class="btn btn-dark btn-lg btn-full" type="button" id="btn-submit-sidebar">
+                Enviar candidatura <span class="arr" aria-hidden="true">→</span>
+              </button>
+            </div>
+            <div class="ac-note">A Nexhire não garante contratação. Candidaturas são avaliadas pela equipe e pela empresa.</div>
+          </div>
+        </div>
+
+        <!-- Info aside -->
+        <div class="aside-info" aria-label="Detalhes operacionais da vaga">
+          <div class="aside-row">
+            <span class="aside-row-l">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Prazo de candidatura
+            </span>
+            <span class="aside-row-v">7 dias</span>
+          </div>
+          <div class="aside-sep" aria-hidden="true"></div>
+          <div class="aside-row">
+            <span class="aside-row-l">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              Candidatos até agora
+            </span>
+            <span class="aside-row-v">3 enviados</span>
+          </div>
+          <div class="aside-sep" aria-hidden="true"></div>
+          <div class="aside-row">
+            <span class="aside-row-l">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+              Curadoria
+            </span>
+            <span class="aside-row-v">HR Manager Nexhire</span>
+          </div>
+          <div class="aside-sep" aria-hidden="true"></div>
+          <div class="aside-nexhire-note" role="note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <p>Esta vaga é gerenciada pela Nexhire. O contato com a empresa só acontece após aprovação pelo HR Manager.</p>
+          </div>
+        </div>
+
+      </div>
+    </aside>
+
+  </div><!-- /page-body -->
+</div><!-- /page-wrap -->
+
+<!-- MOBILE BOTTOM CTA (sticky) -->
+<div class="mobile-bottom-cta" aria-label="Ação rápida de candidatura" id="mobile-cta-bar">
+  <div class="mbc-info">
+    <div class="mbc-title">Product Designer Sênior</div>
+    <div class="mbc-sub">R$ 16–22k · Remoto</div>
+  </div>
+  <button class="btn btn-dark" id="btn-apply-bottom" aria-haspopup="dialog" aria-controls="apply-modal">
+    Candidatar-se <span class="arr" aria-hidden="true">→</span>
+  </button>
+</div>
+
+<!-- MODAL MOBILE -->
+<div class="modal-overlay" id="apply-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+  <div class="modal" id="modal-inner">
+    <div class="modal-inner">
+      <div class="modal-handle" aria-hidden="true"></div>
+      <button class="modal-close" id="modal-close" aria-label="Fechar">&times;</button>
+
+      <div class="modal-title" id="modal-title">Candidatar-se</div>
+      <div class="modal-sub">Product Designer Sênior · Remoto · R$ 16–22k</div>
+
+      <!-- LinkedIn -->
+      <button class="li-btn" type="button" style="width:100%;margin-bottom:1rem">
+        <svg viewBox="0 0 24 24" fill="#0A66C2" width="16" height="16" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        Candidatar com LinkedIn
+      </button>
+      <div class="alt-divider"><div class="alt-line"></div><span class="alt-text">ou preencha abaixo</span><div class="alt-line"></div></div>
+
+      <!-- Upload -->
+      <div class="upload-zone" tabindex="0" role="button" aria-label="Upload do currículo" style="margin-bottom:1rem">
+        <div class="upload-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+        <div><div class="upload-lbl">Arraste ou clique para enviar</div><div class="upload-hint">PDF ou DOCX · máx. 10MB</div></div>
+      </div>
+
+      <div class="fg"><label for="m-nome">Nome completo <span class="req">*</span></label><input class="fi" id="m-nome" type="text" placeholder="Seu nome" autocomplete="name" required></div>
+      <div class="fg"><label for="m-email">E-mail <span class="req">*</span></label><input class="fi" id="m-email" type="email" placeholder="voce@email.com" autocomplete="email" required></div>
+      <label class="check-row"><input type="checkbox" required><span>Autorizo a Nexhire a analisar meu perfil para esta vaga. <a href="faq.html#ia-dados" style="color:var(--g600)">Privacidade</a>.</span></label>
+      <div style="margin-top:1.125rem"><button class="btn btn-dark btn-lg btn-full" type="button">Enviar candidatura <span class="arr" aria-hidden="true">→</span></button></div>
+      <div class="ac-note" style="margin-top:.875rem">A Nexhire não garante contratação. Candidaturas são avaliadas pela equipe.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" aria-label="Nexhire — Início">
+          <svg width="83" height="20" viewBox="0 0 116 28" fill="none" style="display:block;color:var(--f900)" aria-hidden="true"><path d="M106.766 27.608C104.794 27.608 103.083 27.2 101.632 26.384C100.182 25.5453 99.0484 24.3667 98.2324 22.848C97.439 21.3067 97.0424 19.4933 97.0424 17.408C97.0424 15.3227 97.439 13.5207 98.2324 12.002C99.0257 10.4833 100.136 9.30467 101.564 8.46601C103.015 7.62734 104.715 7.20801 106.664 7.20801C108.682 7.20801 110.393 7.66134 111.798 8.56801C113.226 9.47468 114.292 10.7893 114.994 12.512C115.72 14.2347 116.026 16.3087 115.912 18.734H102.584C102.766 20.1847 103.242 21.318 104.012 22.134C104.783 22.95 105.78 23.358 107.004 23.358C108.002 23.358 108.818 23.12 109.452 22.644C110.087 22.1453 110.484 21.5447 110.642 20.842H115.776C115.55 22.2473 115.017 23.46 114.178 24.48C113.362 25.4773 112.32 26.248 111.05 26.792C109.781 27.336 108.353 27.608 106.766 27.608ZM106.698 11.424C105.588 11.424 104.67 11.7867 103.944 12.512C103.219 13.2147 102.766 14.1667 102.584 15.368H110.472C110.382 13.94 109.962 12.9313 109.214 12.342C108.466 11.73 107.628 11.424 106.698 11.424Z" fill="currentColor"/>
+<path d="M85.3766 27.098V15.878C85.3766 13.09 86.1247 10.948 87.6207 9.45201C89.1393 7.95601 91.304 7.20801 94.1147 7.20801C94.4093 7.20801 94.874 7.23067 95.5087 7.27601C96.1433 7.29867 96.778 7.37801 97.4127 7.51401V12.24C96.982 12.172 96.574 12.1153 96.1887 12.07C95.8033 12.002 95.3727 11.968 94.8967 11.968C94.194 11.968 93.5367 12.07 92.9247 12.274C92.3127 12.478 91.814 12.8633 91.4286 13.43C91.066 13.9967 90.8847 14.824 90.8847 15.912V27.098H85.3766Z" fill="currentColor"/>
+<path d="M80.4894 5.61C79.6054 5.61 78.8574 5.34933 78.2454 4.828C77.6561 4.30667 77.3614 3.62667 77.3614 2.788C77.3614 1.972 77.6561 1.30333 78.2454 0.782C78.8574 0.260666 79.6054 0 80.4894 0C81.3508 0 82.0761 0.260666 82.6654 0.782C83.2774 1.30333 83.5834 1.972 83.5834 2.788C83.5834 3.62667 83.2774 4.30667 82.6654 4.828C82.0761 5.34933 81.3508 5.61 80.4894 5.61ZM77.7354 27.098V7.718H83.2434V27.098H77.7354Z" fill="currentColor"/>
+<path d="M57.4502 27.098V1.59802H62.9582V9.96202C63.5702 9.07802 64.3182 8.39802 65.2022 7.92202C66.0862 7.44602 67.0722 7.20802 68.1602 7.20802C69.6108 7.20802 70.8688 7.51402 71.9342 8.12602C72.9995 8.73802 73.8155 9.58802 74.3822 10.676C74.9715 11.764 75.2662 13.022 75.2662 14.45V27.098H69.7582V15.572C69.7582 14.4614 69.4522 13.5774 68.8402 12.92C68.2508 12.2627 67.4348 11.934 66.3922 11.934C65.3268 11.934 64.4882 12.3194 63.8762 13.09C63.2642 13.838 62.9582 14.8354 62.9582 16.082V27.098H57.4502Z" fill="currentColor"/>
+<path d="M37.235 27.098L43.525 17.544L36.589 7.71802H42.879L46.857 13.498L50.495 7.71802H56.411L49.781 17.714L56.241 27.098H50.257L46.449 21.692L43.049 27.098H37.235Z" fill="currentColor"/>
+<path d="M28.7324 27.608C26.7604 27.608 25.0491 27.2 23.5984 26.384C22.1477 25.5453 21.0144 24.3667 20.1984 22.848C19.4051 21.3067 19.0084 19.4933 19.0084 17.408C19.0084 15.3227 19.4051 13.5207 20.1984 12.002C20.9917 10.4833 22.1024 9.30467 23.5304 8.46601C24.9811 7.62734 26.6811 7.20801 28.6304 7.20801C30.6477 7.20801 32.3591 7.66134 33.7644 8.56801C35.1924 9.47468 36.2577 10.7893 36.9604 12.512C37.6857 14.2347 37.9917 16.3087 37.8784 18.734H24.5504C24.7317 20.1847 25.2077 21.318 25.9784 22.134C26.7491 22.95 27.7464 23.358 28.9704 23.358C29.9677 23.358 30.7837 23.12 31.4184 22.644C32.0531 22.1453 32.4497 21.5447 32.6084 20.842H37.7424C37.5157 22.2473 36.9831 23.46 36.1444 24.48C35.3284 25.4773 34.2857 26.248 33.0164 26.792C31.7471 27.336 30.3191 27.608 28.7324 27.608ZM28.6644 11.424C27.5537 11.424 26.6357 11.7867 25.9104 12.512C25.1851 13.2147 24.7317 14.1667 24.5504 15.368H32.4384C32.3477 13.94 31.9284 12.9313 31.1804 12.342C30.4324 11.73 29.5937 11.424 28.6644 11.424Z" fill="currentColor"/>
+<path d="M0 27.098V15.708C0 13.9627 0.351333 12.4553 1.054 11.186C1.77933 9.91667 2.79933 8.94201 4.114 8.26201C5.42867 7.55934 6.98133 7.20801 8.772 7.20801C10.5627 7.20801 12.1153 7.55934 13.43 8.26201C14.7447 8.94201 15.7533 9.91667 16.456 11.186C17.1813 12.4553 17.544 13.9627 17.544 15.708V27.098H12.036V15.776C12.036 14.552 11.73 13.6113 11.118 12.954C10.5287 12.2967 9.74667 11.968 8.772 11.968C7.82 11.968 7.038 12.2967 6.426 12.954C5.814 13.6113 5.508 14.552 5.508 15.776V27.098H0Z" fill="currentColor"/></svg>
+        </a>
+        <p>Rede de recrutamento potencializada por IA. Hunters especialistas, curadoria humana e tecnologia.</p>
+        <div class="footer-social" aria-label="Redes sociais">
+          <a class="fsb" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a>
+          <a class="fsb" href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+          <a class="fsb" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Candidatos</h5><ul><li><a href="vagas.html">Ver vagas</a></li><li><a href="vagas.html#enviar-cv">Enviar CV</a></li><li><a href="vagas.html#como-funciona">Como funciona</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div class="footer-col"><h5>Empresas</h5><ul><li><a href="empresas.html">Para empresas</a></li><li><a href="empresas.html">Abrir vaga</a></li><li><a href="index.html#plataforma">Plataforma</a></li><li><a href="faq.html">Contato</a></li></ul></div>
+      <div class="footer-col"><h5>Recrutadores</h5><ul><li><a href="recrutadores.html">Para recrutadores</a></li><li><a href="recrutadores.html#aplicar">Aplicar</a></li><li><a href="recrutadores.html#ranking">Ranking</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div class="footer-col"><h5>Legal</h5><ul><li><a href="faq.html#ia-dados">Privacidade</a></li><li><a href="faq.html">Termos</a></li><li><a href="faq.html#ia-dados">LGPD</a></li><li><a href="faq.html">Segurança</a></li></ul></div>
+    </div>
+    <div class="footer-bot">
+      <p>© 2026 Nexhire AI, Inc. · Todos os direitos reservados.</p>
+      <nav class="footer-links" aria-label="Links legais">
+        <a href="faq.html#ia-dados">Privacidade</a>
+        <a href="faq.html">Termos</a>
+        <a href="faq.html#ia-dados">LGPD</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(()=>{
+  // REVEAL
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .07, rootMargin: '0px 0px -28px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // MODAL — open/close
+  const modal = document.getElementById('apply-modal');
+  const modalInner = document.getElementById('modal-inner');
+  const btnTop = document.getElementById('btn-apply-top');
+  const btnBottom = document.getElementById('btn-apply-bottom');
+  const btnClose = document.getElementById('modal-close');
+  let lastFocus = null;
+
+  const openModal = () => {
+    lastFocus = document.activeElement;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => { const first = modal.querySelector('input,button,select,textarea,[tabindex]'); if (first) first.focus(); }, 50);
+  };
+
+  const closeModal = () => {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  };
+
+  if (btnTop) btnTop.addEventListener('click', openModal);
+  if (btnBottom) btnBottom.addEventListener('click', openModal);
+  if (btnClose) btnClose.addEventListener('click', closeModal);
+
+  // Close on overlay click (not modal content)
+  modal && modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+  // Close on Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal && modal.classList.contains('open')) closeModal();
+  });
+
+  // Trap focus inside modal
+  modal && modal.addEventListener('keydown', e => {
+    if (e.key !== 'Tab') return;
+    const focusable = [...modal.querySelectorAll('a,button,input,select,textarea,[tabindex]:not([tabindex="-1"])')].filter(el => !el.disabled);
+    if (!focusable.length) return;
+    const first = focusable[0]; const last = focusable[focusable.length - 1];
+    if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+    else { if (document.activeElement === last) { e.preventDefault(); first.focus(); } }
+  });
+
+  // Mobile bottom CTA — hide when sidebar form is visible on desktop
+  // (sidebar only shows ≥ 1024px, mobile-cta-bar only shows < 1024px — no conflict)
+
+  // Upload zone interactions
+  document.querySelectorAll('.upload-zone').forEach(zone => {
+    zone.addEventListener('dragover', e => { e.preventDefault(); zone.style.borderColor = 'var(--border-g)'; zone.style.background = 'var(--m100)'; });
+    zone.addEventListener('dragleave', () => { zone.style.borderColor = ''; zone.style.background = ''; });
+    zone.addEventListener('drop', e => {
+      e.preventDefault(); zone.style.borderColor = ''; zone.style.background = '';
+      const f = e.dataTransfer.files[0];
+      if (f) {
+        const lbl = zone.querySelector('.upload-lbl');
+        if (lbl) lbl.textContent = f.name;
+        if (zone.id === 'upload-zone') {
+          const sidebarLbl = document.getElementById('upload-lbl');
+          if (sidebarLbl) sidebarLbl.textContent = f.name;
+        }
+      }
+    });
+    zone.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); zone.click(); } });
+  });
+
+  // Smooth scroll back to vagas
+  document.querySelectorAll('a[href="vagas.html"]').forEach(a => {
+    a.addEventListener('click', e => {
+      // Let normal navigation happen — just ensure page top
+    });
+  });
+
+  // LinkedIn apply — placeholder
+  document.querySelectorAll('.li-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.textContent = 'Abrindo LinkedIn...';
+      setTimeout(() => { btn.innerHTML = '<svg viewBox="0 0 24 24" fill="#0A66C2" width="16" height="16"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> Candidatar com LinkedIn'; }, 1500);
+    });
+  });
+})();
+</script>
+</body>
+</html>

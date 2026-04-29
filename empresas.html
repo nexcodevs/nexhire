@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Empresas — Nexhire | Contrate com velocidade e precisão</title>
+<meta name="description" content="Abra vagas com baixa fricção, receba candidatos curados por IA e por hunters especializados. Pague apenas quando contratar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ─── */
+:root{
+  --f900:#052E16;--f800:#064E1F;--f700:#0F6B35;
+  --g600:#16A34A;--g500:#22C55E;--neon:#00E676;
+  --m100:#ECFDF5;--m200:#D1FAE5;
+  --bg:#FAFAFA;--cream:#F7F6F2;--bg-mint:#F0FDF4;--surf:#FFFFFF;
+  --text:#052E16;--text2:#374151;--muted:#6B7280;--subtle:#9CA3AF;
+  --border:#E5E7EB;--border2:#D1D5DB;--border-g:#BBF7D0;
+  --grad:linear-gradient(135deg,#052E16 0%,#16A34A 100%);
+  --grad-ai:linear-gradient(135deg,#16A34A 0%,#00E676 100%);
+  --s1:0 1px 2px rgba(5,46,22,.05);
+  --s2:0 4px 16px rgba(5,46,22,.08),0 2px 6px rgba(5,46,22,.04);
+  --s3:0 12px 40px rgba(5,46,22,.10),0 4px 12px rgba(5,46,22,.05);
+  --s4:0 24px 60px rgba(5,46,22,.12),0 8px 24px rgba(5,46,22,.06);
+  --sg:0 8px 24px rgba(5,46,22,.12);
+  --s-neon:0 0 32px rgba(0,230,118,.18);
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --max:1180px;--narrow:860px;
+  --r:16px;--r-lg:24px;--r-xl:28px;
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden}
+
+/* ─── BASE UTILS ─── */
+.it{font-family:var(--serif);font-style:italic;font-weight:400}
+.mono{font-family:var(--mono)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.container{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
+.container-narrow{max-width:var(--narrow);margin:0 auto;padding:0 1.5rem}
+@media(min-width:768px){.container,.container-narrow{padding:0 2.5rem}}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}.d5{transition-delay:.35s}
+
+/* ─── TYPE ─── */
+.eye{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--g600);margin-bottom:.875rem}
+.eye::before{content:'/ ';color:var(--border2)}
+.eye.c{display:flex;justify-content:center}
+.eye.inv{color:var(--m200)}
+.h2{font-size:clamp(24px,3.6vw,46px);font-weight:700;line-height:1.1;letter-spacing:-.035em;color:var(--text)}
+.h2 .it{color:var(--f900)}.h2.inv{color:#F7F6F2}.h2.inv .it{color:var(--neon)}.h2.c{text-align:center}
+.lead{font-size:17px;font-weight:300;color:var(--muted);line-height:1.73;max-width:560px}
+.lead.c{text-align:center;margin:0 auto}.lead.w{max-width:680px}
+@media(max-width:767px){.lead{font-size:15.5px}}
+
+/* ─── SECTION ─── */
+.section{padding:96px 0}
+.section-sm{padding:72px 0}
+@media(max-width:767px){.section{padding:68px 0}.section-sm{padding:52px 0}}
+.s-white{background:var(--surf)}
+.s-cream{background:var(--cream)}
+.s-mint{background:var(--bg-mint)}
+
+.section-head{margin-bottom:3rem}
+.section-head.c{text-align:center;display:flex;flex-direction:column;align-items:center}
+.section-head .h2{margin-bottom:.875rem}
+.section-head .lead{margin-top:.25rem}
+
+/* ─── GRIDS ─── */
+.g2{display:grid;gap:3rem;align-items:center}
+.g3{display:grid;gap:1.125rem}
+.g4{display:grid;gap:1rem}
+@media(min-width:768px){.g2{grid-template-columns:1fr 1fr}}
+@media(min-width:768px){.g2.asym{grid-template-columns:5fr 4fr}}
+@media(min-width:640px){.g3{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.g3{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:600px){.g4{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.g4{grid-template-columns:repeat(4,1fr)}}
+.g2.rev>:first-child{order:2}.g2.rev>:last-child{order:1}
+@media(max-width:767px){.g2.rev>*{order:unset}}
+
+/* ─── BUTTONS ─── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:46px;padding:0 22px;border-radius:999px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:all .18s;border:none;font-family:var(--sans);white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.btn:focus-visible{outline:2px solid var(--neon);outline-offset:3px}
+.btn:active{transform:scale(.975)}
+.btn-dark{background:var(--f900);color:#F7F6F2;box-shadow:var(--sg)}
+.btn-dark:hover{background:var(--f800);transform:translateY(-1px);box-shadow:0 12px 36px rgba(5,46,22,.25)}
+.btn-out{background:transparent;color:var(--text);border:1.5px solid var(--border2)}
+.btn-out:hover{background:var(--m100);border-color:var(--border-g);transform:translateY(-1px)}
+.btn-mint{background:var(--neon);color:var(--f900);font-weight:600}
+.btn-mint:hover{background:#00d166;transform:translateY(-1px);box-shadow:var(--s-neon)}
+.btn-inv{background:rgba(255,255,255,.12);color:#F7F6F2;border:1.5px solid rgba(255,255,255,.2)}
+.btn-inv:hover{background:rgba(255,255,255,.2)}
+.btn-lg{height:52px;padding:0 28px;font-size:15px}
+.btn-sm{height:38px;padding:0 16px;font-size:13px}
+.arr{display:inline-block;transition:transform .18s}
+.btn:hover .arr{transform:translateX(3px)}
+.btn-row{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+@media(max-width:480px){.btn-row.hero-btns{flex-direction:column;align-items:center}.btn-row.hero-btns .btn{width:100%;max-width:320px}}
+.text-cta{font-size:14px;font-weight:500;color:var(--f900);text-decoration:none;display:inline-flex;align-items:center;gap:4px;border-bottom:1px solid transparent;transition:all .15s;padding-bottom:1px}
+.text-cta:hover{border-color:var(--g600);color:var(--g600)}
+.text-cta:focus-visible{outline:2px solid var(--neon);outline-offset:2px;border-radius:3px}
+
+/* ─── NAV ─── */
+.nav{position:fixed;top:0;inset-x:0;z-index:200;padding:.875rem 0;transition:padding .3s,background .3s,border-color .3s,box-shadow .3s}
+.nav.stuck{padding:.625rem 0;background:rgba(250,250,250,.94);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:var(--s1)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
+@media(min-width:768px){.nav-inner{padding:0 2.5rem;gap:1.5rem}}
+.logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+.logo:focus-visible{outline:2px solid var(--neon);outline-offset:3px;border-radius:4px}
+.nav-links{display:none;list-style:none;gap:0;justify-content:center}
+@media(min-width:1024px){.nav-links{display:flex}}
+.nav-links a{padding:8px 13px;border-radius:8px;text-decoration:none;font-size:13.5px;color:var(--muted);transition:all .14s}
+.nav-links a:hover{color:var(--text);background:rgba(5,46,22,.06)}
+.nav-links a.active{color:var(--f900);font-weight:500}
+.nav-links a:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+.nav-end{display:flex;gap:8px;align-items:center;justify-content:flex-end}
+.nav-burger{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;border-radius:8px}
+@media(min-width:1024px){.nav-burger{display:none}}
+.nav-burger span{display:block;width:20px;height:2px;background:var(--text);border-radius:2px;transition:all .2s}
+.nav-burger:focus-visible{outline:2px solid var(--neon)}
+
+/* ─── STICKY TABS ─── */
+.sticky-tabs{position:sticky;top:60px;z-index:100;background:rgba(250,250,250,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.sticky-tabs-inner{max-width:var(--max);margin:0 auto;padding:0 1.5rem;display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.sticky-tabs-inner::-webkit-scrollbar{display:none}
+@media(min-width:768px){.sticky-tabs-inner{padding:0 2.5rem}}
+.stab{padding:.875rem 1.125rem;font-size:13.5px;font-weight:400;color:var(--muted);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:all .15s;flex-shrink:0}
+.stab:hover{color:var(--text)}
+.stab.active{color:var(--f900);border-bottom-color:var(--f900);font-weight:500}
+.stab:focus-visible{outline:2px solid var(--neon);outline-offset:-2px}
+
+/* ─── HERO ─── */
+.hero{position:relative;overflow:hidden;padding:136px 0 0;background:linear-gradient(180deg,#E8FAF0 0%,#F4FBF6 46%,var(--surf) 80%)}
+@media(max-width:767px){.hero{padding:108px 0 0}}
+.hero-halo{position:absolute;inset-x:0;top:0;height:90%;pointer-events:none;
+  background:
+    radial-gradient(ellipse 65% 50% at 68% 0%,rgba(0,230,118,.13) 0%,transparent 56%),
+    radial-gradient(ellipse 45% 40% at 18% 14%,rgba(5,46,22,.06) 0%,transparent 50%);
+  filter:blur(28px)}
+.hero-grid{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(5,46,22,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(5,46,22,.025) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.4) 0%,transparent 68%);
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.4) 0%,transparent 68%)}
+.hero-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:flex-start;padding-bottom:0}
+@media(max-width:1023px){.hero-inner{grid-template-columns:1fr;text-align:center;gap:3rem}}
+
+/* Hero left */
+.hero-left{padding-top:1rem}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;padding:5px 14px 5px 9px;border-radius:999px;background:var(--surf);border:1px solid var(--border);box-shadow:var(--s1);font-size:12px;font-weight:500;color:var(--muted);margin-bottom:1.625rem}
+.hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--neon);animation:blink 2.2s infinite;box-shadow:0 0 8px rgba(0,230,118,.5);flex-shrink:0}
+.hero-h1{font-size:clamp(30px,4.4vw,56px);font-weight:700;line-height:1.08;letter-spacing:-.04em;color:var(--text);margin-bottom:1.25rem}
+.hero-h1 .it{color:var(--f900)}
+.hero-sub{font-size:17px;font-weight:300;color:var(--muted);line-height:1.72;max-width:460px;margin-bottom:2rem}
+@media(max-width:1023px){.hero-sub{margin-left:auto;margin-right:auto}}
+@media(max-width:767px){.hero-sub{font-size:15.5px}}
+.hero-micro{font-size:12.5px;color:var(--subtle);display:flex;align-items:center;gap:6px;margin-top:.875rem;font-weight:300}
+@media(max-width:1023px){.hero-micro{justify-content:center}}
+.hero-micro-dot{width:14px;height:14px;border-radius:50%;background:rgba(0,230,118,.15);border:1px solid rgba(0,230,118,.35);display:grid;place-items:center;flex-shrink:0}
+
+/* Hero right — product mockup */
+.hero-right{position:relative;padding-top:.5rem}
+@media(max-width:1023px){.hero-right{max-width:620px;margin:0 auto}}
+
+/* Float cards */
+.fc{position:absolute;background:var(--surf);border:1px solid var(--border);border-radius:20px;box-shadow:var(--s3);padding:12px 15px;z-index:10;animation:floatY 4.5s ease-in-out infinite}
+.fc-a{bottom:-20px;left:-44px;width:176px;animation-delay:.4s}
+.fc-b{top:32px;right:-40px;width:170px;animation-delay:1.3s}
+@media(max-width:1023px){.fc-a{left:-16px;bottom:-12px}.fc-b{right:-16px;top:24px}}
+.fc-lbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle);margin-bottom:6px}
+.fc-val{font-family:var(--serif);font-size:28px;font-weight:400;color:var(--text);line-height:1}
+.fc-sub{font-size:11.5px;color:var(--muted);margin-top:3px;font-weight:300;line-height:1.4}
+.fc-badge{display:inline-flex;align-items:center;gap:3px;margin-top:7px;font-size:10.5px;font-weight:600;background:rgba(0,230,118,.12);color:var(--f900);border:1px solid rgba(0,230,118,.3);padding:2px 9px;border-radius:999px}
+.fc-person{display:flex;align-items:center;gap:8px}
+.fc-av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:9.5px;font-weight:700;flex-shrink:0;color:#fff}
+.fc-name{font-size:12px;font-weight:600;color:var(--text)}
+.fc-role{font-size:10px;color:var(--subtle);margin-top:1px}
+
+/* ─── PRODUCT WINDOW ─── */
+.pwin{background:var(--surf);border:1px solid var(--border);border-radius:20px;box-shadow:var(--s4);overflow:hidden;position:relative;z-index:2}
+.pwin-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 15px;background:var(--cream);border-bottom:1px solid var(--border)}
+.pwin-mac{display:flex;gap:5px}
+.pwin-mac-dot{width:10px;height:10px;border-radius:50%;background:rgba(5,46,22,.16)}
+.pwin-url{font-family:var(--mono);font-size:11px;color:var(--subtle);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:220px}
+.pwin-ai-badge{display:flex;align-items:center;gap:5px;font-size:10.5px;font-weight:500;color:var(--f900);background:rgba(0,230,118,.12);border:1px solid rgba(0,230,118,.35);padding:3px 10px;border-radius:999px;flex-shrink:0}
+.pwin-ai-dot{width:5px;height:5px;border-radius:50%;background:var(--neon);animation:blink 1.8s infinite}
+.pwin-layout{display:grid;grid-template-columns:180px 1fr}
+@media(max-width:580px){.pwin-layout{grid-template-columns:1fr}}
+/* Rail */
+.pwin-rail{border-right:1px solid var(--border);padding:12px 0;background:var(--cream)}
+@media(max-width:580px){.pwin-rail{display:none}}
+.pwin-rl{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--subtle);padding:0 12px 6px}
+.pwin-ri{display:flex;align-items:center;justify-content:space-between;padding:6px 12px;font-size:12.5px;color:var(--muted);cursor:pointer;transition:all .12s}
+.pwin-ri:hover{color:var(--text);background:rgba(5,46,22,.04)}
+.pwin-ri.on{color:var(--f800);background:var(--surf);border-right:2.5px solid var(--g600);font-weight:500}
+.pwin-rb{background:var(--neon);color:var(--f900);border-radius:999px;font-size:9px;font-weight:700;padding:1px 7px;flex-shrink:0}
+.pwin-rsep{height:1px;background:var(--border);margin:7px 0}
+/* Main */
+.pwin-main{display:flex;flex-direction:column}
+.pwin-top{padding:11px 14px;border-bottom:1px solid var(--border)}
+.pwin-job{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px}
+.pwin-meta{font-size:10.5px;color:var(--subtle);display:flex;gap:.625rem;flex-wrap:wrap}
+.pwin-meta strong{color:var(--f900);font-weight:600}
+/* Funnel */
+.pwin-funnel{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border)}
+@media(max-width:420px){.pwin-funnel{grid-template-columns:repeat(2,1fr)}}
+.pwin-fn{background:var(--surf);padding:8px 10px}
+.pwin-fn-l{font-size:9.5px;color:var(--subtle);margin-bottom:3px}
+.pwin-fn-n{font-size:20px;font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--text);font-family:var(--mono)}
+.pwin-fn-n.g{color:var(--g600)}.pwin-fn-n.a{color:var(--neon)}
+/* Candidate rows */
+.pwin-cands{padding:9px 12px;display:flex;flex-direction:column;gap:5px}
+.pcand{display:flex;align-items:center;gap:8px;padding:7px 9px;border:1px solid var(--border);border-radius:9px;cursor:pointer;transition:all .18s}
+.pcand:hover{border-color:var(--border-g);background:rgba(0,230,118,.05);transform:translateX(2px)}
+.pcand-rk{font-size:10px;font-weight:700;color:var(--subtle);width:14px;text-align:center;flex-shrink:0;font-family:var(--mono)}
+.pcand-av{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:9px;font-weight:700;flex-shrink:0;color:#fff}
+.pcand-info{flex:1;min-width:0}
+.pcand-name{font-size:11.5px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pcand-meta{font-size:9.5px;color:var(--subtle);margin-top:1px}
+.pcand-end{display:flex;align-items:center;gap:5px;flex-shrink:0}
+.sc{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:700;font-family:var(--mono)}
+.sc-hi{background:rgba(0,230,118,.15);color:var(--f900);border:1.5px solid rgba(0,230,118,.4)}
+.sc-md{background:#fef9c3;color:#854d0e;border:1.5px solid #fde047}
+.ptag{padding:2.5px 7px;border-radius:999px;font-size:9px;font-weight:600}
+.ptag-ok{background:rgba(0,230,118,.12);color:var(--f800);border:1px solid rgba(0,230,118,.35)}
+.ptag-ai{background:rgba(0,230,118,.1);color:var(--f900);border:1px solid rgba(0,230,118,.3)}
+.ptag-hr{background:#dbeafe;color:#1e40af;border:1px solid #bfdbfe}
+.ptag-own{background:var(--f900);color:var(--neon);font-size:8.5px;padding:2px 7px}
+/* AI Score strip */
+.pwin-score{margin:0 12px 8px;padding:9px 11px;background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.2);border-radius:9px;display:flex;align-items:flex-start;gap:9px}
+.pwin-score-ring{width:38px;height:38px;border-radius:50%;background:var(--surf);border:1.5px solid rgba(0,230,118,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--s1)}
+.pwin-score-n{font-family:var(--mono);font-size:13px;font-weight:700;line-height:1;background:var(--grad-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.pwin-score-l{font-size:7.5px;color:var(--muted);margin-top:1px}
+.pwin-score-body{flex:1;min-width:0}
+.pwin-score-title{font-size:11.5px;font-weight:600;color:var(--text);margin-bottom:5px}
+.pwin-bars{display:flex;flex-direction:column;gap:3px}
+.pwin-bar-row{display:flex;align-items:center;gap:6px}
+.pwin-bar-lbl{font-size:9px;color:var(--muted);width:64px;flex-shrink:0}
+.pwin-bar-track{flex:1;height:4px;background:rgba(5,46,22,.09);border-radius:2px;overflow:hidden}
+.pwin-bar-fill{height:100%;border-radius:2px;background:var(--grad-ai)}
+.pwin-bar-val{font-family:var(--mono);font-size:9px;font-weight:700;color:var(--f900);width:18px;text-align:right;flex-shrink:0}
+/* Meta strip: SLA, ownership, entrevista */
+.pwin-meta-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.pwin-mc{background:var(--cream);padding:6px 10px}
+.pwin-mc-l{font-size:8.5px;color:var(--subtle);text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}
+.pwin-mc-v{font-size:11px;font-weight:600;color:var(--text);font-family:var(--mono)}
+.pwin-mc-v.neon{color:var(--f900);background:rgba(0,230,118,.12);border:1px solid rgba(0,230,118,.3);border-radius:999px;padding:1px 7px;font-size:10px;display:inline-block}
+/* Foot */
+.pwin-foot{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--cream);border-top:1px solid var(--border);gap:.5rem;flex-wrap:wrap}
+.pwin-note{display:flex;align-items:center;gap:5px;font-size:10px;font-weight:600;color:var(--g600)}
+.pwin-note svg{flex-shrink:0;width:12px;height:12px;stroke:currentColor;fill:none;stroke-linecap:round}
+.pwin-pill{padding:3px 10px;border-radius:999px;font-size:10.5px;font-weight:500;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.3);color:var(--f900);cursor:pointer;transition:all .12s}
+.pwin-pill:hover{background:rgba(0,230,118,.18)}
+
+/* ─── LOGOS ─── */
+.logos-bar{background:var(--surf);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.75rem 0;margin-top:4.5rem}
+.logos-lbl{font-size:11.5px;color:var(--subtle);text-align:center;margin-bottom:1.125rem;font-weight:300}
+.marquee-wrap{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:2.75rem;width:max-content;animation:marquee 52s linear infinite}
+.mq-item{display:flex;align-items:center;gap:7px;flex-shrink:0}
+.mq-ico{width:15px;height:15px;border-radius:4px;background:rgba(5,46,22,.22)}
+.mq-name{font-size:14.5px;font-weight:700;letter-spacing:-.3px;color:rgba(5,46,22,.36);white-space:nowrap}
+
+/* ─── DORES (pain points) ─── */
+.pain-grid{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--s1);margin-top:3rem}
+@media(min-width:600px){.pain-grid{grid-template-columns:repeat(3,1fr)}}
+.pain-cell{background:var(--surf);padding:2rem 1.875rem;transition:background .18s;cursor:default}
+.pain-cell:hover{background:var(--cream)}
+.pain-n{font-family:var(--mono);font-size:10.5px;color:var(--subtle);margin-bottom:1.125rem;letter-spacing:.1em}
+.pain-cell h3{font-family:var(--serif);font-size:21px;font-weight:400;color:var(--text);margin-bottom:.625rem;line-height:1.25}
+.pain-cell p{font-size:14px;color:var(--muted);font-weight:300;line-height:1.68}
+.pain-tag{display:inline-flex;margin-top:.875rem;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:600;background:#fef2f2;color:#b91c1c;border:1px solid #fecaca}
+
+/* ─── FLOW ROW ─── */
+.flow-row{display:flex;align-items:flex-start;overflow-x:auto;padding-bottom:.5rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.flow-row::-webkit-scrollbar{display:none}
+.flow-step{display:flex;flex-direction:column;align-items:center;min-width:88px;flex:1}
+.flow-ico{width:46px;height:46px;border-radius:13px;border:1px solid var(--border);background:var(--surf);display:grid;place-items:center;margin-bottom:.875rem;box-shadow:var(--s1);transition:all .2s}
+.flow-ico svg{width:19px;height:19px;stroke:var(--f700);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.flow-ico.ai-ico{background:rgba(0,230,118,.1);border-color:rgba(0,230,118,.28)}
+.flow-ico.ai-ico svg{stroke:var(--f900)}
+.flow-step:hover .flow-ico{border-color:var(--border-g);box-shadow:var(--s2);transform:translateY(-2px)}
+.flow-lbl{font-size:12px;font-weight:500;color:var(--text);text-align:center;line-height:1.3}
+.flow-sub{font-size:10.5px;color:var(--subtle);text-align:center;margin-top:2px;max-width:80px}
+.flow-arrow{color:var(--border2);flex-shrink:0;padding:0 .25rem;margin-top:1.2rem;font-size:15px}
+
+/* ─── MODELO COMERCIAL ─── */
+.model-cards{display:grid;gap:1rem;margin-top:2.5rem}
+@media(min-width:640px){.model-cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.model-cards{grid-template-columns:repeat(4,1fr)}}
+.model-card{background:var(--surf);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.75rem;box-shadow:var(--s1);transition:all .2s}
+.model-card:hover{box-shadow:var(--s2);transform:translateY(-2px);border-color:var(--border-g)}
+.model-card-icon{width:38px;height:38px;border-radius:10px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.28);display:grid;place-items:center;margin-bottom:1rem}
+.model-card-icon svg{width:17px;height:17px;stroke:var(--f900);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.model-card h4{font-size:15px;font-weight:600;color:var(--text);margin-bottom:.375rem;letter-spacing:-.2px}
+.model-card p{font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.6}
+
+/* ─── PLATAFORMA (pipeline) ─── */
+.pipeline-card{background:var(--surf);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--s3)}
+.pc-head{display:flex;align-items:center;justify-content:space-between;padding:1.125rem 1.375rem;border-bottom:1px solid var(--border)}
+.pc-title{font-size:13.5px;font-weight:600;color:var(--text)}
+.pc-live{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted)}
+.pc-live-dot{width:7px;height:7px;border-radius:50%;background:var(--neon);animation:blink 2s infinite}
+.pc-funnel{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border)}
+@media(max-width:480px){.pc-funnel{grid-template-columns:repeat(2,1fr)}}
+.pc-stage{background:var(--surf);padding:.875rem 1.125rem}
+.pc-stage-l{font-size:10.5px;color:var(--subtle);margin-bottom:4px}
+.pc-stage-n{font-size:24px;font-weight:700;letter-spacing:-.04em;color:var(--text);line-height:1;font-family:var(--mono)}
+.pc-body{padding:1.375rem}
+.pc-chart-lbl{font-size:11.5px;color:var(--muted);margin-bottom:.875rem}
+.pc-bars{display:flex;align-items:flex-end;gap:5px;height:76px;margin-bottom:1rem}
+.pc-bar{flex:1;border-radius:4px 4px 0 0;background:var(--f800);min-height:8px}
+.pc-insight{display:flex;align-items:flex-start;gap:.75rem;padding:.875rem 1rem;background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.25);border-radius:11px}
+.pc-ico{width:26px;height:26px;border-radius:7px;background:var(--f900);display:grid;place-items:center;flex-shrink:0;box-shadow:0 0 12px rgba(0,230,118,.2)}
+.pc-ico svg{width:12px;height:12px;stroke:var(--neon);stroke-width:2;fill:none;stroke-linecap:round}
+.pc-insight-txt{font-size:12.5px;color:var(--text);font-weight:300;line-height:1.55}
+.pc-insight-txt strong{font-weight:600}
+/* Status list */
+.status-list{display:flex;flex-direction:column;gap:.5rem;margin-top:2rem}
+.status-row{display:flex;align-items:center;gap:.875rem;padding:.875rem 1rem;border:1px solid var(--border);border-radius:11px;background:var(--surf);transition:all .15s}
+.status-row:hover{border-color:var(--border-g);background:var(--m100)}
+.status-av{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:700;flex-shrink:0;color:#fff}
+.status-info{flex:1;min-width:0}
+.status-name{font-size:13.5px;font-weight:600;color:var(--text)}
+.status-role{font-size:11.5px;color:var(--subtle);margin-top:1px}
+.status-right{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.sbadge{padding:3px 10px;border-radius:999px;font-size:10.5px;font-weight:600;white-space:nowrap}
+.sb-entrevista{background:#dbeafe;color:#1e40af;border:1px solid #bfdbfe}
+.sb-shortlist{background:rgba(0,230,118,.12);color:var(--f900);border:1px solid rgba(0,230,118,.35)}
+.sb-aprovado{background:#dcfce7;color:#15803d;border:1px solid #86efac}
+.sb-sla{font-family:var(--mono);font-size:10.5px;color:var(--subtle)}
+
+/* ─── IA CARDS ─── */
+.ia-card{background:var(--surf);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.875rem;transition:all .2s;box-shadow:var(--s1);position:relative;overflow:hidden}
+.ia-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-ai);opacity:0;transition:opacity .2s}
+.ia-card:hover{box-shadow:var(--s3);transform:translateY(-2px);border-color:var(--border-g)}
+.ia-card:hover::before{opacity:1}
+.ia-ico{width:40px;height:40px;border-radius:11px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.28);display:grid;place-items:center;margin-bottom:1.125rem}
+.ia-ico svg{width:18px;height:18px;stroke:var(--f900);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.ia-card h3{font-size:16px;font-weight:600;color:var(--text);margin-bottom:.5rem;letter-spacing:-.2px;line-height:1.3}
+.ia-card p{font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.65}
+
+/* ─── TRUST CARDS ─── */
+.trust-card{background:var(--surf);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.875rem;box-shadow:var(--s1);transition:all .2s}
+.trust-card:hover{box-shadow:var(--s2);transform:translateY(-2px);border-color:var(--border-g)}
+.trust-ico{width:40px;height:40px;border-radius:11px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.28);display:grid;place-items:center;margin-bottom:1.125rem}
+.trust-ico svg{width:17px;height:17px;stroke:var(--f900);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.trust-card h3{font-size:16px;font-weight:600;color:var(--text);margin-bottom:.5rem;letter-spacing:-.2px;line-height:1.3}
+.trust-card p{font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.65}
+.trust-pill{display:inline-block;margin-top:.875rem;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:500;background:rgba(0,230,118,.1);color:var(--f800);border:1px solid rgba(0,230,118,.25)}
+
+/* ─── SEGMENTOS ─── */
+.seg-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem}
+.seg-tag{padding:6px 16px;border:1px solid var(--border);border-radius:999px;font-size:13.5px;color:var(--muted);background:var(--surf);transition:all .15s;cursor:default}
+.seg-tag:hover{border-color:var(--border-g);color:var(--text);background:var(--m100)}
+
+/* ─── MÉTRICAS DARK ─── */
+.metrics-dark{display:grid;grid-template-columns:repeat(2,1fr);border-radius:var(--r-xl);overflow:hidden;background:var(--f900)}
+@media(min-width:768px){.metrics-dark{grid-template-columns:repeat(4,1fr)}}
+.md-cell{padding:2rem 1.75rem;border-right:1px solid rgba(255,255,255,.09);transition:background .18s}
+.md-cell:last-child{border-right:none}
+.md-cell:hover{background:rgba(255,255,255,.04)}
+.md-n{font-family:var(--serif);font-size:clamp(28px,3.5vw,42px);font-weight:400;color:#F7F6F2;line-height:1;display:block;margin-bottom:.375rem;letter-spacing:-.02em}
+.md-n em{color:var(--neon);font-style:normal}
+.md-l{font-size:13px;color:rgba(251,248,241,.5);font-weight:300;line-height:1.5}
+
+/* ─── FAQ ─── */
+.faq-grp-lbl{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--g600);margin:2.5rem 0 0;display:block}
+.faq-grp-lbl::before{content:'/ ';color:var(--border2)}
+.faq-grp-lbl:first-child{margin-top:0}
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.375rem 0;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--sans);font-size:15.5px;font-weight:500;color:var(--text);transition:color .15s;-webkit-tap-highlight-color:transparent}
+.faq-q:hover{color:var(--f900)}
+.faq-q:focus-visible{outline:none;color:var(--f900)}
+.faq-icon{width:28px;height:28px;border-radius:50%;flex-shrink:0;border:1px solid var(--border);background:var(--cream);display:grid;place-items:center;transition:all .2s}
+.faq-icon svg{width:12px;height:12px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;transition:transform .25s ease,stroke .2s}
+.faq-item.open .faq-icon{background:var(--f900);border-color:var(--f900)}
+.faq-item.open .faq-icon svg{stroke:var(--neon);transform:rotate(45deg)}
+.faq-a{font-size:14.5px;color:var(--muted);font-weight:300;line-height:1.75;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease,opacity .25s ease;opacity:0;padding-bottom:0}
+.faq-item.open .faq-a{max-height:600px;opacity:1;padding-bottom:1.375rem}
+@media(max-width:767px){.faq-q{font-size:14.5px;padding:1.125rem 0}}
+
+/* ─── CTA BLOCK ─── */
+.cta-outer{padding:2rem 1.5rem 4rem;background:var(--cream)}
+@media(min-width:768px){.cta-outer{padding:2rem 2.5rem 4rem}}
+.cta-box{max-width:var(--max);margin:0 auto;background:var(--f900);border-radius:var(--r-xl);padding:5rem;position:relative;overflow:hidden;box-shadow:var(--sg)}
+@media(max-width:1023px){.cta-box{padding:4rem 3rem}}
+@media(max-width:767px){.cta-box{padding:3rem 1.75rem}}
+.cta-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 18% 20%,rgba(0,230,118,.18),transparent 38%),radial-gradient(circle at 82% 80%,rgba(0,230,118,.08),transparent 38%)}
+.cta-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(221,245,234,.09) 1px,transparent 1px);background-size:14px 14px}
+.cta-badge{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);font-size:12px;color:rgba(251,248,241,.7);margin-bottom:1.5rem;position:relative;z-index:1}
+.cta-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--neon);box-shadow:0 0 8px rgba(0,230,118,.6);flex-shrink:0}
+.cta-box h2{font-size:clamp(28px,5vw,62px);font-weight:700;line-height:1.06;letter-spacing:-.04em;color:#F7F6F2;margin-bottom:1.125rem;position:relative;z-index:1;max-width:700px}
+.cta-box h2 .it{color:var(--neon)}
+.cta-box p{font-size:17px;font-weight:300;color:rgba(251,248,241,.55);max-width:460px;line-height:1.72;margin-bottom:2.5rem;position:relative;z-index:1}
+.cta-btns{display:flex;gap:.875rem;flex-wrap:wrap;position:relative;z-index:1}
+@media(max-width:480px){.cta-box p{font-size:15.5px}.cta-btns{flex-direction:column}.cta-btns .btn{width:100%;max-width:320px}}
+
+/* ─── FOOTER ─── */
+.footer{background:var(--cream);border-top:1px solid var(--border);padding:4rem 1.5rem 2.25rem}
+@media(min-width:768px){.footer{padding:4.5rem 2.5rem 2.25rem}}
+.footer-inner{max-width:var(--max);margin:0 auto}
+.footer-top{display:grid;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border);margin-bottom:2rem}
+@media(min-width:1024px){.footer-top{grid-template-columns:1.8fr repeat(4,1fr)}}
+@media(min-width:640px) and (max-width:1023px){.footer-top{grid-template-columns:1fr 1fr}}
+.footer-brand p{font-size:13px;color:var(--muted);font-weight:300;line-height:1.7;max-width:210px;margin-top:.875rem}
+.footer-social{display:flex;gap:.5rem;margin-top:1.25rem}
+.fsb{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);display:grid;place-items:center;font-family:var(--mono);font-size:9.5px;color:var(--muted);text-decoration:none;transition:all .12s;-webkit-tap-highlight-color:transparent}
+.fsb:hover{color:var(--text);border-color:var(--border2)}
+.fsb:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+.footer-col h5{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--text);margin-bottom:.875rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.footer-col a{font-size:13.5px;color:var(--muted);text-decoration:none;font-weight:300;transition:color .12s}
+.footer-col a:hover{color:var(--text)}
+.footer-col a:focus-visible{outline:2px solid var(--neon);outline-offset:2px;border-radius:3px}
+.footer-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-bot p{font-size:12px;color:var(--subtle);font-weight:300}
+.footer-links{display:flex;gap:1.25rem}
+.footer-links a{font-size:12px;color:var(--subtle);text-decoration:none}
+.footer-links a:hover{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html" aria-label="Nexhire">
+      <svg width="91" height="22" viewBox="0 0 116 28" fill="none" style="display:block;color:var(--f900)" aria-hidden="true"><path d="M106.766 27.608C104.794 27.608 103.083 27.2 101.632 26.384C100.182 25.5453 99.0484 24.3667 98.2324 22.848C97.439 21.3067 97.0424 19.4933 97.0424 17.408C97.0424 15.3227 97.439 13.5207 98.2324 12.002C99.0257 10.4833 100.136 9.30467 101.564 8.46601C103.015 7.62734 104.715 7.20801 106.664 7.20801C108.682 7.20801 110.393 7.66134 111.798 8.56801C113.226 9.47468 114.292 10.7893 114.994 12.512C115.72 14.2347 116.026 16.3087 115.912 18.734H102.584C102.766 20.1847 103.242 21.318 104.012 22.134C104.783 22.95 105.78 23.358 107.004 23.358C108.002 23.358 108.818 23.12 109.452 22.644C110.087 22.1453 110.484 21.5447 110.642 20.842H115.776C115.55 22.2473 115.017 23.46 114.178 24.48C113.362 25.4773 112.32 26.248 111.05 26.792C109.781 27.336 108.353 27.608 106.766 27.608ZM106.698 11.424C105.588 11.424 104.67 11.7867 103.944 12.512C103.219 13.2147 102.766 14.1667 102.584 15.368H110.472C110.382 13.94 109.962 12.9313 109.214 12.342C108.466 11.73 107.628 11.424 106.698 11.424Z" fill="currentColor"/>
+<path d="M85.3766 27.098V15.878C85.3766 13.09 86.1247 10.948 87.6207 9.45201C89.1393 7.95601 91.304 7.20801 94.1147 7.20801C94.4093 7.20801 94.874 7.23067 95.5087 7.27601C96.1433 7.29867 96.778 7.37801 97.4127 7.51401V12.24C96.982 12.172 96.574 12.1153 96.1887 12.07C95.8033 12.002 95.3727 11.968 94.8967 11.968C94.194 11.968 93.5367 12.07 92.9247 12.274C92.3127 12.478 91.814 12.8633 91.4286 13.43C91.066 13.9967 90.8847 14.824 90.8847 15.912V27.098H85.3766Z" fill="currentColor"/>
+<path d="M80.4894 5.61C79.6054 5.61 78.8574 5.34933 78.2454 4.828C77.6561 4.30667 77.3614 3.62667 77.3614 2.788C77.3614 1.972 77.6561 1.30333 78.2454 0.782C78.8574 0.260666 79.6054 0 80.4894 0C81.3508 0 82.0761 0.260666 82.6654 0.782C83.2774 1.30333 83.5834 1.972 83.5834 2.788C83.5834 3.62667 83.2774 4.30667 82.6654 4.828C82.0761 5.34933 81.3508 5.61 80.4894 5.61ZM77.7354 27.098V7.718H83.2434V27.098H77.7354Z" fill="currentColor"/>
+<path d="M57.4502 27.098V1.59802H62.9582V9.96202C63.5702 9.07802 64.3182 8.39802 65.2022 7.92202C66.0862 7.44602 67.0722 7.20802 68.1602 7.20802C69.6108 7.20802 70.8688 7.51402 71.9342 8.12602C72.9995 8.73802 73.8155 9.58802 74.3822 10.676C74.9715 11.764 75.2662 13.022 75.2662 14.45V27.098H69.7582V15.572C69.7582 14.4614 69.4522 13.5774 68.8402 12.92C68.2508 12.2627 67.4348 11.934 66.3922 11.934C65.3268 11.934 64.4882 12.3194 63.8762 13.09C63.2642 13.838 62.9582 14.8354 62.9582 16.082V27.098H57.4502Z" fill="currentColor"/>
+<path d="M37.235 27.098L43.525 17.544L36.589 7.71802H42.879L46.857 13.498L50.495 7.71802H56.411L49.781 17.714L56.241 27.098H50.257L46.449 21.692L43.049 27.098H37.235Z" fill="currentColor"/>
+<path d="M28.7324 27.608C26.7604 27.608 25.0491 27.2 23.5984 26.384C22.1477 25.5453 21.0144 24.3667 20.1984 22.848C19.4051 21.3067 19.0084 19.4933 19.0084 17.408C19.0084 15.3227 19.4051 13.5207 20.1984 12.002C20.9917 10.4833 22.1024 9.30467 23.5304 8.46601C24.9811 7.62734 26.6811 7.20801 28.6304 7.20801C30.6477 7.20801 32.3591 7.66134 33.7644 8.56801C35.1924 9.47468 36.2577 10.7893 36.9604 12.512C37.6857 14.2347 37.9917 16.3087 37.8784 18.734H24.5504C24.7317 20.1847 25.2077 21.318 25.9784 22.134C26.7491 22.95 27.7464 23.358 28.9704 23.358C29.9677 23.358 30.7837 23.12 31.4184 22.644C32.0531 22.1453 32.4497 21.5447 32.6084 20.842H37.7424C37.5157 22.2473 36.9831 23.46 36.1444 24.48C35.3284 25.4773 34.2857 26.248 33.0164 26.792C31.7471 27.336 30.3191 27.608 28.7324 27.608ZM28.6644 11.424C27.5537 11.424 26.6357 11.7867 25.9104 12.512C25.1851 13.2147 24.7317 14.1667 24.5504 15.368H32.4384C32.3477 13.94 31.9284 12.9313 31.1804 12.342C30.4324 11.73 29.5937 11.424 28.6644 11.424Z" fill="currentColor"/>
+<path d="M0 27.098V15.708C0 13.9627 0.351333 12.4553 1.054 11.186C1.77933 9.91667 2.79933 8.94201 4.114 8.26201C5.42867 7.55934 6.98133 7.20801 8.772 7.20801C10.5627 7.20801 12.1153 7.55934 13.43 8.26201C14.7447 8.94201 15.7533 9.91667 16.456 11.186C17.1813 12.4553 17.544 13.9627 17.544 15.708V27.098H12.036V15.776C12.036 14.552 11.73 13.6113 11.118 12.954C10.5287 12.2967 9.74667 11.968 8.772 11.968C7.82 11.968 7.038 12.2967 6.426 12.954C5.814 13.6113 5.508 14.552 5.508 15.776V27.098H0Z" fill="currentColor"/></svg>
+    </a>
+    <ul class="nav-links" role="navigation" aria-label="Navegação principal">
+      <li><a href="index.html#como-funciona">Como funciona</a></li>
+      <li><a href="empresas.html" class="active" aria-current="page">Para empresas</a></li>
+      <li><a href="recrutadores.html">Para recrutadores</a></li>
+      <li><a href="vagas.html">Vagas</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <div class="nav-end">
+      <a class="btn btn-out btn-sm" href="empresas.html">Entrar</a>
+      <a class="btn btn-dark btn-sm" href="empresas.html">Abrir vaga <span class="arr" aria-hidden="true">→</span></a>
+      <button class="nav-burger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="topo" aria-labelledby="hero-h1">
+  <div class="hero-halo" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- Left -->
+      <div class="hero-left">
+        <div class="hero-tag" role="note" style="animation:fadeUp .4s ease both">
+          <div class="hero-tag-dot" aria-hidden="true"></div>
+          Para empresas
+        </div>
+        <h1 class="hero-h1" id="hero-h1" style="animation:fadeUp .5s .08s ease both">
+          Contrate com a velocidade<br>de uma rede e a precisão <span class="it">da IA.</span>
+        </h1>
+        <p class="hero-sub" style="animation:fadeUp .5s .16s ease both">
+          A Nexhire combina hunters especialistas, curadoria humana e tecnologia para transformar vagas abertas em shortlists qualificadas.
+        </p>
+        <div class="btn-row hero-btns" style="animation:fadeUp .5s .22s ease both">
+          <a class="btn btn-dark btn-lg" href="empresas.html">Abrir minha primeira vaga <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-out btn-lg" href="faq.html">Falar com a Nexhire</a>
+        </div>
+        <div class="hero-micro" style="animation:fadeUp .5s .28s ease both" aria-label="Sem risco antecipado">
+          <div class="hero-micro-dot" aria-hidden="true">
+            <svg viewBox="0 0 10 10" fill="none" width="9" height="9" aria-hidden="true"><path d="M2 5.5 4 7.5 8 3" stroke="#00E676" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          Baixa fricção para começar. Pague apenas quando contratar.
+        </div>
+      </div>
+
+      <!-- Right — Product mockup -->
+      <div class="hero-right" style="animation:fadeUp .6s .18s ease both">
+
+        <!-- Float A: velocidade -->
+        <div class="fc fc-a" aria-hidden="true">
+          <div class="fc-lbl">Tempo até shortlist</div>
+          <div class="fc-val">12</div>
+          <div class="fc-sub">dias em média, com curadoria completa</div>
+          <div class="fc-badge">▼ 68% mais rápido</div>
+        </div>
+
+        <!-- Float B: hire confirmada -->
+        <div class="fc fc-b" aria-hidden="true">
+          <div class="fc-lbl">Hire confirmada</div>
+          <div class="fc-person">
+            <div class="fc-av" style="background:#1e40af">AR</div>
+            <div>
+              <div class="fc-name">Aline Ramos</div>
+              <div class="fc-role">Score 97 · HR ✓ · Owner</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Window -->
+        <div class="pwin" role="img" aria-label="Dashboard Nexhire: Product Designer Sênior com 8 hunters ativos, 14 candidatos submetidos, 5 aprovados pelo HR, shortlist de 3 com AI Score visível">
+          <div class="pwin-bar">
+            <div style="display:flex;align-items:center;gap:9px">
+              <div class="pwin-mac" aria-hidden="true"><div class="pwin-mac-dot"></div><div class="pwin-mac-dot"></div><div class="pwin-mac-dot"></div></div>
+              <span class="pwin-url">app.nexhire.ai / vagas / product-designer-sr</span>
+            </div>
+            <div class="pwin-ai-badge" aria-hidden="true"><div class="pwin-ai-dot"></div>IA ativa</div>
+          </div>
+          <div class="pwin-layout">
+            <!-- Rail -->
+            <div class="pwin-rail" aria-hidden="true">
+              <div class="pwin-rl">Vagas ativas</div>
+              <div class="pwin-ri on">Product Designer Sr. <span class="pwin-rb">14</span></div>
+              <div class="pwin-ri">Eng. Software Sr.</div>
+              <div class="pwin-ri">Data Scientist</div>
+              <div class="pwin-ri">Head de Growth</div>
+              <div class="pwin-rsep"></div>
+              <div class="pwin-rl">Ferramentas</div>
+              <div class="pwin-ri">IA Análise</div>
+              <div class="pwin-ri">Entrevistas</div>
+            </div>
+            <!-- Main -->
+            <div class="pwin-main">
+              <div class="pwin-top">
+                <div class="pwin-job">Product Designer Sênior</div>
+                <div class="pwin-meta">Scale-up SaaS · Remoto · R6–22k · Prazo: <strong>4d restantes</strong></div>
+              </div>
+              <div class="pwin-funnel" aria-hidden="true">
+                <div class="pwin-fn"><div class="pwin-fn-l">Hunters</div><div class="pwin-fn-n g">8</div></div>
+                <div class="pwin-fn"><div class="pwin-fn-l">Submetidos</div><div class="pwin-fn-n">14</div></div>
+                <div class="pwin-fn"><div class="pwin-fn-l">HR aprovados</div><div class="pwin-fn-n g">5</div></div>
+                <div class="pwin-fn"><div class="pwin-fn-l">Shortlist</div><div class="pwin-fn-n a">3</div></div>
+              </div>
+              <div class="pwin-cands" aria-hidden="true">
+                <div class="pcand">
+                  <div class="pcand-rk">01</div>
+                  <div class="pcand-av" style="background:#1e40af">AR</div>
+                  <div class="pcand-info"><div class="pcand-name">Aline Ramos</div><div class="pcand-meta">Product Designer · 7a · SP</div></div>
+                  <div class="pcand-end">
+                    <span class="ptag ptag-ok">HR ✓</span>
+                    <span class="ptag ptag-own">OWNER</span>
+                    <div class="sc sc-hi">97</div>
+                  </div>
+                </div>
+                <div class="pcand">
+                  <div class="pcand-rk">02</div>
+                  <div class="pcand-av" style="background:#065f46">TM</div>
+                  <div class="pcand-info"><div class="pcand-name">Thiago Melo</div><div class="pcand-meta">UX Designer · 5a · Remoto</div></div>
+                  <div class="pcand-end"><span class="ptag ptag-ai">IA ✓</span><div class="sc sc-hi">91</div></div>
+                </div>
+                <div class="pcand">
+                  <div class="pcand-rk">03</div>
+                  <div class="pcand-av" style="background:#78350f">LS</div>
+                  <div class="pcand-info"><div class="pcand-name">Laura Souza</div><div class="pcand-meta">Product Design · 4a · CWB</div></div>
+                  <div class="pcand-end"><span class="ptag ptag-ai">IA ✓</span><div class="sc sc-md">78</div></div>
+                </div>
+              </div>
+              <!-- AI Score strip -->
+              <div class="pwin-score" aria-hidden="true">
+                <div class="pwin-score-ring">
+                  <div class="pwin-score-n">94</div>
+                  <div class="pwin-score-l">Score</div>
+                </div>
+                <div class="pwin-score-body">
+                  <div class="pwin-score-title">Aline Ramos — Match excelente</div>
+                  <div class="pwin-bars">
+                    <div class="pwin-bar-row"><div class="pwin-bar-lbl">Fit técnico</div><div class="pwin-bar-track"><div class="pwin-bar-fill" style="width:96%"></div></div><div class="pwin-bar-val">96</div></div>
+                    <div class="pwin-bar-row"><div class="pwin-bar-lbl">Senioridade</div><div class="pwin-bar-track"><div class="pwin-bar-fill" style="width:90%"></div></div><div class="pwin-bar-val">90</div></div>
+                    <div class="pwin-bar-row"><div class="pwin-bar-lbl">Comportamental</div><div class="pwin-bar-track"><div class="pwin-bar-fill" style="width:88%"></div></div><div class="pwin-bar-val">88</div></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Meta: SLA + Ownership + Entrevista -->
+              <div class="pwin-meta-strip" aria-hidden="true">
+                <div class="pwin-mc"><div class="pwin-mc-l">SLA feedback</div><div class="pwin-mc-v"><span class="pwin-mc-v neon">3 dias</span></div></div>
+                <div class="pwin-mc"><div class="pwin-mc-l">Ownership</div><div class="pwin-mc-v">Sofia M. · 60d</div></div>
+                <div class="pwin-mc"><div class="pwin-mc-l">Entrevista</div><div class="pwin-mc-v">Agendada ✓</div></div>
+              </div>
+              <div class="pwin-foot" aria-hidden="true">
+                <div class="pwin-note">
+                  <svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M7 4v3.5M7 9v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  IA recomenda Aline e Thiago para envio
+                </div>
+                <button class="pwin-pill">Aprovar seleção →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /hero-right -->
+    </div>
+
+    <!-- Logos strip dentro do hero -->
+    <div class="logos-bar">
+      <p class="logos-lbl">Empresas que confiam na Nexhire para contratar com velocidade e precisão</p>
+      <div class="marquee-wrap"><div class="marquee-track" id="mtrack" aria-hidden="true"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STICKY TABS ═══ -->
+<nav class="sticky-tabs" aria-label="Seções desta página">
+  <div class="sticky-tabs-inner">
+    <a href="#dores" class="stab">O problema</a>
+    <a href="#solucao" class="stab">Solução</a>
+    <a href="#modelo" class="stab">Modelo comercial</a>
+    <a href="#plataforma" class="stab">Plataforma</a>
+    <a href="#ia" class="stab">IA + Curadoria</a>
+    <a href="#confianca" class="stab">Regras</a>
+    <a href="#segmentos" class="stab">Segmentos</a>
+    <a href="#faq" class="stab">FAQ</a>
+  </div>
+</nav>
+
+<!-- ═══ 2. DORES ═══ -->
+<section class="section s-white" id="dores" aria-labelledby="dores-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="eye reveal">O problema</div>
+      <h2 class="h2 reveal d1" id="dores-title">Seu time não precisa<br>fazer <span class="it">tudo sozinho.</span></h2>
+      <p class="lead reveal d2">Triagem manual, CVs irrelevantes e vagas acumuladas. Quando a demanda cresce, o processo de contratação vira o primeiro gargalo.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-cell reveal d1">
+        <div class="pain-n">01 /</div>
+        <h3>Muitos CVs, pouco fit</h3>
+        <p>Seu time perde horas filtrando perfis que nunca deveriam chegar à etapa de análise. Ruído que consome o tempo de quem decide.</p>
+        <div class="pain-tag">80% dos CVs são irrelevantes</div>
+      </div>
+      <div class="pain-cell reveal d2">
+        <div class="pain-n">02 /</div>
+        <h3>Vagas acumulam rápido</h3>
+        <p>Quando a demanda cresce, o recrutamento vira gargalo operacional. Cada nova vaga aumenta a pressão sobre um time que já está no limite.</p>
+        <div class="pain-tag">Média: 45 dias para fechar</div>
+      </div>
+      <div class="pain-cell reveal d3">
+        <div class="pain-n">03 /</div>
+        <h3>Escalar contratação custa caro</h3>
+        <p>Mais vagas normalmente significam mais equipe, mais fornecedores e mais complexidade — sem garantia de qualidade ou previsibilidade de resultado.</p>
+        <div class="pain-tag">Até 30% de retainer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3. SOLUÇÃO ═══ -->
+<section class="section s-cream" id="solucao" aria-labelledby="solucao-title">
+  <div class="container">
+    <div class="section-head c">
+      <div class="eye c reveal">A solução</div>
+      <h2 class="h2 c reveal d1" id="solucao-title">A Nexhire distribui o esforço<br>e <span class="it">centraliza a qualidade.</span></h2>
+      <p class="lead c reveal d2">Hunters buscam talentos. A IA ranqueia e resume. O HR Manager faz curadoria. Sua empresa entrevista apenas quem faz sentido.</p>
+    </div>
+    <div class="flow-row reveal d2" role="list" aria-label="Fluxo do processo">
+      <div class="flow-step" role="listitem">
+        <div class="flow-ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div class="flow-lbl">Vaga aberta</div>
+        <div class="flow-sub">empresa cria</div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step" role="listitem">
+        <div class="flow-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <div class="flow-lbl">Rede de hunters</div>
+        <div class="flow-sub">enviam candidatos</div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step" role="listitem">
+        <div class="flow-ico ai-ico"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="flow-lbl">IA Match Score</div>
+        <div class="flow-sub">ranqueia e resume</div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step" role="listitem">
+        <div class="flow-ico"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <div class="flow-lbl">HR Review</div>
+        <div class="flow-sub">curadoria humana</div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step" role="listitem">
+        <div class="flow-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="flow-lbl">Shortlist</div>
+        <div class="flow-sub">curada e aprovada</div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step" role="listitem">
+        <div class="flow-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div class="flow-lbl">Entrevista</div>
+        <div class="flow-sub">cliente aprova</div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="flow-step" role="listitem">
+        <div class="flow-ico"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+        <div class="flow-lbl">Contratação</div>
+        <div class="flow-sub">pague ao fechar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4. MODELO COMERCIAL ═══ -->
+<section class="section s-white" id="modelo" aria-labelledby="modelo-title">
+  <div class="container">
+    <div class="g2 asym">
+      <div>
+        <div class="eye reveal">Modelo comercial</div>
+        <h2 class="h2 reveal d1" id="modelo-title">Pague por contratação,<br>não por <span class="it">tentativa.</span></h2>
+        <p class="lead reveal d2">Abra vagas com baixa fricção, receba candidatos curados e avance no processo com previsibilidade. A cobrança acontece quando a posição é fechada, conforme as condições acordadas.</p>
+        <div class="model-cards reveal d3">
+          <div class="model-card">
+            <div class="model-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <h4>Success fee</h4>
+            <p>Pagamento por posição fechada. Condições definidas no contrato de cliente.</p>
+          </div>
+          <div class="model-card">
+            <div class="model-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h4>Garantia configurável</h4>
+            <p>Prazo de substituição definido por contrato, com mobilização imediata da rede se necessário.</p>
+          </div>
+          <div class="model-card">
+            <div class="model-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <h4>SLA de feedback</h4>
+            <p>Prazo de resposta sobre candidatos configurável por cliente e registrado no processo.</p>
+          </div>
+          <div class="model-card">
+            <div class="model-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+            <h4>Baixa fricção inicial</h4>
+            <p>Abra vagas sem mensalidade obrigatória no modelo inicial. Compromisso financeiro apenas no fechamento.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Pipeline card -->
+      <div class="reveal d2">
+        <div class="pipeline-card">
+          <div class="pc-head">
+            <span class="pc-title">Pipeline — Product Designer Sr.</span>
+            <div class="pc-live" aria-live="polite"><div class="pc-live-dot" aria-hidden="true"></div>Ao vivo</div>
+          </div>
+          <div class="pc-funnel" role="group" aria-label="Funil de recrutamento">
+            <div class="pc-stage"><div class="pc-stage-l">Sourced</div><div class="pc-stage-n">248</div></div>
+            <div class="pc-stage"><div class="pc-stage-l">Pontuados</div><div class="pc-stage-n">112</div></div>
+            <div class="pc-stage"><div class="pc-stage-l">HR curado</div><div class="pc-stage-n">14</div></div>
+            <div class="pc-stage"><div class="pc-stage-l">Shortlist</div><div class="pc-stage-n">3</div></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-chart-lbl">Submissões por semana</div>
+            <div class="pc-bars" id="pc-bars" aria-hidden="true"></div>
+            <div class="pc-insight" role="note">
+              <div class="pc-ico" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+              <div class="pc-insight-txt"><strong>Insight da IA:</strong> No ritmo atual, você terá oferta aberta até sexta. 2 candidatos batem com o perfil das suas últimas contratações de sucesso.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 5. PLATAFORMA EM AÇÃO ═══ -->
+<section class="section s-cream" id="plataforma" aria-labelledby="plat-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="eye reveal">Plataforma em ação</div>
+      <h2 class="h2 reveal d1" id="plat-title">Veja o funil da vaga<br>em <span class="it">tempo real.</span></h2>
+      <p class="lead reveal d2">Acompanhe o processo sem depender de planilhas, trocas soltas de e-mail ou follow-ups manuais. Cada candidato tem status, prazo e histórico registrado.</p>
+    </div>
+    <div class="g2 asym">
+      <div>
+        <div class="status-list reveal" role="list" aria-label="Status dos candidatos da shortlist">
+          <div class="status-row" role="listitem">
+            <div class="status-av" style="background:#1e40af" aria-hidden="true">AR</div>
+            <div class="status-info">
+              <div class="status-name">Aline Ramos</div>
+              <div class="status-role">Product Designer · 7 anos · São Paulo</div>
+            </div>
+            <div class="status-right">
+              <span class="sbadge sb-entrevista">Entrevista agendada</span>
+              <span class="sbadge sb-sla">SLA: 2d</span>
+            </div>
+          </div>
+          <div class="status-row" role="listitem">
+            <div class="status-av" style="background:#065f46" aria-hidden="true">TM</div>
+            <div class="status-info">
+              <div class="status-name">Thiago Melo</div>
+              <div class="status-role">UX Designer · 5 anos · Remoto</div>
+            </div>
+            <div class="status-right">
+              <span class="sbadge sb-shortlist">Na shortlist</span>
+              <span class="sbadge sb-sla">SLA: 3d</span>
+            </div>
+          </div>
+          <div class="status-row" role="listitem">
+            <div class="status-av" style="background:#78350f" aria-hidden="true">LS</div>
+            <div class="status-info">
+              <div class="status-name">Laura Souza</div>
+              <div class="status-role">Product Design · 4 anos · Curitiba</div>
+            </div>
+            <div class="status-right">
+              <span class="sbadge sb-aprovado">Aprovado pelo HR</span>
+              <span class="sbadge sb-sla">SLA: 3d</span>
+            </div>
+          </div>
+          <div class="status-row" role="listitem">
+            <div class="status-av" style="background:#7c3aed" aria-hidden="true">CM</div>
+            <div class="status-info">
+              <div class="status-name">Carlos Mota</div>
+              <div class="status-role">Product Design · 6 anos · BH</div>
+            </div>
+            <div class="status-right">
+              <span class="sbadge sb-aprovado">Aprovado pelo HR</span>
+              <span class="sbadge sb-sla">SLA: 1d</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:2rem" class="reveal d2">
+          <div class="btn-row">
+            <a class="btn btn-dark" href="empresas.html">Abrir uma vaga <span class="arr" aria-hidden="true">→</span></a>
+            <a class="text-cta" href="index.html#plataforma">Ver todas as funcionalidades</a>
+          </div>
+        </div>
+      </div>
+      <div class="reveal d3">
+        <div style="background:var(--surf);border:1px solid var(--border);border-radius:var(--r-xl);padding:2rem;box-shadow:var(--s2)">
+          <div style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--subtle);margin-bottom:1.375rem;font-family:var(--mono)">O que você acompanha</div>
+          <div style="display:flex;flex-direction:column;gap:0">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;padding:.875rem 0;border-bottom:1px solid var(--border);font-size:14.5px;gap:1rem">
+              <span style="color:var(--muted);font-weight:300;flex-shrink:0">Candidatos enviados</span>
+              <span style="color:var(--text);font-weight:500;text-align:right">por hunter, com prazo</span>
+            </div>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;padding:.875rem 0;border-bottom:1px solid var(--border);font-size:14.5px;gap:1rem">
+              <span style="color:var(--muted);font-weight:300;flex-shrink:0">Aprovados pelo HR</span>
+              <span style="color:var(--text);font-weight:500;text-align:right">antes do envio ao cliente</span>
+            </div>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;padding:.875rem 0;border-bottom:1px solid var(--border);font-size:14.5px;gap:1rem">
+              <span style="color:var(--muted);font-weight:300;flex-shrink:0">Shortlist enviada</span>
+              <span style="color:var(--text);font-weight:500;text-align:right">com AI Score por candidato</span>
+            </div>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;padding:.875rem 0;border-bottom:1px solid var(--border);font-size:14.5px;gap:1rem">
+              <span style="color:var(--muted);font-weight:300;flex-shrink:0">Entrevistas agendadas</span>
+              <span style="color:var(--text);font-weight:500;text-align:right">status e próximos passos</span>
+            </div>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;padding:.875rem 0;border-bottom:1px solid var(--border);font-size:14.5px;gap:1rem">
+              <span style="color:var(--muted);font-weight:300;flex-shrink:0">Prazo de resposta</span>
+              <span style="color:var(--text);font-weight:500;text-align:right">SLA configurável</span>
+            </div>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;padding:.875rem 0;font-size:14.5px;gap:1rem">
+              <span style="color:var(--muted);font-weight:300;flex-shrink:0">Ownership</span>
+              <span style="color:var(--text);font-weight:500;text-align:right">primeiro envio válido</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6. IA + CURADORIA ═══ -->
+<section class="section s-white" id="ia" aria-labelledby="ia-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="eye reveal">IA + curadoria humana</div>
+      <h2 class="h2 reveal d1" id="ia-title">IA para reduzir ruído.<br><span class="it">Humanos para decidir melhor.</span></h2>
+      <p class="lead reveal d2">A IA da Nexhire estrutura vagas, analisa CVs e ranqueia candidatos. A decisão final sempre passa pelo HR Manager antes de chegar a você.</p>
+    </div>
+    <div class="g3">
+      <div class="ia-card reveal d1">
+        <div class="ia-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Score de aderência</h3>
+        <p>Cada candidato recebe score 0–100 por fit técnico, senioridade e comportamental. Auditável pelo HR Manager antes de qualquer envio ao cliente.</p>
+      </div>
+      <div class="ia-card reveal d2">
+        <div class="ia-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="13 2 13 9 20 9"/></svg></div>
+        <h3>Resumo de CV</h3>
+        <p>A IA resume experiência, senioridade e pontos de atenção de cada candidato. O HR Manager valida antes de você ver qualquer perfil.</p>
+      </div>
+      <div class="ia-card reveal d3">
+        <div class="ia-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div>
+        <h3>Ranking de candidatos</h3>
+        <p>Candidatos ordenados por aderência com justificativa clara. Veja quem tem maior fit antes de qualquer leitura manual de currículo.</p>
+      </div>
+      <div class="ia-card reveal d1">
+        <div class="ia-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Perguntas sugeridas</h3>
+        <p>Roteiro de perguntas personalizado por candidato, baseado nos gaps identificados e nos critérios da vaga.</p>
+      </div>
+      <div class="ia-card reveal d2">
+        <div class="ia-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <h3>Gaps e riscos</h3>
+        <p>A IA aponta lacunas de qualificação e riscos de aderência — antes do processo avançar, não depois.</p>
+      </div>
+      <div class="ia-card reveal d3">
+        <div class="ia-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Detecção de duplicidade</h3>
+        <p>Candidatos repetidos identificados automaticamente por e-mail, telefone e LinkedIn. Ownership registrado no primeiro envio válido.</p>
+      </div>
+    </div>
+    <div style="margin-top:2.5rem;padding:1.5rem 2rem;background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.2);border-radius:var(--r-lg);max-width:600px" class="reveal" role="note">
+      <p style="font-size:15px;color:var(--f900);line-height:1.65"><strong>A IA apoia a decisão.</strong> A curadoria final é sempre humana — o HR Manager Nexhire valida cada candidato antes de qualquer perfil chegar à sua empresa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7. REGRAS DE CONFIANÇA ═══ -->
+<section class="section s-mint" id="confianca" aria-labelledby="confianca-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="eye reveal">Regras de confiança</div>
+      <h2 class="h2 reveal d1" id="confianca-title">Um processo desenhado<br>para <span class="it">qualidade.</span></h2>
+      <p class="lead reveal d2">O que diferencia a Nexhire de uma consultoria comum é a estrutura operacional que garante consistência em cada etapa — com regras claras para todos os participantes.</p>
+    </div>
+    <div class="g3" style="margin-bottom:2rem">
+      <div class="trust-card reveal d1">
+        <div class="trust-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+        <h3>Limite por hunter</h3>
+        <p>Cada hunter envia um número limitado de candidatos por vaga. Isso garante qualidade, não volume. O HR Manager define o limite por vaga.</p>
+        <div class="trust-pill">Padrão: até 3 candidatos por hunter</div>
+      </div>
+      <div class="trust-card reveal d2">
+        <div class="trust-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Prazo padrão de envio</h3>
+        <p>7 dias para envio de candidatos. SLA de feedback configurável por cliente. Lembretes automáticos para não deixar candidatos esperando sem resposta.</p>
+        <div class="trust-pill">Padrão: 7 dias de prazo</div>
+      </div>
+      <div class="trust-card reveal d3">
+        <div class="trust-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Curadoria antes do cliente</h3>
+        <p>Nenhum candidato chega à empresa sem aprovação do HR Manager Nexhire. O cliente nunca vê perfis que não passaram pela curadoria interna.</p>
+        <div class="trust-pill">HR aprova antes do envio</div>
+      </div>
+      <div class="trust-card reveal d1">
+        <div class="trust-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 0 0 1.946-.806 3.42 3.42 0 0 1 4.438 0 3.42 3.42 0 0 0 1.946.806 3.42 3.42 0 0 1 3.138 3.138 3.42 3.42 0 0 0 .806 1.946 3.42 3.42 0 0 1 0 4.438 3.42 3.42 0 0 0-.806 1.946 3.42 3.42 0 0 1-3.138 3.138 3.42 3.42 0 0 0-1.946.806 3.42 3.42 0 0 1-4.438 0 3.42 3.42 0 0 0-1.946-.806 3.42 3.42 0 0 1-3.138-3.138 3.42 3.42 0 0 0-.806-1.946 3.42 3.42 0 0 1 0-4.438 3.42 3.42 0 0 0 .806-1.946 3.42 3.42 0 0 1 3.138-3.138z"/></svg></div>
+        <h3>Ownership garantido</h3>
+        <p>O primeiro envio válido garante o ownership do candidato, com validade configurável. Sem disputas — a regra é clara desde o início.</p>
+        <div class="trust-pill">Ownership no primeiro envio válido</div>
+      </div>
+      <div class="trust-card reveal d2">
+        <div class="trust-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <h3>Ranking de hunters</h3>
+        <p>Recrutadores com melhor performance evoluem no ranking e acessam vagas exclusivas. Iniciante → Especialista → Top Hunter — baseado em resultados reais.</p>
+        <div class="trust-pill">Top Hunters · vagas exclusivas</div>
+      </div>
+      <div class="trust-card reveal d3">
+        <div class="trust-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <h3>Garantia + LGPD</h3>
+        <p>Garantia de substituição definida por contrato. Todos os dados tratados em conformidade com a LGPD. Processo auditável do início ao fim.</p>
+        <div class="trust-pill">LGPD · Garantia configurável</div>
+      </div>
+    </div>
+    <!-- Indicadores -->
+    <div class="metrics-dark reveal" role="list" aria-label="Indicadores da plataforma">
+      <div class="md-cell" role="listitem"><span class="md-n" aria-label="12 dias"><em>12</em> dias</span><p class="md-l">tempo médio até shortlist curada</p></div>
+      <div class="md-cell" role="listitem"><span class="md-n" aria-label="Score médio 94%"><em>94</em>%</span><p class="md-l">score médio dos perfis enviados</p></div>
+      <div class="md-cell" role="listitem"><span class="md-n" aria-label="600 talentos"><em>600</em>+</span><p class="md-l">talentos mapeados em ciclos ativos</p></div>
+      <div class="md-cell" role="listitem"><span class="md-n" aria-label="40 hunters"><em>40</em>+</span><p class="md-l">hunters especializados na rede</p></div>
+    </div>
+    <p style="font-size:12px;color:var(--subtle);margin-top:1rem;font-style:italic;text-align:center">Indicadores coletados na plataforma e atualizados continuamente. Métricas individualizadas disponíveis no dashboard.</p>
+  </div>
+</section>
+
+<!-- ═══ 8. SEGMENTOS ═══ -->
+<section class="section-sm s-white" id="segmentos" aria-labelledby="seg-title">
+  <div class="container">
+    <div class="section-head c">
+      <div class="eye c reveal">Segmentos atendidos</div>
+      <h2 class="h2 c reveal d1" id="seg-title">Feito para empresas que contratam<br>em volume e precisam de <span class="it">precisão.</span></h2>
+    </div>
+    <div class="seg-tags reveal d2" role="list" aria-label="Segmentos de mercado atendidos" style="justify-content:center">
+      <span class="seg-tag" role="listitem">Tecnologia</span>
+      <span class="seg-tag" role="listitem">Contabilidade</span>
+      <span class="seg-tag" role="listitem">Indústria</span>
+      <span class="seg-tag" role="listitem">Construção Civil</span>
+      <span class="seg-tag" role="listitem">Logística</span>
+      <span class="seg-tag" role="listitem">Operações</span>
+      <span class="seg-tag" role="listitem">Vendas</span>
+      <span class="seg-tag" role="listitem">Administrativo</span>
+      <span class="seg-tag" role="listitem">Financeiro</span>
+      <span class="seg-tag" role="listitem">Atendimento</span>
+      <span class="seg-tag" role="listitem">Marketing</span>
+      <span class="seg-tag" role="listitem">RH</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 9. FAQ ═══ -->
+<section class="section s-cream" id="faq" aria-labelledby="faq-title">
+  <div class="container-narrow">
+    <div class="section-head">
+      <div class="eye reveal">Perguntas frequentes</div>
+      <h2 class="h2 reveal d1" id="faq-title">O que as empresas<br>perguntam antes de <span class="it">começar.</span></h2>
+    </div>
+    <div class="faq-list reveal" role="list">
+      <div class="faq-item open" role="listitem">
+        <button class="faq-q" aria-expanded="true" aria-controls="faq1-a">
+          A empresa paga para abrir uma vaga?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq1-a" role="region">
+          <p>No modelo inicial, não há mensalidade obrigatória para abrir vagas. A cobrança acontece quando uma posição é efetivamente fechada com um candidato da Nexhire, conforme as condições definidas no contrato de cliente.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq2-a">
+          Como funciona o success fee?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq2-a" role="region">
+          <p>O success fee é cobrado quando o candidato indicado pela Nexhire é contratado e inicia na empresa. O percentual e as condições são definidos no contrato comercial firmado antes do início do processo. Não há cobrança antecipada.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq3-a">
+          Quem seleciona os candidatos que chegam até mim?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq3-a" role="region">
+          <p>Os hunters enviam candidatos para a plataforma. A IA ranqueia cada perfil por aderência à vaga. O HR Manager Nexhire faz a curadoria final e decide quais candidatos serão enviados ao cliente. Você só recebe perfis que passaram por essa dupla validação.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq4-a">
+          A IA decide quem será contratado?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq4-a" role="region">
+          <p>Não. A IA analisa, ranqueia e resume — mas a decisão de quais candidatos avançam é sempre humana. O HR Manager Nexhire valida a curadoria. A empresa toma a decisão final sobre aprovação, entrevista e contratação.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq5-a">
+          Posso falar diretamente com os hunters?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq5-a" role="region">
+          <p>Não diretamente. A comunicação com hunters é gerenciada pelo HR Manager Nexhire. Isso garante processo centralizado, sem conflito de informações e com visibilidade total sobre o que acontece em cada etapa da vaga.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq6-a">
+          Como funciona o prazo de feedback para candidatos?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq6-a" role="region">
+          <p>O SLA de feedback é configurável por cliente e definido no contrato. O padrão é 3 dias úteis para que a empresa se manifeste sobre cada candidato recebido. Lembretes automáticos são enviados quando o prazo se aproxima.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq7-a">
+          Como a Nexhire evita candidatos duplicados?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq7-a" role="region">
+          <p>A plataforma detecta automaticamente candidatos repetidos por e-mail, telefone e LinkedIn. O ownership é registrado no primeiro envio válido, com validade configurável. Em caso de disputa, o HR Manager decide com base no histórico da plataforma.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq8-a">
+          Existe garantia se o candidato sair logo após a contratação?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq8-a" role="region">
+          <p>Sim. Cada cliente tem um prazo de garantia configurável definido em contrato. Se o candidato sair dentro desse período por razões previstas, a Nexhire mobiliza novamente a rede para reposição — sem custo adicional de success fee.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 10. CTA FINAL ═══ -->
+<div class="cta-outer">
+  <div class="cta-box">
+    <div class="cta-glow" aria-hidden="true"></div>
+    <div class="cta-dots" aria-hidden="true"></div>
+    <div class="cta-badge" role="note"><div class="cta-badge-dot" aria-hidden="true"></div>Publicação com baixa fricção · pague só na contratação</div>
+    <h2>Abra sua próxima vaga<br>com uma rede inteira<br>trabalhando por <span class="it">você.</span></h2>
+    <p>Receba candidatos curados, reduza ruído operacional e pague apenas quando contratar.</p>
+    <div class="cta-btns">
+      <a class="btn btn-mint btn-lg" href="empresas.html">Começar a contratar <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn btn-inv btn-lg" href="faq.html">Falar com a Nexhire</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" aria-label="Nexhire — Início">
+          <svg width="83" height="20" viewBox="0 0 116 28" fill="none" style="display:block;color:var(--f900)" aria-hidden="true"><path d="M106.766 27.608C104.794 27.608 103.083 27.2 101.632 26.384C100.182 25.5453 99.0484 24.3667 98.2324 22.848C97.439 21.3067 97.0424 19.4933 97.0424 17.408C97.0424 15.3227 97.439 13.5207 98.2324 12.002C99.0257 10.4833 100.136 9.30467 101.564 8.46601C103.015 7.62734 104.715 7.20801 106.664 7.20801C108.682 7.20801 110.393 7.66134 111.798 8.56801C113.226 9.47468 114.292 10.7893 114.994 12.512C115.72 14.2347 116.026 16.3087 115.912 18.734H102.584C102.766 20.1847 103.242 21.318 104.012 22.134C104.783 22.95 105.78 23.358 107.004 23.358C108.002 23.358 108.818 23.12 109.452 22.644C110.087 22.1453 110.484 21.5447 110.642 20.842H115.776C115.55 22.2473 115.017 23.46 114.178 24.48C113.362 25.4773 112.32 26.248 111.05 26.792C109.781 27.336 108.353 27.608 106.766 27.608ZM106.698 11.424C105.588 11.424 104.67 11.7867 103.944 12.512C103.219 13.2147 102.766 14.1667 102.584 15.368H110.472C110.382 13.94 109.962 12.9313 109.214 12.342C108.466 11.73 107.628 11.424 106.698 11.424Z" fill="currentColor"/>
+<path d="M85.3766 27.098V15.878C85.3766 13.09 86.1247 10.948 87.6207 9.45201C89.1393 7.95601 91.304 7.20801 94.1147 7.20801C94.4093 7.20801 94.874 7.23067 95.5087 7.27601C96.1433 7.29867 96.778 7.37801 97.4127 7.51401V12.24C96.982 12.172 96.574 12.1153 96.1887 12.07C95.8033 12.002 95.3727 11.968 94.8967 11.968C94.194 11.968 93.5367 12.07 92.9247 12.274C92.3127 12.478 91.814 12.8633 91.4286 13.43C91.066 13.9967 90.8847 14.824 90.8847 15.912V27.098H85.3766Z" fill="currentColor"/>
+<path d="M80.4894 5.61C79.6054 5.61 78.8574 5.34933 78.2454 4.828C77.6561 4.30667 77.3614 3.62667 77.3614 2.788C77.3614 1.972 77.6561 1.30333 78.2454 0.782C78.8574 0.260666 79.6054 0 80.4894 0C81.3508 0 82.0761 0.260666 82.6654 0.782C83.2774 1.30333 83.5834 1.972 83.5834 2.788C83.5834 3.62667 83.2774 4.30667 82.6654 4.828C82.0761 5.34933 81.3508 5.61 80.4894 5.61ZM77.7354 27.098V7.718H83.2434V27.098H77.7354Z" fill="currentColor"/>
+<path d="M57.4502 27.098V1.59802H62.9582V9.96202C63.5702 9.07802 64.3182 8.39802 65.2022 7.92202C66.0862 7.44602 67.0722 7.20802 68.1602 7.20802C69.6108 7.20802 70.8688 7.51402 71.9342 8.12602C72.9995 8.73802 73.8155 9.58802 74.3822 10.676C74.9715 11.764 75.2662 13.022 75.2662 14.45V27.098H69.7582V15.572C69.7582 14.4614 69.4522 13.5774 68.8402 12.92C68.2508 12.2627 67.4348 11.934 66.3922 11.934C65.3268 11.934 64.4882 12.3194 63.8762 13.09C63.2642 13.838 62.9582 14.8354 62.9582 16.082V27.098H57.4502Z" fill="currentColor"/>
+<path d="M37.235 27.098L43.525 17.544L36.589 7.71802H42.879L46.857 13.498L50.495 7.71802H56.411L49.781 17.714L56.241 27.098H50.257L46.449 21.692L43.049 27.098H37.235Z" fill="currentColor"/>
+<path d="M28.7324 27.608C26.7604 27.608 25.0491 27.2 23.5984 26.384C22.1477 25.5453 21.0144 24.3667 20.1984 22.848C19.4051 21.3067 19.0084 19.4933 19.0084 17.408C19.0084 15.3227 19.4051 13.5207 20.1984 12.002C20.9917 10.4833 22.1024 9.30467 23.5304 8.46601C24.9811 7.62734 26.6811 7.20801 28.6304 7.20801C30.6477 7.20801 32.3591 7.66134 33.7644 8.56801C35.1924 9.47468 36.2577 10.7893 36.9604 12.512C37.6857 14.2347 37.9917 16.3087 37.8784 18.734H24.5504C24.7317 20.1847 25.2077 21.318 25.9784 22.134C26.7491 22.95 27.7464 23.358 28.9704 23.358C29.9677 23.358 30.7837 23.12 31.4184 22.644C32.0531 22.1453 32.4497 21.5447 32.6084 20.842H37.7424C37.5157 22.2473 36.9831 23.46 36.1444 24.48C35.3284 25.4773 34.2857 26.248 33.0164 26.792C31.7471 27.336 30.3191 27.608 28.7324 27.608ZM28.6644 11.424C27.5537 11.424 26.6357 11.7867 25.9104 12.512C25.1851 13.2147 24.7317 14.1667 24.5504 15.368H32.4384C32.3477 13.94 31.9284 12.9313 31.1804 12.342C30.4324 11.73 29.5937 11.424 28.6644 11.424Z" fill="currentColor"/>
+<path d="M0 27.098V15.708C0 13.9627 0.351333 12.4553 1.054 11.186C1.77933 9.91667 2.79933 8.94201 4.114 8.26201C5.42867 7.55934 6.98133 7.20801 8.772 7.20801C10.5627 7.20801 12.1153 7.55934 13.43 8.26201C14.7447 8.94201 15.7533 9.91667 16.456 11.186C17.1813 12.4553 17.544 13.9627 17.544 15.708V27.098H12.036V15.776C12.036 14.552 11.73 13.6113 11.118 12.954C10.5287 12.2967 9.74667 11.968 8.772 11.968C7.82 11.968 7.038 12.2967 6.426 12.954C5.814 13.6113 5.508 14.552 5.508 15.776V27.098H0Z" fill="currentColor"/></svg>
+        </a>
+        <p>Rede de recrutamento potencializada por IA. Hunters especialistas, curadoria humana e tecnologia.</p>
+        <div class="footer-social" aria-label="Redes sociais">
+          <a class="fsb" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a>
+          <a class="fsb" href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">X</a>
+          <a class="fsb" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Produto</h5><ul><li><a href="index.html#plataforma">Plataforma</a></li><li><a href="sobre.html">IA e Scoring</a></li><li><a href="index.html">Integrações</a></li><li><a href="blog.html">Changelog</a></li></ul></div>
+      <div class="footer-col"><h5>Soluções</h5><ul><li><a href="empresas.html">Para empresas</a></li><li><a href="recrutadores.html">Para recrutadores</a></li><li><a href="vagas.html">Vagas abertas</a></li><li><a href="sobre.html">Sobre</a></li></ul></div>
+      <div class="footer-col"><h5>Suporte</h5><ul><li><a href="index.html#como-funciona">Como funciona</a></li><li><a href="faq.html">FAQ</a></li><li><a href="faq.html">Contato</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <div class="footer-col"><h5>Legal</h5><ul><li><a href="faq.html#ia-dados">Privacidade</a></li><li><a href="faq.html">Termos de uso</a></li><li><a href="faq.html#ia-dados">LGPD</a></li><li><a href="faq.html">Segurança</a></li></ul></div>
+    </div>
+    <div class="footer-bot">
+      <p>© 2026 Nexhire AI, Inc. · Todos os direitos reservados.</p>
+      <nav class="footer-links" aria-label="Links legais">
+        <a href="faq.html#ia-dados">Privacidade</a>
+        <a href="faq.html">Termos</a>
+        <a href="faq.html#ia-dados">LGPD</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(()=>{
+  // NAV stuck
+  const nav = document.getElementById('nav');
+  const tick = () => nav && nav.classList.toggle('stuck', window.scrollY > 8);
+  window.addEventListener('scroll', tick, { passive: true });
+  tick();
+
+  // REVEAL
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .08, rootMargin: '0px 0px -36px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // STICKY TABS sync
+  const tabs = document.querySelectorAll('.stab');
+  const sects = document.querySelectorAll('section[id]');
+  const tabIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        tabs.forEach(t => t.classList.toggle('active', t.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { rootMargin: '-64px 0px -60% 0px' });
+  sects.forEach(s => tabIO.observe(s));
+  tabs.forEach(tab => {
+    tab.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(tab.getAttribute('href'));
+      if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 128, behavior: 'smooth' });
+    });
+  });
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    const toggle = () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      btn.closest('.faq-list').querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    };
+    btn.addEventListener('click', toggle);
+    btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+
+  // MARQUEE logos
+  const brands = ['Northwind','Lumen','Orbital','Paragon','Vektor','Hyperion','Soliduum','Nimbus','Arcadia','Keystone','Stratus','Covalent'];
+  const track = document.getElementById('mtrack');
+  if (track) [...brands, ...brands].forEach(n => {
+    const d = document.createElement('div'); d.className = 'mq-item';
+    d.innerHTML = '<div class="mq-ico"></div><span class="mq-name">' + n + '</span>';
+    track.appendChild(d);
+  });
+
+  // PIPELINE bars
+  const heights = [12,16,22,24,20,26,30,32,28,36,40,44,38,46,50,52];
+  const c = document.getElementById('pc-bars');
+  if (c) heights.forEach((h, i) => {
+    const d = document.createElement('div'); d.className = 'pc-bar'; d.setAttribute('aria-hidden','true');
+    d.style.cssText = 'height:' + h + 'px;opacity:' + (.16 + i / heights.length * .75).toFixed(2);
+    c.appendChild(d);
+  });
+})();
+</script>
+</body>
+</html>

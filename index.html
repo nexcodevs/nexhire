@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexhire — Contrate melhor. Mais rápido. Sem esforço operacional.</title>
+<meta name="description" content="A Nexhire conecta sua vaga a uma rede de recrutadores especialistas e usa IA para ranquear candidatos, reduzir ruído e entregar apenas perfis prontos para entrevista.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════
+   DESIGN TOKENS — v2 COLOR SYSTEM
+═══════════════════════════ */
+:root{
+  /* Brand greens */
+  --f950: #041B0B;
+  --f900: #052E16;
+  --f800: #064E1F;
+  --f700: #0F6B35;
+  --g600: #16A34A;
+  --g500: #22C55E;
+  --g400: #4ADE80;
+  --neon: #00E676;
+
+  /* Soft greens */
+  --m100: #ECFDF5;
+  --m200: #D1FAE5;
+  --m300: #A7F3D0;
+
+  /* Backgrounds */
+  --cream:  #F7F6F2;
+  --cream2: #F5F5F5;
+  --bg-mint:#F0FDF4;
+  --surf:   #FFFFFF;
+
+  /* Text */
+  --text:   #052E16;
+  --text2:  #374151;
+  --muted:  #6B7280;
+  --subtle: #9CA3AF;
+
+  /* Borders */
+  --border: #E5E7EB;
+  --border2:#D1D5DB;
+  --border-g:#BBF7D0;
+
+  /* Gradients */
+  --grad:      linear-gradient(135deg,#052E16 0%,#16A34A 100%);
+  --grad-ai:   linear-gradient(135deg,#16A34A 0%,#00E676 100%);
+  --grad-soft: linear-gradient(180deg,#FAFAFA 0%,#ECFDF5 100%);
+  --grad-hero: radial-gradient(circle at 30% 20%,rgba(0,230,118,.12),transparent 34%),
+               radial-gradient(circle at 80% 10%,rgba(5,46,22,.08),transparent 30%);
+
+  /* Shadows */
+  --s1: 0 1px 2px rgba(5,46,22,.05);
+  --s2: 0 4px 16px rgba(5,46,22,.08),0 2px 6px rgba(5,46,22,.04);
+  --s3: 0 12px 40px rgba(5,46,22,.10),0 4px 12px rgba(5,46,22,.05);
+  --s4: 0 24px 60px rgba(5,46,22,.12),0 8px 24px rgba(5,46,22,.06);
+  --sg: 0 8px 24px rgba(5,46,22,.12);
+  --s-neon: 0 0 40px rgba(0,230,118,.18);
+
+  --serif: 'Instrument Serif',Georgia,serif;
+  --sans:  'Inter',system-ui,sans-serif;
+  --mono:  'JetBrains Mono',monospace;
+  --max:   1180px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{background:#FAFAFA;color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden}
+
+/* ─── UTILITY ─── */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 2.5rem}
+@media(max-width:768px){.wrap{padding:0 1.5rem}}
+.it{font-family:var(--serif);font-style:italic;font-weight:400}
+.mono{font-family:var(--mono)}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes barIn{from{width:0}to{width:var(--w)}}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
+
+/* ─── BUTTONS ─── */
+.btn{display:inline-flex;align-items:center;gap:6px;height:46px;padding:0 22px;border-radius:999px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:all .18s;border:none;font-family:var(--sans);white-space:nowrap;letter-spacing:-.01em}
+.btn:active{transform:scale(.975)}
+.btn-dark{background:var(--f900);color:var(--cream2);box-shadow:var(--sg)}
+.btn-dark:hover{background:var(--f800);transform:translateY(-1px);box-shadow:0 12px 36px rgba(7,61,44,.28)}
+.btn-out{background:transparent;color:var(--text);border:1.5px solid var(--border2)}
+.btn-out:hover{background:var(--m100);border-color:var(--border-g);transform:translateY(-1px)}
+.btn-mint{background:var(--neon);color:var(--f900);font-weight:600}
+.btn-mint:hover{background:#00d166;transform:translateY(-1px);box-shadow:var(--s-neon)}
+.btn-inv{background:rgba(255,255,255,.12);color:var(--cream2);border:1.5px solid rgba(255,255,255,.2)}
+.btn-inv:hover{background:rgba(255,255,255,.2)}
+.btn-lg{height:52px;padding:0 28px;font-size:15px}
+.btn-sm{height:38px;padding:0 16px;font-size:13px}
+.arr{display:inline-block;transition:transform .18s}
+.btn:hover .arr{transform:translateX(3px)}
+
+/* ─── NAV ─── */
+.nav{position:fixed;top:0;inset-x:0;z-index:200;padding:.875rem 0;transition:all .3s}
+.nav.stuck{padding:.625rem 0;background:rgba(250,250,250,.94);backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid var(--border);box-shadow:var(--s1)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem}
+@media(max-width:768px){.nav-inner{padding:0 1.5rem;grid-template-columns:1fr auto}}
+.logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+/* logo-mark/name replaced by inline SVG */
+.nav-links{display:none;list-style:none;gap:0;justify-content:center}
+@media(min-width:1024px){.nav-links{display:flex}}
+.nav-links a{padding:8px 13px;border-radius:8px;text-decoration:none;font-size:13.5px;color:var(--muted);transition:all .14s}
+.nav-links a:hover{color:var(--text);background:rgba(5,46,22,.06)}
+.nav-end{display:flex;gap:8px;align-items:center;justify-content:flex-end}
+
+/* ─── HERO ─── */
+.hero{
+  position:relative;overflow:hidden;padding-top:88px;
+  background:
+    linear-gradient(180deg, #E8FAF0 0%, #F4FBF6 38%, #FFFFFF 72%);
+}
+.hero-halo{
+  position:absolute;inset-x:0;top:0;height:100%;
+  background:
+    radial-gradient(ellipse 70% 55% at 68% 0%, rgba(0,230,118,.14) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 20% 10%, rgba(5,46,22,.06) 0%, transparent 50%),
+    radial-gradient(ellipse 35% 30% at 90% 60%, rgba(0,230,118,.07) 0%, transparent 50%);
+  filter:blur(24px);pointer-events:none;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(5,46,22,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(5,46,22,.03) 1px,transparent 1px);
+  background-size:56px 56px;
+  pointer-events:none;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.2) 50%,transparent 80%);
+}
+.hero-inner{position:relative;max-width:var(--max);margin:0 auto;padding:5rem 2.5rem 0;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;min-height:calc(100vh - 88px)}
+@media(max-width:768px){.hero-inner{padding-left:1.5rem;padding-right:1.5rem}}
+@media(max-width:1023px){.hero-inner{grid-template-columns:1fr;min-height:auto;padding-top:3.5rem;text-align:center}}
+
+/* Hero left */
+.hero-kicker{display:inline-flex;align-items:center;gap:7px;padding:5px 13px 5px 8px;border-radius:999px;background:var(--surf);border:1px solid var(--border);box-shadow:var(--s1);font-size:12px;font-weight:500;color:var(--muted);margin-bottom:1.75rem;letter-spacing:-.01em}
+.kicker-dot{width:6px;height:6px;border-radius:50%;background:var(--neon);animation:blink 2.2s infinite;box-shadow:0 0 8px rgba(0,230,118,.5)}
+
+.hero-h1{font-size:clamp(38px,4.6vw,62px);font-weight:700;line-height:1.07;letter-spacing:-.04em;color:var(--text);margin-bottom:1.25rem}
+.hero-h1 .it{color:var(--f900)}
+
+.hero-sub{font-size:17px;font-weight:300;color:var(--muted);line-height:1.72;max-width:456px;margin-bottom:2rem}
+@media(max-width:1023px){.hero-sub{margin-left:auto;margin-right:auto}}
+
+.hero-btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:.875rem}
+@media(max-width:1023px){.hero-btns{justify-content:center}}
+
+.hero-micro{font-size:12.5px;color:var(--subtle);display:flex;align-items:center;gap:5px;font-weight:300}
+@media(max-width:1023px){.hero-micro{justify-content:center}}
+.micro-check{width:14px;height:14px;border-radius:50%;background:rgba(0,230,118,.15);border:1px solid rgba(0,230,118,.35);display:grid;place-items:center;flex-shrink:0}
+
+/* Hero right */
+.hero-right{position:relative;padding-bottom:5rem;animation:fadeUp .6s .18s cubic-bezier(.16,1,.3,1) both}
+@media(max-width:1023px){.hero-right{max-width:600px;margin:2.5rem auto 0;padding-bottom:3rem}}
+
+/* Floating cards */
+.fc{position:absolute;background:var(--surf);border:1px solid var(--border);border-radius:20px;box-shadow:var(--s3);padding:14px 16px;z-index:6}
+.fc-a{bottom:60px;left:-52px;width:182px;animation:floatCard 4.5s ease-in-out infinite;animation-delay:.4s}
+.fc-b{top:36px;right:-48px;width:166px;animation:floatCard 4.5s ease-in-out infinite;animation-delay:1.4s}
+.fc-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle);margin-bottom:6px}
+.fc-val{font-family:var(--serif);font-size:30px;font-weight:400;color:var(--text);line-height:1;letter-spacing:-.02em}
+.fc-sub{font-size:11.5px;color:var(--muted);margin-top:3px;font-weight:300;line-height:1.4}
+.fc-badge{display:inline-flex;align-items:center;gap:3px;margin-top:7px;font-size:10.5px;font-weight:600;background:rgba(0,230,118,.12);color:var(--f900);border:1px solid rgba(0,230,118,.3);padding:2px 9px;border-radius:999px}
+.fc-row{display:flex;align-items:center;gap:8px}
+.fc-av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:700;flex-shrink:0;color:#fff}
+.fc-name{font-size:12px;font-weight:600;color:var(--text)}
+.fc-role{font-size:10px;color:var(--subtle);margin-top:1px}
+
+/* ─── PRODUCT WINDOW ─── */
+.pwin{background:var(--surf);border:1px solid var(--border);border-radius:22px;box-shadow:var(--s4);overflow:hidden;position:relative;z-index:2}
+.pwin-bar{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;background:var(--cream2);border-bottom:1px solid var(--border)}
+.mac{display:flex;gap:5px}
+.mac-d{width:10px;height:10px;border-radius:50%;background:rgba(11,74,53,.16)}
+.pwin-url{font-family:var(--mono);font-size:11px;color:var(--subtle)}
+.ai-live{display:flex;align-items:center;gap:5px;font-size:10.5px;font-weight:500;color:var(--f900);background:rgba(0,230,118,.12);border:1px solid rgba(0,230,118,.35);padding:3px 10px;border-radius:999px}
+.ai-live-dot{width:5px;height:5px;border-radius:50%;background:var(--neon);animation:blink 1.8s infinite}
+
+.pwin-body{display:grid;grid-template-columns:185px 1fr;min-height:400px}
+@media(max-width:640px){.pwin-body{grid-template-columns:1fr}}
+
+.pwin-rail{border-right:1px solid var(--border);padding:14px 0;background:var(--cream)}
+.rail-lbl{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--subtle);padding:0 13px 6px}
+.rail-row{display:flex;align-items:center;justify-content:space-between;padding:6.5px 13px;font-size:12.5px;color:var(--muted);cursor:pointer;transition:all .12s}
+.rail-row:hover{color:var(--text);background:rgba(11,74,53,.04)}
+.rail-row.on{color:var(--f800);background:var(--surf);border-right:2.5px solid var(--g600);font-weight:500}
+.rail-ct{background:var(--neon);color:var(--f900);border-radius:999px;font-size:9px;font-weight:700;padding:1px 7px}
+.rail-sep{height:1px;background:var(--border);margin:8px 0}
+
+.pwin-main{display:flex;flex-direction:column}
+.pwin-top{display:flex;align-items:flex-start;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--border);gap:.875rem;flex-wrap:wrap}
+.pwin-title{font-size:13px;font-weight:600;color:var(--text)}
+.pwin-sub{font-size:10.5px;color:var(--subtle);margin-top:2px;line-height:1.4}
+.pills{display:flex;gap:5px;flex-wrap:wrap}
+.pill{padding:4px 11px;border-radius:999px;font-size:11px;font-weight:500;border:1px solid var(--border);background:var(--cream2);color:var(--muted);cursor:pointer;transition:all .12s;white-space:nowrap}
+.pill.on{background:rgba(0,230,118,.1);border-color:rgba(0,230,118,.3);color:var(--f900)}
+
+/* Funnel strip */
+.pwin-funnel{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border)}
+@media(max-width:500px){.pwin-funnel{grid-template-columns:repeat(2,1fr)}}
+.fn{background:var(--surf);padding:10px 13px}
+.fn-l{font-size:10px;color:var(--subtle);margin-bottom:4px;font-weight:400}
+.fn-n{font-size:22px;font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--text)}
+.fn-n.g{color:var(--g600)}.fn-n.a{color:var(--neon)}
+
+/* Candidates */
+.pwin-cands{padding:10px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cand{display:flex;align-items:center;gap:9px;padding:8px 11px;border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .18s}
+.cand:hover{border-color:var(--border-g);background:rgba(0,230,118,.06);transform:translateX(2px)}
+.c-rk{font-size:10px;font-weight:700;color:var(--subtle);width:14px;text-align:center;flex-shrink:0;font-family:var(--mono)}
+.c-av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:700;flex-shrink:0;color:#fff}
+.c-info{flex:1;min-width:0}
+.c-name{font-size:12px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c-meta{font-size:10px;color:var(--subtle);margin-top:1px}
+.c-end{display:flex;align-items:center;gap:5px;flex-shrink:0}
+.score{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:700;font-family:var(--mono)}
+.sc-hi{background:rgba(0,230,118,.15);color:var(--f900);border:1.5px solid rgba(0,230,118,.4)}
+.sc-md{background:#fef9c3;color:#854d0e;border:1.5px solid #fde047}
+.tag{padding:2.5px 7px;border-radius:999px;font-size:9.5px;font-weight:600}
+.tag-ai{background:rgba(0,230,118,.1);color:var(--f900);border:1px solid rgba(0,230,118,.3)}
+.tag-hr{background:#dbeafe;color:#1e40af;border:1px solid #bfdbfe}
+.tag-ok{background:rgba(0,230,118,.12);color:var(--f800);border:1px solid rgba(0,230,118,.35)}
+
+/* AI Score strip */
+.score-strip{margin:0 14px 10px;padding:11px 13px;background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.25);border-radius:10px;display:flex;align-items:center;gap:12px}
+.ss-ring{width:42px;height:42px;border-radius:50%;background:var(--surf);border:1.5px solid rgba(0,230,118,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--s1)}
+.ss-n{font-size:14px;font-weight:700;color:var(--f900);line-height:1;font-family:var(--mono);background:var(--grad-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ss-lbl{font-size:8px;color:var(--muted);margin-top:1px}
+.ss-body{flex:1}
+.ss-title{font-size:12px;font-weight:600;color:var(--text);margin-bottom:6px}
+.ss-bars{display:flex;flex-direction:column;gap:4px}
+.ss-bar-row{display:flex;align-items:center;gap:7px}
+.ss-bar-lbl{font-size:9.5px;color:var(--muted);width:70px;flex-shrink:0}
+.ss-bar-track{flex:1;height:5px;background:rgba(11,74,53,.10);border-radius:3px;overflow:hidden}
+.ss-bar-fill{height:100%;border-radius:3px;background:var(--grad-ai)}
+.ss-bar-val{font-size:9.5px;font-weight:700;color:var(--f800);width:20px;text-align:right;flex-shrink:0;font-family:var(--mono)}
+
+.pwin-foot{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--cream2);border-top:1px solid var(--border)}
+.ai-note{display:flex;align-items:center;gap:5px;font-size:10.5px;font-weight:500;color:var(--g600);font-weight:600}
+.ai-note svg{flex-shrink:0}
+
+/* ─── LOGOS ─── */
+.logos-strip{background:var(--surf);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2rem 0}
+.logos-lbl{font-size:11.5px;color:var(--subtle);text-align:center;margin-bottom:1.25rem;font-weight:300;letter-spacing:.02em}
+.marquee-wrap{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:3rem;width:max-content;animation:marquee 55s linear infinite}
+.logo-item{display:flex;align-items:center;gap:7px;flex-shrink:0}
+.logo-ico{width:16px;height:16px;border-radius:4px;background:rgba(11,74,53,.22)}
+.logo-name{font-size:15px;font-weight:700;letter-spacing:-.3px;color:rgba(11,74,53,.36);white-space:nowrap}
+
+/* ─── TICKER ─── */
+.ticker{background:var(--f900);padding:1rem 0;overflow:hidden}
+.ticker-track{display:flex;gap:4rem;width:max-content;animation:ticker 38s linear infinite;align-items:center}
+.ticker-item{font-size:13px;font-weight:300;color:rgba(251,248,241,.6);white-space:nowrap}
+.ticker-dot{width:4px;height:4px;border-radius:50%;background:var(--neon);flex-shrink:0}
+
+/* ─── SEGMENTS ─── */
+.seg-strip{background:var(--surf);border-bottom:1px solid var(--border);padding:2.25rem 2.5rem}
+.seg-inner{max-width:var(--max);margin:0 auto}
+.seg-title{font-size:13px;color:var(--muted);margin-bottom:1.125rem;font-weight:400}
+.seg-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.seg-tag{padding:5px 15px;border:1px solid var(--border);border-radius:999px;font-size:13px;color:var(--muted);background:var(--cream);transition:all .15s;cursor:default;font-weight:300}
+.seg-tag:hover{border-color:var(--border-g);color:var(--f900);background:var(--m100)}
+
+/* ─── SECTION BASE ─── */
+.section{padding:100px 0}
+@media(max-width:767px){.section{padding:72px 0}}
+.s-white{background:var(--surf)}
+.s-cream{background:#FAFAFA}
+.s-dark{background:var(--f900)}
+
+.eye{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--g600);margin-bottom:.875rem}
+.eye::before{content:'/ ';color:var(--border2)}
+.eye.c{display:flex;justify-content:center}
+.eye.inv{color:var(--m200)}
+
+.h2{font-size:clamp(28px,3.8vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.03em;color:var(--text);margin-bottom:1rem}
+.h2 .it{color:var(--f800)}
+.h2.inv{color:var(--cream2)}.h2.inv .it{color:var(--m200)}
+.h2.center{text-align:center}
+
+.lead{font-size:17px;font-weight:300;color:var(--muted);line-height:1.73;max-width:560px}
+.lead.center{text-align:center;margin:0 auto}
+.lead.inv{color:rgba(251,248,241,.58)}
+
+/* ─── PROBLEM ─── */
+.prob-grid{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:var(--s1);margin-top:3.5rem}
+@media(min-width:600px){.prob-grid{grid-template-columns:repeat(3,1fr)}}
+.prob-cell{background:var(--surf);padding:2.25rem 2rem;transition:background .18s;cursor:default}
+.prob-cell:hover{background:var(--cream)}
+.prob-n{font-family:var(--mono);font-size:10.5px;color:var(--subtle);margin-bottom:1.25rem;letter-spacing:.1em}
+.prob-cell h3{font-family:var(--serif);font-size:21px;font-weight:400;color:var(--text);margin-bottom:.625rem;line-height:1.25}
+.prob-cell p{font-size:14px;color:var(--muted);font-weight:300;line-height:1.68}
+.prob-stat{display:inline-flex;align-items:center;margin-top:.875rem;padding:3px 11px;border-radius:999px;font-size:11.5px;font-weight:600;background:#fef2f2;color:#b91c1c;border:1px solid #fecaca}
+
+/* ─── FLOW ─── */
+.flow-row{display:flex;align-items:flex-start;gap:0;margin-top:3.5rem;overflow-x:auto;padding-bottom:.5rem;-ms-overflow-style:none;scrollbar-width:none}
+.flow-row::-webkit-scrollbar{display:none}
+.flow-step{display:flex;flex-direction:column;align-items:center;min-width:96px;flex:1}
+.flow-ico{width:48px;height:48px;border-radius:14px;border:1px solid var(--border);background:var(--surf);display:grid;place-items:center;margin-bottom:.875rem;box-shadow:var(--s1);transition:all .2s;flex-shrink:0}
+.flow-ico svg{width:20px;height:20px;stroke:var(--f700);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.flow-step:hover .flow-ico{border-color:var(--border-g);box-shadow:var(--s2);transform:translateY(-2px)}
+.flow-label{font-size:12.5px;font-weight:500;color:var(--text);text-align:center;line-height:1.3}
+.flow-sublabel{font-size:11px;color:var(--subtle);text-align:center;margin-top:3px;line-height:1.4;max-width:80px}
+.flow-arrow{color:var(--border2);flex-shrink:0;padding:0 .25rem;margin-top:1.25rem;font-size:16px;font-weight:300}
+
+/* ─── HOW IT WORKS ─── */
+.how-grid{display:grid;gap:1.25rem;margin-top:3.5rem}
+@media(min-width:900px){.how-grid{grid-template-columns:repeat(3,1fr)}}
+.how-card{background:var(--surf);border:1px solid var(--border);border-radius:24px;padding:2rem;transition:all .2s;overflow:hidden;position:relative;cursor:default}
+.how-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-ai);opacity:0;transition:opacity .2s}
+.how-card:hover{box-shadow:var(--s3);transform:translateY(-2px);border-color:var(--border-g)}.how-card:hover::before{opacity:1}
+.how-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+.how-step{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--subtle)}
+.how-n{width:26px;height:26px;border-radius:50%;border:1px solid var(--border);background:var(--cream);display:grid;place-items:center;font-size:11px;font-weight:600;color:var(--muted);font-family:var(--mono)}
+.how-card h3{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--text);margin-bottom:.5rem;line-height:1.2}
+.how-card p{font-size:14px;color:var(--muted);font-weight:300;line-height:1.7}
+
+/* Mock — brief */
+.mock{background:var(--cream2);border:1px solid var(--border);border-radius:12px;padding:.875rem;margin-bottom:1.375rem}
+.mock-url{font-family:var(--mono);font-size:10px;color:var(--subtle);margin-bottom:.75rem}
+.mock-text{font-size:12.5px;color:var(--text);line-height:1.58;margin-bottom:.875rem}
+.mock-text strong{font-weight:600}
+.mock-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:.625rem}
+.mock-tag{padding:3px 9px;border-radius:999px;font-size:10.5px;background:var(--surf);border:1px solid var(--border);color:var(--muted)}
+.mock-ai{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--g600);font-weight:600}
+.mock-ai svg{flex-shrink:0}
+
+/* Mock — ranking */
+.mock-rank{background:var(--cream2);border:1px solid var(--border);border-radius:12px;padding:.875rem;margin-bottom:1.375rem}
+.mock-rank-hdr{font-family:var(--mono);font-size:10px;color:var(--subtle);margin-bottom:.875rem}
+.mock-rrow{display:flex;align-items:center;gap:.625rem;margin-bottom:.5rem}
+.mock-rrow:last-child{margin-bottom:0;opacity:.5}
+.mock-rav{width:20px;height:20px;border-radius:50%;flex-shrink:0}
+.mock-bt{flex:1;height:6px;background:rgba(11,74,53,.09);border-radius:3px;overflow:hidden}
+.mock-bf{height:100%;border-radius:3px;background:var(--g600)}
+.mock-rs{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--text);width:22px;text-align:right;flex-shrink:0}
+
+/* Mock — timer */
+.mock-timer{background:var(--cream2);border:1px solid var(--border);border-radius:12px;padding:1.125rem;margin-bottom:1.375rem;text-align:center}
+.timer-ring{width:92px;height:92px;border-radius:50%;border:1px solid var(--border);background:var(--surf);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto .875rem;box-shadow:var(--s2)}
+.timer-tiny{font-size:9px;color:var(--subtle);margin-bottom:1px}
+.timer-val{font-size:28px;font-weight:700;letter-spacing:-.04em;color:var(--text);line-height:1;font-family:var(--mono)}
+.timer-val span{font-size:16px;font-weight:400;font-family:var(--sans)}
+.timer-delta{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:600;color:var(--f900);background:rgba(0,230,118,.14);border:1px solid rgba(0,230,118,.35);border-radius:999px;padding:2px 9px}
+.timer-foot{display:flex;align-items:center;justify-content:space-between;font-size:10.5px;color:var(--subtle);margin-top:.75rem}
+.timer-ok{display:flex;align-items:center;gap:3px;color:var(--g600);font-weight:600}
+.timer-ok svg{flex-shrink:0}
+
+/* ─── PLATFORM ─── */
+.plat-section{background:#FAFAFA;padding:96px 0;text-align:center}
+.plat-cards{display:grid;gap:1rem;margin-top:3rem}
+@media(min-width:600px){.plat-cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.plat-cards{grid-template-columns:repeat(4,1fr)}}
+.plat-card{background:var(--surf);border:1px solid var(--border);border-radius:24px;padding:2rem;text-align:left;transition:all .2s;box-shadow:var(--s1)}
+.plat-card:hover{box-shadow:var(--s3);transform:translateY(-2px);border-color:var(--border-g)}
+.plat-ico{width:40px;height:40px;border-radius:11px;border:1px solid var(--border);background:var(--cream);display:grid;place-items:center;margin-bottom:1.25rem;box-shadow:var(--s1)}
+.plat-ico svg{width:18px;height:18px;stroke:var(--f800);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.plat-card h3{font-size:17px;font-weight:600;color:var(--text);margin-bottom:.5rem;letter-spacing:-.2px;line-height:1.3}
+.plat-card p{font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.65}
+.plat-tag{display:inline-block;margin-top:.875rem;padding:3px 11px;border-radius:999px;font-size:11px;font-weight:500;background:rgba(0,230,118,.1);color:var(--f800);border:1px solid rgba(0,230,118,.28)}
+
+.stats-row{display:grid;grid-template-columns:repeat(2,1fr);border-radius:24px;overflow:hidden;margin-top:1rem;background:var(--f900)}
+@media(min-width:768px){.stats-row{grid-template-columns:repeat(4,1fr)}}
+.stat-cell{padding:2.25rem 2rem;border-right:1px solid rgba(255,255,255,.09);transition:background .18s}
+.stat-cell:last-child{border-right:none}
+.stat-cell:hover{background:rgba(255,255,255,.04)}
+.stat-n{font-family:var(--serif);font-size:clamp(30px,3.5vw,44px);font-weight:400;color:var(--cream2);line-height:1;display:block;margin-bottom:.375rem;letter-spacing:-.02em}
+.stat-n em{color:var(--neon);font-style:normal}
+.stat-l{font-size:13px;color:rgba(251,248,241,.5);font-weight:300;line-height:1.5}
+
+/* ─── SPLIT ─── */
+.split{display:grid;gap:3.5rem;align-items:center}
+@media(min-width:1024px){.split{grid-template-columns:1fr 1fr}}
+.split.rev>:first-child{order:2}.split.rev>:last-child{order:1}
+@media(max-width:1023px){.split.rev>*{order:unset}}
+
+.feat-list{list-style:none;display:flex;flex-direction:column;gap:.625rem;margin:2rem 0 2.25rem}
+.feat-item{display:flex;align-items:flex-start;gap:.875rem;padding:.875rem 1rem;border:1px solid var(--border);border-radius:13px;background:var(--surf);transition:all .15s}
+.feat-item:hover{border-color:var(--border-g);background:var(--m100)}
+.feat-lett{width:32px;height:32px;border-radius:9px;background:var(--f900);color:var(--cream2);display:grid;place-items:center;font-size:12px;font-weight:700;flex-shrink:0;font-family:var(--mono)}
+.feat-body h4{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px;letter-spacing:-.01em}
+.feat-body p{font-size:13px;color:var(--muted);font-weight:300;line-height:1.5}
+
+.btn-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.text-cta{font-size:14px;font-weight:500;color:var(--text);text-decoration:none;border-bottom:1px solid transparent;transition:all .15s;padding-bottom:1px;display:inline-flex;align-items:center;gap:4px;letter-spacing:-.01em}
+.text-cta:hover{border-color:var(--g600);color:var(--f800)}
+
+/* Pipeline card */
+.pipe-card{background:var(--surf);border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:var(--s3)}
+.pipe-head{display:flex;align-items:center;justify-content:space-between;padding:1.125rem 1.375rem;border-bottom:1px solid var(--border)}
+.pipe-head-title{font-size:13.5px;font-weight:600;color:var(--text)}
+.pipe-live{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted)}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--neon);animation:blink 2s infinite}
+.pipe-funnel{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border)}
+.pf{background:var(--surf);padding:.875rem 1.125rem}
+.pf-l{font-size:10.5px;color:var(--subtle);margin-bottom:4px}
+.pf-n{font-size:24px;font-weight:700;letter-spacing:-.04em;color:var(--text);line-height:1;font-family:var(--mono)}
+.pipe-body{padding:1.375rem}
+.pipe-chart-l{font-size:11.5px;color:var(--muted);margin-bottom:.875rem;font-weight:400}
+.pipe-bars{display:flex;align-items:flex-end;gap:5px;height:88px;margin-bottom:1rem}
+.pb{flex:1;border-radius:5px 5px 0 0;background:var(--f800);min-height:8px}
+.pipe-insight{display:flex;align-items:flex-start;gap:.75rem;padding:.875rem 1rem;background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.25);border-radius:12px}
+.ins-ico{width:26px;height:26px;border-radius:7px;background:var(--f900);display:grid;place-items:center;flex-shrink:0;box-shadow:0 0 12px rgba(0,230,118,.2)}
+.ins-ico svg{width:13px;height:13px;stroke:var(--neon);stroke-width:2;fill:none;stroke-linecap:round}
+.ins-txt{font-size:12.5px;color:var(--text);font-weight:300;line-height:1.55}
+.ins-txt strong{font-weight:600}
+
+/* Recruiter card */
+.rec-card{background:var(--surf);border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:var(--s3)}
+.rec-head{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.375rem;border-bottom:1px solid var(--border)}
+.rec-av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#f97316,#facc15);display:grid;place-items:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0;letter-spacing:-.02em}
+.rec-name{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px;letter-spacing:-.01em}
+.rec-role{font-size:11.5px;color:var(--subtle)}
+.rec-rating{font-size:12.5px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:4px}
+.stars{color:#f59e0b;font-size:12px;letter-spacing:.5px}
+.rec-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border)}
+.rs{background:var(--surf);padding:.875rem 1rem}
+.rs-l{font-size:10.5px;color:var(--subtle);margin-bottom:3px}
+.rs-n{font-size:20px;font-weight:700;letter-spacing:-.03em;color:var(--text);line-height:1;font-family:var(--mono)}
+.rec-briefings{padding:1.25rem}
+.rb-lbl{font-size:11.5px;color:var(--muted);margin-bottom:.875rem;font-weight:400}
+.job-row{display:flex;align-items:center;justify-content:space-between;padding:.875rem 1rem;border:1px solid var(--border);border-radius:11px;margin-bottom:.5rem;cursor:pointer;transition:all .15s;text-decoration:none}
+.job-row:last-child{margin-bottom:0}
+.job-row:hover{border-color:var(--border-g);background:var(--m100);transform:translateX(2px)}
+.job-left{display:flex;align-items:center;gap:.75rem}
+.job-ico{width:30px;height:30px;border-radius:8px;background:var(--cream2);border:1px solid var(--border);display:grid;place-items:center;font-size:11px;font-weight:700;color:var(--muted);flex-shrink:0;font-family:var(--mono)}
+.job-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:1px;letter-spacing:-.01em}
+.job-meta{font-size:10.5px;color:var(--subtle)}
+.job-fee{font-size:12.5px;font-weight:700;color:var(--f700);white-space:nowrap;font-family:var(--mono)}
+.rec-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:.875rem;margin-top:2rem}
+.rb-card{background:var(--surf);border:1px solid var(--border);border-radius:13px;padding:1.125rem}
+.rbc-t{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:.375rem;letter-spacing:-.01em}
+.rbc-d{font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.55}
+
+/* ─── IA CARDS ─── */
+.ia-grid{display:grid;gap:1rem;margin-top:3.5rem}
+@media(min-width:600px){.ia-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.ia-grid{grid-template-columns:repeat(3,1fr)}}
+.ia-card{background:var(--surf);border:1px solid var(--border);border-radius:24px;padding:2rem;transition:all .2s;box-shadow:var(--s1)}
+.ia-card:hover{box-shadow:var(--s2);transform:translateY(-2px)}
+.ia-ico{width:40px;height:40px;border-radius:11px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.28);display:grid;place-items:center;margin-bottom:1.125rem}
+.ia-ico svg{width:18px;height:18px;stroke:var(--f900);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.ia-card h3{font-size:16px;font-weight:600;color:var(--text);margin-bottom:.5rem;letter-spacing:-.2px;line-height:1.3}
+.ia-card p{font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.65}
+.ia-footer{margin-top:2.5rem;padding:1.5rem 2rem;background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.25);border-radius:20px;max-width:600px}
+.ia-footer p{font-size:15px;color:var(--f900);font-weight:400;line-height:1.65}
+.ia-footer strong{font-weight:600}
+
+/* ─── TRUST ─── */
+.trust-grid{display:grid;gap:1rem;margin-top:3.5rem}
+@media(min-width:768px){.trust-grid{grid-template-columns:repeat(3,1fr)}}
+.trust-card{background:var(--surf);border:1px solid var(--border);border-radius:24px;padding:2rem;box-shadow:var(--s1);transition:all .2s}
+.trust-card:hover{box-shadow:var(--s2);transform:translateY(-2px);border-color:var(--border-g)}
+.trust-ico{width:40px;height:40px;border-radius:11px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.28);display:grid;place-items:center;margin-bottom:1.25rem}
+.trust-ico svg{width:18px;height:18px;stroke:var(--f900);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.trust-card h3{font-size:17px;font-weight:600;color:var(--text);margin-bottom:.5rem;letter-spacing:-.2px;line-height:1.3}
+.trust-card p{font-size:14px;color:var(--muted);font-weight:300;line-height:1.68}
+.trust-pill{display:inline-block;margin-top:.875rem;padding:3px 11px;border-radius:999px;font-size:11px;font-weight:500;background:rgba(0,230,118,.1);color:var(--f800);border:1px solid rgba(0,230,118,.25)}
+
+/* ─── TESTIMONIALS ─── */
+.testi-grid{display:grid;gap:1rem;margin-top:3.5rem}
+@media(min-width:768px){.testi-grid{grid-template-columns:repeat(3,1fr)}}
+.testi-card{background:var(--surf);border:1px solid var(--border);border-radius:24px;padding:2rem;display:flex;flex-direction:column;transition:all .2s;box-shadow:var(--s1)}
+.testi-card:hover{box-shadow:var(--s3);transform:translateY(-2px)}
+.testi-qq{font-size:30px;line-height:1;color:rgba(5,46,22,.12);font-family:Georgia,serif;margin-bottom:1.125rem;display:block;letter-spacing:-.02em}
+.testi-q{font-size:14.5px;line-height:1.66;color:rgba(5,46,22,.82);flex:1;margin-bottom:1.5rem;font-weight:300}
+.testi-sep{height:1px;background:var(--border);margin-bottom:1.25rem}
+.testi-person{display:flex;align-items:center;gap:.75rem}
+.testi-av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;flex-shrink:0;letter-spacing:-.01em}
+.testi-name{font-size:13px;font-weight:600;color:var(--text);letter-spacing:-.01em}
+.testi-role{font-size:11.5px;color:var(--subtle);margin-top:1px}
+
+/* ─── CTA FINAL ─── */
+.cta-outer{padding:2rem 2.5rem 4rem;background:var(--cream)}
+@media(max-width:768px){.cta-outer{padding:1.5rem 1.5rem 3.5rem}}
+.cta-box{max-width:var(--max);margin:0 auto;background:var(--f900);border-radius:28px;padding:5rem 5rem;position:relative;overflow:hidden;box-shadow:var(--sg)}
+@media(max-width:1023px){.cta-box{padding:4rem 3rem}}
+@media(max-width:767px){.cta-box{padding:3rem 2rem}}
+.cta-glow{position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(0,230,118,.18),transparent 38%),radial-gradient(circle at 80% 80%,rgba(0,230,118,.08),transparent 38%);pointer-events:none}
+.cta-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(221,245,234,.09) 1px,transparent 1px);background-size:14px 14px;pointer-events:none}
+.cta-badge{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);font-size:12px;color:rgba(251,248,241,.7);margin-bottom:1.5rem;position:relative;z-index:1}
+.cta-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--neon);box-shadow:0 0 8px rgba(0,230,118,.6)}
+.cta-h2{font-size:clamp(36px,5.5vw,70px);font-weight:700;line-height:1.06;letter-spacing:-.04em;color:var(--cream2);margin-bottom:1.25rem;position:relative;z-index:1;max-width:760px}
+.cta-h2 .it{color:var(--neon)}
+.cta-p{font-size:17px;font-weight:300;color:rgba(251,248,241,.55);max-width:480px;line-height:1.72;margin-bottom:2.5rem;position:relative;z-index:1}
+.cta-btns{display:flex;gap:.875rem;flex-wrap:wrap;position:relative;z-index:1}
+
+/* ─── FOOTER ─── */
+footer{background:var(--cream2);border-top:1px solid var(--border);padding:4.5rem 2.5rem 2.25rem}
+@media(max-width:768px){footer{padding:3.5rem 1.5rem 2rem}}
+.fi{max-width:var(--max);margin:0 auto}
+.ft{display:grid;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border);margin-bottom:2rem}
+@media(min-width:1024px){.ft{grid-template-columns:1.8fr repeat(4,1fr)}}
+.fl{display:flex;align-items:center;gap:9px;text-decoration:none;margin-bottom:.875rem}
+.fb-desc{font-size:13px;color:var(--muted);font-weight:300;line-height:1.7;max-width:210px;margin-top:.875rem}
+.fb-social{display:flex;gap:.5rem;margin-top:1.25rem}
+.social-btn{width:32px;height:32px;border-radius:8px;border:1px solid var(--border);display:grid;place-items:center;font-family:var(--mono);font-size:9.5px;color:var(--muted);text-decoration:none;transition:all .12s}
+.social-btn:hover{color:var(--text);border-color:var(--border2)}
+.fc- h5{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--text);margin-bottom:.875rem}
+.fc- ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.fc- a{font-size:13.5px;color:var(--muted);text-decoration:none;font-weight:300;transition:color .12s}
+.fc- a:hover{color:var(--text)}
+.fbot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.fbot p{font-size:12px;color:var(--subtle);font-weight:300}
+.flinks{display:flex;gap:1.25rem}
+.flinks a{font-size:12px;color:var(--subtle);text-decoration:none;transition:color .12s}
+.flinks a:hover{color:var(--muted)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
+.btn:focus-visible{outline:2px solid var(--neon);outline-offset:3px}.nav-links a:focus-visible{outline:2px solid var(--neon);outline-offset:2px}.logo:focus-visible{outline:2px solid var(--neon);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html" aria-label="Nexhire">
+      <svg width="91" height="22" viewBox="0 0 116 28" fill="none" style="display:block;color:var(--f900)" aria-hidden="true"><path d="M106.766 27.608C104.794 27.608 103.083 27.2 101.632 26.384C100.182 25.5453 99.0484 24.3667 98.2324 22.848C97.439 21.3067 97.0424 19.4933 97.0424 17.408C97.0424 15.3227 97.439 13.5207 98.2324 12.002C99.0257 10.4833 100.136 9.30467 101.564 8.46601C103.015 7.62734 104.715 7.20801 106.664 7.20801C108.682 7.20801 110.393 7.66134 111.798 8.56801C113.226 9.47468 114.292 10.7893 114.994 12.512C115.72 14.2347 116.026 16.3087 115.912 18.734H102.584C102.766 20.1847 103.242 21.318 104.012 22.134C104.783 22.95 105.78 23.358 107.004 23.358C108.002 23.358 108.818 23.12 109.452 22.644C110.087 22.1453 110.484 21.5447 110.642 20.842H115.776C115.55 22.2473 115.017 23.46 114.178 24.48C113.362 25.4773 112.32 26.248 111.05 26.792C109.781 27.336 108.353 27.608 106.766 27.608ZM106.698 11.424C105.588 11.424 104.67 11.7867 103.944 12.512C103.219 13.2147 102.766 14.1667 102.584 15.368H110.472C110.382 13.94 109.962 12.9313 109.214 12.342C108.466 11.73 107.628 11.424 106.698 11.424Z" fill="currentColor"/>
+<path d="M85.3766 27.098V15.878C85.3766 13.09 86.1247 10.948 87.6207 9.45201C89.1393 7.95601 91.304 7.20801 94.1147 7.20801C94.4093 7.20801 94.874 7.23067 95.5087 7.27601C96.1433 7.29867 96.778 7.37801 97.4127 7.51401V12.24C96.982 12.172 96.574 12.1153 96.1887 12.07C95.8033 12.002 95.3727 11.968 94.8967 11.968C94.194 11.968 93.5367 12.07 92.9247 12.274C92.3127 12.478 91.814 12.8633 91.4286 13.43C91.066 13.9967 90.8847 14.824 90.8847 15.912V27.098H85.3766Z" fill="currentColor"/>
+<path d="M80.4894 5.61C79.6054 5.61 78.8574 5.34933 78.2454 4.828C77.6561 4.30667 77.3614 3.62667 77.3614 2.788C77.3614 1.972 77.6561 1.30333 78.2454 0.782C78.8574 0.260666 79.6054 0 80.4894 0C81.3508 0 82.0761 0.260666 82.6654 0.782C83.2774 1.30333 83.5834 1.972 83.5834 2.788C83.5834 3.62667 83.2774 4.30667 82.6654 4.828C82.0761 5.34933 81.3508 5.61 80.4894 5.61ZM77.7354 27.098V7.718H83.2434V27.098H77.7354Z" fill="currentColor"/>
+<path d="M57.4502 27.098V1.59802H62.9582V9.96202C63.5702 9.07802 64.3182 8.39802 65.2022 7.92202C66.0862 7.44602 67.0722 7.20802 68.1602 7.20802C69.6108 7.20802 70.8688 7.51402 71.9342 8.12602C72.9995 8.73802 73.8155 9.58802 74.3822 10.676C74.9715 11.764 75.2662 13.022 75.2662 14.45V27.098H69.7582V15.572C69.7582 14.4614 69.4522 13.5774 68.8402 12.92C68.2508 12.2627 67.4348 11.934 66.3922 11.934C65.3268 11.934 64.4882 12.3194 63.8762 13.09C63.2642 13.838 62.9582 14.8354 62.9582 16.082V27.098H57.4502Z" fill="currentColor"/>
+<path d="M37.235 27.098L43.525 17.544L36.589 7.71802H42.879L46.857 13.498L50.495 7.71802H56.411L49.781 17.714L56.241 27.098H50.257L46.449 21.692L43.049 27.098H37.235Z" fill="currentColor"/>
+<path d="M28.7324 27.608C26.7604 27.608 25.0491 27.2 23.5984 26.384C22.1477 25.5453 21.0144 24.3667 20.1984 22.848C19.4051 21.3067 19.0084 19.4933 19.0084 17.408C19.0084 15.3227 19.4051 13.5207 20.1984 12.002C20.9917 10.4833 22.1024 9.30467 23.5304 8.46601C24.9811 7.62734 26.6811 7.20801 28.6304 7.20801C30.6477 7.20801 32.3591 7.66134 33.7644 8.56801C35.1924 9.47468 36.2577 10.7893 36.9604 12.512C37.6857 14.2347 37.9917 16.3087 37.8784 18.734H24.5504C24.7317 20.1847 25.2077 21.318 25.9784 22.134C26.7491 22.95 27.7464 23.358 28.9704 23.358C29.9677 23.358 30.7837 23.12 31.4184 22.644C32.0531 22.1453 32.4497 21.5447 32.6084 20.842H37.7424C37.5157 22.2473 36.9831 23.46 36.1444 24.48C35.3284 25.4773 34.2857 26.248 33.0164 26.792C31.7471 27.336 30.3191 27.608 28.7324 27.608ZM28.6644 11.424C27.5537 11.424 26.6357 11.7867 25.9104 12.512C25.1851 13.2147 24.7317 14.1667 24.5504 15.368H32.4384C32.3477 13.94 31.9284 12.9313 31.1804 12.342C30.4324 11.73 29.5937 11.424 28.6644 11.424Z" fill="currentColor"/>
+<path d="M0 27.098V15.708C0 13.9627 0.351333 12.4553 1.054 11.186C1.77933 9.91667 2.79933 8.94201 4.114 8.26201C5.42867 7.55934 6.98133 7.20801 8.772 7.20801C10.5627 7.20801 12.1153 7.55934 13.43 8.26201C14.7447 8.94201 15.7533 9.91667 16.456 11.186C17.1813 12.4553 17.544 13.9627 17.544 15.708V27.098H12.036V15.776C12.036 14.552 11.73 13.6113 11.118 12.954C10.5287 12.2967 9.74667 11.968 8.772 11.968C7.82 11.968 7.038 12.2967 6.426 12.954C5.814 13.6113 5.508 14.552 5.508 15.776V27.098H0Z" fill="currentColor"/></svg>
+    </a>
+    <ul class="nav-links" role="navigation" aria-label="Navegação principal">
+      <li><a href="index.html#como-funciona">Como funciona</a></li>
+      <li><a href="empresas.html">Para empresas</a></li>
+      <li><a href="recrutadores.html">Para recrutadores</a></li>
+      <li><a href="vagas.html">Vagas</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <div class="nav-end">
+      <a class="btn btn-out btn-sm" href="empresas.html">Entrar</a>
+      <a class="btn btn-dark btn-sm" href="empresas.html">Abrir vaga <span class="arr" aria-hidden="true">→</span></a>
+      <button class="nav-burger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-halo"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+
+    <!-- LEFT -->
+    <div>
+      <div style="animation:fadeUp .4s ease both">
+        <div class="hero-kicker"><div class="kicker-dot"></div>Rede de recrutamento potencializada por IA</div>
+      </div>
+      <h1 class="hero-h1" style="animation:fadeUp .5s .08s ease both">
+        Contrate melhor.<br>Mais rápido.<br>Sem esforço <span class="it">operacional.</span>
+      </h1>
+      <p class="hero-sub" style="animation:fadeUp .5s .16s ease both">
+        A Nexhire conecta sua vaga a uma rede de recrutadores especialistas e usa IA para ranquear candidatos, reduzir ruído e entregar apenas perfis prontos para entrevista.
+      </p>
+      <div class="hero-btns" style="animation:fadeUp .5s .22s ease both">
+        <a class="btn btn-dark btn-lg" href="empresas.html">Começar a contratar <span class="arr">→</span></a>
+        <a class="btn btn-out btn-lg" href="empresas.html">Quero ser recrutador parceiro</a>
+      </div>
+      <div class="hero-micro" style="animation:fadeUp .5s .28s ease both">
+        <div class="micro-check">
+          <svg viewBox="0 0 10 10" fill="none" width="9" height="9"><path d="M2 5.5 4 7.5 8 3" stroke="#00E676" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        Pague apenas quando contratar.
+      </div>
+    </div>
+
+    <!-- RIGHT — product window -->
+    <div class="hero-right">
+      <!-- Float A -->
+      <div class="fc fc-a">
+        <div class="fc-label">Velocidade média</div>
+        <div class="fc-val">3×</div>
+        <div class="fc-sub">mais rápido que agências tradicionais</div>
+        <div class="fc-badge">↑ vs mercado</div>
+      </div>
+      <!-- Float B -->
+      <div class="fc fc-b">
+        <div class="fc-label">Contratação confirmada</div>
+        <div class="fc-row">
+          <div class="fc-av" style="background:#1e40af;font-size:10px">AR</div>
+          <div>
+            <div class="fc-name">Aline Ramos</div>
+            <div class="fc-role">Score 97 · HR aprovada</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pwin">
+        <div class="pwin-bar">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div class="mac"><div class="mac-d"></div><div class="mac-d"></div><div class="mac-d"></div></div>
+            <span class="pwin-url">app.nexhire.ai / vagas / product-designer-sr</span>
+          </div>
+          <div class="ai-live"><div class="ai-live-dot"></div>IA ativa</div>
+        </div>
+        <div class="pwin-body">
+          <!-- Rail -->
+          <div class="pwin-rail">
+            <div class="rail-lbl">Vagas ativas</div>
+            <div class="rail-row on">Product Designer Sr. <span class="rail-ct">14</span></div>
+            <div class="rail-row">Eng. Software Sr.</div>
+            <div class="rail-row">Data Scientist</div>
+            <div class="rail-row">Head de Growth</div>
+            <div class="rail-sep"></div>
+            <div class="rail-lbl">Ferramentas</div>
+            <div class="rail-row">IA Análise</div>
+            <div class="rail-row">Analytics</div>
+            <div class="rail-row">Entrevistas</div>
+          </div>
+          <!-- Main -->
+          <div class="pwin-main">
+            <div class="pwin-top">
+              <div>
+                <div class="pwin-title">Product Designer Sênior</div>
+                <div class="pwin-sub">Scale-up SaaS · Remoto · R$16–22k · Prazo: 4d restantes</div>
+              </div>
+              <div class="pills">
+                <div class="pill on">IA ranqueado</div>
+                <div class="pill">Filtrar</div>
+                <div class="pill">Enviar ao cliente →</div>
+              </div>
+            </div>
+            <div class="pwin-funnel">
+              <div class="fn"><div class="fn-l">Hunters ativos</div><div class="fn-n g">8</div></div>
+              <div class="fn"><div class="fn-l">Submetidos</div><div class="fn-n">14</div></div>
+              <div class="fn"><div class="fn-l">HR aprovados</div><div class="fn-n g">5</div></div>
+              <div class="fn"><div class="fn-l">Shortlist</div><div class="fn-n a">3</div></div>
+            </div>
+            <div class="pwin-cands">
+              <div class="cand">
+                <div class="c-rk">01</div>
+                <div class="c-av" style="background:#1e40af">AR</div>
+                <div class="c-info"><div class="c-name">Aline Ramos</div><div class="c-meta">Product Designer · 7 anos · São Paulo</div></div>
+                <div class="c-end"><span class="tag tag-ok">HR ✓</span><div class="score sc-hi">97</div></div>
+              </div>
+              <div class="cand">
+                <div class="c-rk">02</div>
+                <div class="c-av" style="background:#065f46">TM</div>
+                <div class="c-info"><div class="c-name">Thiago Melo</div><div class="c-meta">UX Designer · 5 anos · Remoto</div></div>
+                <div class="c-end"><span class="tag tag-ai">IA ✓</span><div class="score sc-hi">91</div></div>
+              </div>
+              <div class="cand">
+                <div class="c-rk">03</div>
+                <div class="c-av" style="background:#78350f">LS</div>
+                <div class="c-info"><div class="c-name">Laura Souza</div><div class="c-meta">Product Design · 4 anos · Curitiba</div></div>
+                <div class="c-end"><span class="tag tag-ai">IA ✓</span><div class="score sc-md">78</div></div>
+              </div>
+            </div>
+            <!-- AI Score -->
+            <div class="score-strip">
+              <div class="ss-ring"><div class="ss-n">94</div><div class="ss-lbl">AI Score</div></div>
+              <div class="ss-body">
+                <div class="ss-title">Aline Ramos — Match excelente</div>
+                <div class="ss-bars">
+                  <div class="ss-bar-row"><div class="ss-bar-lbl">Fit técnico</div><div class="ss-bar-track"><div class="ss-bar-fill" style="width:96%"></div></div><div class="ss-bar-val">96</div></div>
+                  <div class="ss-bar-row"><div class="ss-bar-lbl">Senioridade</div><div class="ss-bar-track"><div class="ss-bar-fill" style="width:90%"></div></div><div class="ss-bar-val">90</div></div>
+                  <div class="ss-bar-row"><div class="ss-bar-lbl">Comportamental</div><div class="ss-bar-track"><div class="ss-bar-fill" style="width:88%"></div></div><div class="ss-bar-val">88</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="pwin-foot">
+              <div class="ai-note">
+                <svg viewBox="0 0 14 14" fill="none" width="13" height="13"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M7 4v3.5M7 9v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                IA recomenda Aline e Thiago para envio ao cliente
+              </div>
+              <div class="pill on" style="cursor:pointer">Aprovar seleção →</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /hero-inner -->
+
+  <!-- Logos -->
+  <div class="logos-strip" style="margin-top:5rem">
+    <div class="logos-lbl">Empresas que confiam na Nexhire para contratar com velocidade e precisão</div>
+    <div class="marquee-wrap"><div class="marquee-track" id="mtrack"></div></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Candidatos curados, não pilhas de CVs.</span>
+    <span class="ticker-dot"></span>
+    <span class="ticker-item">IA para reduzir ruído. Humanos para decidir melhor.</span>
+    <span class="ticker-dot"></span>
+    <span class="ticker-item">Pague apenas quando contratar.</span>
+    <span class="ticker-dot"></span>
+    <span class="ticker-item">Uma rede inteira trabalhando pela sua vaga.</span>
+    <span class="ticker-dot"></span>
+    <span class="ticker-item">Escale contratação sem aumentar seu time interno.</span>
+    <span class="ticker-dot"></span>
+    <span class="ticker-item">Shortlist qualificada em dias, não semanas.</span>
+    <span class="ticker-dot"></span>
+    <span class="ticker-item">Candidatos curados, não pilhas de CVs.</span>
+    <span class="ticker-dot"></span>
+    <span class="ticker-item">IA para reduzir ruído. Humanos para decidir melhor.</span>
+    <span class="ticker-dot"></span>
+    <span class="ticker-item">Pague apenas quando contratar.</span>
+    <span class="ticker-dot"></span>
+    <span class="ticker-item">Uma rede inteira trabalhando pela sua vaga.</span>
+    <span class="ticker-dot"></span>
+    <span class="ticker-item">Escale contratação sem aumentar seu time interno.</span>
+    <span class="ticker-dot"></span>
+    <span class="ticker-item">Shortlist qualificada em dias, não semanas.</span>
+    <span class="ticker-dot"></span>
+  </div>
+</div>
+
+<!-- SEGMENTS -->
+<div class="seg-strip">
+  <div class="seg-inner">
+    <div class="seg-title">Criado para empresas que precisam contratar com velocidade, qualidade e previsibilidade.</div>
+    <div class="seg-tags">
+      <span class="seg-tag">Tecnologia</span>
+      <span class="seg-tag">Contabilidade</span>
+      <span class="seg-tag">Indústria</span>
+      <span class="seg-tag">Construção Civil</span>
+      <span class="seg-tag">Logística</span>
+      <span class="seg-tag">Operações</span>
+      <span class="seg-tag">Vendas</span>
+      <span class="seg-tag">Administrativo</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEMA -->
+<section class="section s-white" id="problem">
+  <div class="wrap">
+    <div class="eye reveal">O problema</div>
+    <h2 class="h2 reveal d1">Contratar ainda exige esforço<br>demais para <span class="it">entregar pouco resultado.</span></h2>
+    <p class="lead reveal d2">As mesmas dores. Em todo crescimento. Quanto mais vagas, mais o processo trava.</p>
+    <div class="prob-grid">
+      <div class="prob-cell reveal d1">
+        <div class="prob-n">01 /</div>
+        <h3>Muitos CVs, pouco fit</h3>
+        <p>Seu time perde horas avaliando perfis que nunca deveriam chegar à etapa de análise. Ruído operacional que consome quem decide.</p>
+        <div class="prob-stat">80% dos CVs são irrelevantes</div>
+      </div>
+      <div class="prob-cell reveal d2">
+        <div class="prob-n">02 /</div>
+        <h3>Operação lenta e manual</h3>
+        <p>Entre briefing, busca, triagem e follow-up, semanas desaparecem antes da primeira entrevista relevante. Sem dados, sem visibilidade.</p>
+        <div class="prob-stat">Média: 45 dias para fechar</div>
+      </div>
+      <div class="prob-cell reveal d3">
+        <div class="prob-n">03 /</div>
+        <h3>Escalar contratação custa caro</h3>
+        <p>Mais vagas normalmente significam mais equipe, mais fornecedores e mais complexidade — sem garantia de qualidade ou previsibilidade.</p>
+        <div class="prob-stat">Até 30% de retainer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODELO NEXHIRE / FLUXO -->
+<section class="section s-cream" id="flow">
+  <div class="wrap">
+    <div style="text-align:center;max-width:640px;margin:0 auto">
+      <div class="eye c reveal">O modelo Nexhire</div>
+      <h2 class="h2 center reveal d1">Uma rede inteira<br>trabalhando na <span class="it">sua vaga.</span></h2>
+      <p class="lead center reveal d2">Hunters especialistas buscam talentos. A IA ranqueia, resume e identifica gaps. HR Managers fazem curadoria. Sua empresa entrevista apenas quem faz sentido.</p>
+    </div>
+    <div class="flow-row reveal d2">
+      <div class="flow-step">
+        <div class="flow-ico">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="flow-label">Empresa</div>
+        <div class="flow-sublabel">Abre a vaga</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-ico">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="flow-label">Hunters</div>
+        <div class="flow-sublabel">Enviam candidatos</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-ico">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="flow-label">IA Score</div>
+        <div class="flow-sublabel">Ranqueia e resume</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-ico">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+        </div>
+        <div class="flow-label">HR Manager</div>
+        <div class="flow-sublabel">Curadoria humana</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-ico">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="flow-label">Shortlist</div>
+        <div class="flow-sublabel">Curada e aprovada</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-ico">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        </div>
+        <div class="flow-label">Contratação</div>
+        <div class="flow-sublabel">Pague ao fechar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="section s-white" id="how">
+  <div class="wrap">
+    <div style="text-align:center;max-width:600px;margin:0 auto">
+      <div class="eye c reveal">Como funciona</div>
+      <h2 class="h2 center reveal d1">Do briefing à contratação<br>em um <span class="it">fluxo simples.</span></h2>
+      <p class="lead center reveal d2">Quatro passos. IA e humanos em cada etapa.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card reveal d1">
+        <div class="how-top"><span class="how-step">PASSO / 01</span><span class="how-n">1</span></div>
+        <div class="mock">
+          <div class="mock-url">nexhire://nova-vaga</div>
+          <div class="mock-text">Procurando um(a) <strong>Product Designer Sênior</strong> para nosso time de <strong>fintech B2B</strong> — remoto, fusos EU, R$ 25–35k. Precisa ter entregue design systems.</div>
+          <div class="mock-tags"><span class="mock-tag">B2B SaaS</span><span class="mock-tag">Design systems</span><span class="mock-tag">EU/Remoto</span></div>
+          <div class="mock-ai">
+            <svg viewBox="0 0 12 12" fill="none" width="11" height="11"><path d="M2 6.5 4.5 9 10 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            IA extraiu 12 sinais · Sênior · R$ 25–35k
+          </div>
+        </div>
+        <h3>Abra a vaga</h3>
+        <p>A empresa cria a vaga em poucos minutos. A IA ajuda a transformar requisitos em uma descrição clara, objetiva e atrativa.</p>
+      </div>
+      <div class="how-card reveal d2">
+        <div class="how-top"><span class="how-step">PASSO / 02</span><span class="how-n">2</span></div>
+        <div class="mock-rank">
+          <div class="mock-rank-hdr">inbound / ranqueando...</div>
+          <div class="mock-rrow"><div class="mock-rav" style="background:linear-gradient(135deg,#f97316,#facc15)"></div><div class="mock-bt"><div class="mock-bf" style="width:96%"></div></div><div class="mock-rs">96</div></div>
+          <div class="mock-rrow"><div class="mock-rav" style="background:#0B4A35"></div><div class="mock-bt"><div class="mock-bf" style="width:92%"></div></div><div class="mock-rs">92</div></div>
+          <div class="mock-rrow"><div class="mock-rav" style="background:#22A06B"></div><div class="mock-bt"><div class="mock-bf" style="width:89%"></div></div><div class="mock-rs">89</div></div>
+          <div class="mock-rrow"><div class="mock-rav" style="background:#9ca3af"></div><div class="mock-bt"><div class="mock-bf" style="width:83%"></div></div><div class="mock-rs">83</div></div>
+        </div>
+        <h3>Hunters ativam a rede</h3>
+        <p>Recrutadores aprovados enviam seus melhores candidatos dentro do limite e prazo definidos. Cada envio inclui resumo de entrevista.</p>
+      </div>
+      <div class="how-card reveal d3">
+        <div class="how-top"><span class="how-step">PASSO / 03</span><span class="how-n">3</span></div>
+        <div class="mock-timer">
+          <div class="timer-ring">
+            <div class="timer-tiny">Tempo até shortlist</div>
+            <div class="timer-val">12<span>d</span></div>
+            <div class="timer-delta">▼ 68% mais rápido</div>
+          </div>
+          <div class="timer-foot">
+            <span>HR curou · shortlist pronta</span>
+            <div class="timer-ok">
+              <svg viewBox="0 0 12 12" fill="none" width="11" height="11"><path d="M2 6.5 4.5 9 10 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              prontos para entrevistar
+            </div>
+          </div>
+        </div>
+        <h3>IA + HR montam a shortlist</h3>
+        <p>A plataforma gera score, resume perfis e ajuda o HR Manager a selecionar os candidatos certos. Você vê apenas o que importa.</p>
+      </div>
+    </div>
+    <!-- Passo 4 -->
+    <div style="margin-top:1.25rem;background:var(--surf);border:1px solid var(--border);border-radius:24px;padding:2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;box-shadow:var(--s1)" class="reveal d4">
+      <div style="font-family:var(--mono);font-size:10.5px;color:var(--subtle);letter-spacing:.16em;flex-shrink:0">PASSO / 04</div>
+      <div style="flex:1;min-width:220px">
+        <h3 style="font-family:var(--serif);font-size:21px;font-weight:400;color:var(--text);margin-bottom:.375rem;line-height:1.2">Você entrevista e contrata</h3>
+        <p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.65">O cliente aprova perfis, agenda entrevistas e paga apenas quando contratar. Sem risco, sem mensalidade, sem compromisso antecipado.</p>
+      </div>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;flex-shrink:0">
+        <a class="btn btn-dark" href="empresas.html">Começar a contratar <span class="arr">→</span></a>
+        <a class="btn btn-out" href="empresas.html">Ver como funciona</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATAFORMA -->
+<section class="plat-section" id="platform">
+  <div class="wrap">
+    <div class="eye c reveal">Plataforma</div>
+    <h2 class="h2 center reveal d1" style="max-width:600px;margin:0 auto .875rem">IA para reduzir ruído.<br><span class="it">Humanos para decidir melhor.</span></h2>
+    <p class="lead center reveal d2" style="max-width:500px">A IA lida com o volume. Humanos lidam com o julgamento. Você recebe uma shortlist que realmente converte.</p>
+    <div class="plat-cards">
+      <div class="plat-card reveal d1">
+        <div class="plat-ico"><svg viewBox="0 0 20 20"><path d="M4 14l3-3 2 2 7-7"/></svg></div>
+        <h3>Scoring com IA</h3>
+        <p>Compare candidatos com base nos critérios reais da posição. Score explicável — não uma caixa-preta que você não entende.</p>
+        <span class="plat-tag">Automático e auditável</span>
+      </div>
+      <div class="plat-card reveal d2">
+        <div class="plat-ico"><svg viewBox="0 0 20 20"><path d="M4 6h12M4 10h8M4 14h5"/></svg></div>
+        <h3>Candidatos curados</h3>
+        <p>Apenas os top 5% chegam até você. Hunters filtram antes da IA ranquear. O oposto de um job board que envia volume sem critério.</p>
+        <span class="plat-tag">Zero ruído</span>
+      </div>
+      <div class="plat-card reveal d3">
+        <div class="plat-ico"><svg viewBox="0 0 20 20"><rect x="2" y="5" width="16" height="12" rx="2"/><path d="M2 9h16"/></svg></div>
+        <h3>Pagamento por contratação</h3>
+        <p>Sem retainer. Sem assinatura. O pagamento acontece quando a posição é fechada — nunca antes, nunca por tentativa.</p>
+        <span class="plat-tag">Risco zero</span>
+      </div>
+      <div class="plat-card reveal d4">
+        <div class="plat-ico"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><path d="M10 2a8 8 0 0 1 0 16M2 10h16"/></svg></div>
+        <h3>Rede de hunters validados</h3>
+        <p>Recrutadores especializados por segmento, aprovados antes de acessar a plataforma. Qualidade garantida na entrada, não na saída.</p>
+        <span class="plat-tag">600+ hunters ativos</span>
+      </div>
+    </div>
+    <div class="stats-row reveal">
+      <div class="stat-cell"><span class="stat-n"><em>12</em> dias</span><p class="stat-l">tempo médio até shortlist</p></div>
+      <div class="stat-cell"><span class="stat-n"><em>94</em>%</span><p class="stat-l">score médio dos perfis enviados</p></div>
+      <div class="stat-cell"><span class="stat-n"><em>600</em>+</span><p class="stat-l">talentos mapeados em ciclos ativos</p></div>
+      <div class="stat-cell"><span class="stat-n"><em>40</em>+</span><p class="stat-l">hunters especializados na rede</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA EMPRESAS -->
+<section class="section s-white" id="companies">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="eye reveal">Para empresas</div>
+        <h2 class="h2 reveal d1">Pare de revisar<br><span class="it">currículos irrelevantes.</span></h2>
+        <p class="lead reveal d2">Receba candidatos curados, acompanhe o funil em tempo real e reduza o esforço do seu time interno.</p>
+        <ul class="feat-list reveal d3">
+          <li class="feat-item">
+            <div class="feat-lett">V</div>
+            <div class="feat-body">
+              <h4>Velocidade</h4>
+              <p>Abra vagas com baixa fricção. Candidatos curados em até 72h. Shortlist completa em 12 dias em média.</p>
+            </div>
+          </li>
+          <li class="feat-item">
+            <div class="feat-lett">Q</div>
+            <div class="feat-body">
+              <h4>Qualidade garantida</h4>
+              <p>Nenhum candidato chega sem validação da IA e curadoria do HR Manager. Zero perfis irrelevantes.</p>
+            </div>
+          </li>
+          <li class="feat-item">
+            <div class="feat-lett">C</div>
+            <div class="feat-body">
+              <h4>Custo por resultado</h4>
+              <p>Pague por contratação, não por tentativa. Reduza custo operacional e escale vagas sem aumentar equipe.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="btn-row reveal d4">
+          <a class="btn btn-dark" href="empresas.html">Abrir minha primeira vaga <span class="arr">→</span></a>
+          <a class="text-cta" href="faq.html">Falar com vendas</a>
+        </div>
+      </div>
+      <div class="pipe-card reveal d2">
+        <div class="pipe-head">
+          <span class="pipe-head-title">Visão do pipeline</span>
+          <div class="pipe-live"><div class="live-dot"></div>Ao vivo</div>
+        </div>
+        <div class="pipe-funnel">
+          <div class="pf"><div class="pf-l">Sourced</div><div class="pf-n">248</div></div>
+          <div class="pf"><div class="pf-l">Pontuados</div><div class="pf-n">112</div></div>
+          <div class="pf"><div class="pf-l">Entrevista</div><div class="pf-n">14</div></div>
+          <div class="pf"><div class="pf-l">Oferta</div><div class="pf-n">3</div></div>
+        </div>
+        <div class="pipe-body">
+          <div class="pipe-chart-l">Submissões semanais</div>
+          <div class="pipe-bars" id="pbars"></div>
+          <div class="pipe-insight">
+            <div class="ins-ico">
+              <svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg>
+            </div>
+            <div class="ins-txt"><strong>Insight da IA:</strong> No ritmo atual, você terá uma oferta aberta até sexta. 2 candidatos correspondem ao perfil das suas últimas 3 contratações de sucesso.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA RECRUTADORES -->
+<section class="section s-cream" id="recruiters">
+  <div class="wrap">
+    <div class="split rev">
+      <div class="rec-card reveal d2">
+        <div class="rec-head">
+          <div style="display:flex;align-items:center;gap:.875rem">
+            <div class="rec-av">SM</div>
+            <div>
+              <div class="rec-name">Sofia Moretti</div>
+              <div class="rec-role">Recrutadora tech · Milão · Top 3%</div>
+            </div>
+          </div>
+          <div class="rec-rating"><span class="stars">★★★★★</span> 4.98</div>
+        </div>
+        <div class="rec-stats">
+          <div class="rs"><div class="rs-l">Placements</div><div class="rs-n">38</div></div>
+          <div class="rs"><div class="rs-l">Ganhos no ano</div><div class="rs-n">R$148k</div></div>
+          <div class="rs"><div class="rs-l">Taxa média</div><div class="rs-n">R$3,9k</div></div>
+        </div>
+        <div class="rec-briefings">
+          <div class="rb-lbl">Briefings de hoje para você</div>
+          <a class="job-row" href="vagas.html">
+            <div class="job-left"><div class="job-ico">N</div><div><div class="job-title">Engenheiro de ML Staff</div><div class="job-meta">Remoto · R$ 32–40k</div></div></div>
+            <div class="job-fee">R$ 7.200 →</div>
+          </a>
+          <a class="job-row" href="vagas.html">
+            <div class="job-left"><div class="job-ico">N</div><div><div class="job-title">Head de Design</div><div class="job-meta">Berlim · €140–170k</div></div></div>
+            <div class="job-fee">€8.400 →</div>
+          </a>
+          <a class="job-row" href="vagas.html">
+            <div class="job-left"><div class="job-ico">N</div><div><div class="job-title">Engenheiro iOS Sênior</div><div class="job-meta">Remoto · R$ 27–32k</div></div></div>
+            <div class="job-fee">R$ 5.400 →</div>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="eye reveal">Para recrutadores</div>
+        <h2 class="h2 reveal d1">Trabalhe em vagas reais.<br><span class="it">Ganhe por resultado.</span></h2>
+        <p class="lead reveal d2">Acesse oportunidades, envie seus melhores candidatos e construa reputação em uma rede que premia qualidade, velocidade e consistência.</p>
+        <div class="rec-benefits reveal d3">
+          <div class="rb-card">
+            <div class="rbc-t">Ganhe mais</div>
+            <div class="rbc-d">Até 70% da taxa de placement. Pago em até 7 dias após o start date.</div>
+          </div>
+          <div class="rb-card">
+            <div class="rbc-t">Liberdade total</div>
+            <div class="rbc-d">Escolha vagas aderentes à sua especialidade. Trabalhe onde e quando quiser.</div>
+          </div>
+          <div class="rb-card">
+            <div class="rbc-t">Acesso exclusivo</div>
+            <div class="rbc-d">Evolua para Top Hunter. Acesse vagas exclusivas com remuneração diferenciada.</div>
+          </div>
+        </div>
+        <div class="btn-row reveal d4" style="margin-top:2.25rem">
+          <a class="btn btn-dark" href="empresas.html">Quero ser hunter parceiro <span class="arr">→</span></a>
+          <a class="text-cta" href="vagas.html">Ver briefings abertos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IA APLICADA -->
+<section class="section s-white" id="ai">
+  <div class="wrap">
+    <div class="eye reveal">IA aplicada</div>
+    <h2 class="h2 reveal d1">IA onde ela realmente<br><span class="it">aumenta qualidade.</span></h2>
+    <p class="lead reveal d2" style="margin-bottom:0">A IA da Nexhire estrutura vagas, sugere perguntas, analisa CVs, identifica gaps, detecta duplicidades e ranqueia candidatos. Humanos continuam responsáveis pelas decisões críticas.</p>
+    <div class="ia-grid">
+      <div class="ia-card reveal d1">
+        <div class="ia-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+        <h3>Job Description Assistida</h3>
+        <p>Transforme requisitos soltos em uma vaga clara, atrativa e bem estruturada — pronta para atrair os perfis certos.</p>
+      </div>
+      <div class="ia-card reveal d2">
+        <div class="ia-ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <h3>AI Match Score</h3>
+        <p>Compare candidatos com base nos critérios reais da posição. Veja quem tem maior aderência antes de abrir dezenas de currículos.</p>
+      </div>
+      <div class="ia-card reveal d3">
+        <div class="ia-ico"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div>
+        <h3>Ranking de Candidatos</h3>
+        <p>Candidatos ordenados por fit com justificativa da IA. Veja quem tem maior aderência antes de qualquer leitura manual.</p>
+      </div>
+      <div class="ia-card reveal d1">
+        <div class="ia-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Resumo de CV</h3>
+        <p>Entenda experiência, senioridade e pontos de atenção de cada candidato em segundos — não em minutos de leitura manual.</p>
+      </div>
+      <div class="ia-card reveal d2">
+        <div class="ia-ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Perguntas de Entrevista</h3>
+        <p>Dê aos hunters um roteiro alinhado ao que precisa ser validado. Perguntas personalizadas por candidato e por vaga.</p>
+      </div>
+      <div class="ia-card reveal d3">
+        <div class="ia-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Duplicidade e Ownership</h3>
+        <p>Evite candidatos repetidos e organize prioridade de envio. Ownership registrado automaticamente no primeiro envio válido.</p>
+      </div>
+    </div>
+    <div class="ia-footer reveal">
+      <p><strong>A IA não contrata por você.</strong> Ela ajuda seu time a decidir melhor — com mais dados, menos ruído e mais contexto em cada candidato.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIANÇA OPERACIONAL -->
+<section class="section s-cream" id="trust">
+  <div class="wrap">
+    <div class="eye reveal">Confiança operacional</div>
+    <h2 class="h2 reveal d1">Regras claras para um marketplace<br>de recrutamento <span class="it">confiável.</span></h2>
+    <p class="lead reveal d2">O que diferencia a Nexhire de uma consultoria comum não é só a IA — é a estrutura operacional que garante qualidade em cada etapa.</p>
+    <div class="trust-grid">
+      <div class="trust-card reveal d1">
+        <div class="trust-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+        <h3>Limite configurável por hunter</h3>
+        <p>Cada hunter envia um número limitado de candidatos por vaga. Isso garante qualidade, não volume. Configurável pelo HR Manager por vaga.</p>
+        <div class="trust-pill">Padrão: 3 candidatos</div>
+      </div>
+      <div class="trust-card reveal d2">
+        <div class="trust-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Prazo padrão de envio</h3>
+        <p>Prazo padrão de 7 dias para envio de candidatos. SLA de feedback configurável por cliente. Lembretes automáticos em cada etapa.</p>
+        <div class="trust-pill">Padrão: 7 dias</div>
+      </div>
+      <div class="trust-card reveal d3">
+        <div class="trust-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Ownership garantido</h3>
+        <p>O primeiro envio válido garante o ownership do candidato com validade configurável. Em disputa, o HR Manager decide com transparência.</p>
+        <div class="trust-pill">Ownership no primeiro envio válido</div>
+      </div>
+      <div class="trust-card reveal d1">
+        <div class="trust-ico"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 0 0 1.946-.806 3.42 3.42 0 0 1 4.438 0 3.42 3.42 0 0 0 1.946.806 3.42 3.42 0 0 1 3.138 3.138 3.42 3.42 0 0 0 .806 1.946 3.42 3.42 0 0 1 0 4.438 3.42 3.42 0 0 0-.806 1.946 3.42 3.42 0 0 1-3.138 3.138 3.42 3.42 0 0 0-1.946.806 3.42 3.42 0 0 1-4.438 0 3.42 3.42 0 0 0-1.946-.806 3.42 3.42 0 0 1-3.138-3.138 3.42 3.42 0 0 0-.806-1.946 3.42 3.42 0 0 1 0-4.438 3.42 3.42 0 0 0 .806-1.946 3.42 3.42 0 0 1 3.138-3.138z"/></svg></div>
+        <h3>Curadoria antes do cliente</h3>
+        <p>HR Manager faz curadoria antes do cliente ver qualquer candidato. O cliente nunca recebe perfis que não foram validados internamente.</p>
+        <div class="trust-pill">HR aprova antes do envio</div>
+      </div>
+      <div class="trust-card reveal d2">
+        <div class="trust-ico"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <h3>Top Hunters para vagas exclusivas</h3>
+        <p>Recrutadores com melhor performance evoluem no ranking e acessam vagas exclusivas com remuneração diferenciada e mais oportunidades.</p>
+        <div class="trust-pill">Iniciante → Especialista → Top Hunter</div>
+      </div>
+      <div class="trust-card reveal d3">
+        <div class="trust-ico"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <h3>Garantia configurável e LGPD</h3>
+        <p>Garantia de substituição definida por cliente. Todos os dados tratados conforme a LGPD. Processo auditável do início ao fim.</p>
+        <div class="trust-pill">LGPD · Garantia por contrato</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section s-white">
+  <div class="wrap">
+    <div class="eye reveal">Quem usa, recomenda</div>
+    <h2 class="h2 reveal d1">Times que contratam bem<br><span class="it">avançam mais rápido.</span></h2>
+    <div class="testi-grid">
+      <figure class="testi-card reveal d1">
+        <span class="testi-qq">"</span>
+        <blockquote class="testi-q">Contratamos nosso Head de Engenharia em 11 dias, não 11 semanas. O ranqueamento da IA entregou uma shortlist que converteu 100%. Não voltamos mais para agência tradicional.</blockquote>
+        <div class="testi-sep"></div>
+        <div class="testi-person">
+          <div class="testi-av" style="background:#1e40af;color:#fff">CB</div>
+          <div><div class="testi-name">Clara Bennett</div><div class="testi-role">VP de People · Lumen</div></div>
+        </div>
+      </figure>
+      <figure class="testi-card reveal d2">
+        <span class="testi-qq">"</span>
+        <blockquote class="testi-q">Metade do custo, três vezes o volume. O scoring é o diferencial — sabemos exatamente por que cada candidato está na shortlist. Isso muda a qualidade da decisão de contratação.</blockquote>
+        <div class="testi-sep"></div>
+        <div class="testi-person">
+          <div class="testi-av" style="background:#065f46;color:#fff">DS</div>
+          <div><div class="testi-name">Daniel Schäfer</div><div class="testi-role">Head of Talent · Paragon</div></div>
+        </div>
+      </figure>
+      <figure class="testi-card reveal d3">
+        <span class="testi-qq">"</span>
+        <blockquote class="testi-q">É a primeira plataforma onde as vagas são reais e os clientes respeitam meu trabalho como recrutadora. Fechei R$60k no primeiro trimestre trabalhando no meu ritmo.</blockquote>
+        <div class="testi-sep"></div>
+        <div class="testi-person">
+          <div class="testi-av" style="background:#78350f;color:#fff">AR</div>
+          <div><div class="testi-name">Aisha Rahman</div><div class="testi-role">Recrutadora independente · Tech</div></div>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-outer">
+  <div class="cta-box">
+    <div class="cta-glow"></div>
+    <div class="cta-dots"></div>
+    <div class="cta-badge"><div class="cta-badge-dot"></div>Publicação grátis · pague só na contratação</div>
+    <h2 class="cta-h2">Sua próxima contratação<br>pode estar na <span class="it">nossa rede.</span></h2>
+    <p class="cta-p">Abra uma vaga, ative uma rede de especialistas e receba candidatos curados com apoio de IA.</p>
+    <div class="cta-btns">
+      <a class="btn btn-mint btn-lg" href="empresas.html">Começar a contratar <span class="arr">→</span></a>
+      <a class="btn btn-inv btn-lg" href="recrutadores.html">Seja recrutador parceiro</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fi">
+    <div class="ft">
+      <div>
+        <a class="fl" href="index.html">
+<svg width="83" height="20" viewBox="0 0 116 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;color:var(--f900)"><path d="M106.766 27.608C104.794 27.608 103.083 27.2 101.632 26.384C100.182 25.5453 99.0484 24.3667 98.2324 22.848C97.439 21.3067 97.0424 19.4933 97.0424 17.408C97.0424 15.3227 97.439 13.5207 98.2324 12.002C99.0257 10.4833 100.136 9.30467 101.564 8.46601C103.015 7.62734 104.715 7.20801 106.664 7.20801C108.682 7.20801 110.393 7.66134 111.798 8.56801C113.226 9.47468 114.292 10.7893 114.994 12.512C115.72 14.2347 116.026 16.3087 115.912 18.734H102.584C102.766 20.1847 103.242 21.318 104.012 22.134C104.783 22.95 105.78 23.358 107.004 23.358C108.002 23.358 108.818 23.12 109.452 22.644C110.087 22.1453 110.484 21.5447 110.642 20.842H115.776C115.55 22.2473 115.017 23.46 114.178 24.48C113.362 25.4773 112.32 26.248 111.05 26.792C109.781 27.336 108.353 27.608 106.766 27.608ZM106.698 11.424C105.588 11.424 104.67 11.7867 103.944 12.512C103.219 13.2147 102.766 14.1667 102.584 15.368H110.472C110.382 13.94 109.962 12.9313 109.214 12.342C108.466 11.73 107.628 11.424 106.698 11.424Z" fill="currentColor"/>
+<path d="M85.3766 27.098V15.878C85.3766 13.09 86.1247 10.948 87.6207 9.45201C89.1393 7.95601 91.304 7.20801 94.1147 7.20801C94.4093 7.20801 94.874 7.23067 95.5087 7.27601C96.1433 7.29867 96.778 7.37801 97.4127 7.51401V12.24C96.982 12.172 96.574 12.1153 96.1887 12.07C95.8033 12.002 95.3727 11.968 94.8967 11.968C94.194 11.968 93.5367 12.07 92.9247 12.274C92.3127 12.478 91.814 12.8633 91.4286 13.43C91.066 13.9967 90.8847 14.824 90.8847 15.912V27.098H85.3766Z" fill="currentColor"/>
+<path d="M80.4894 5.61C79.6054 5.61 78.8574 5.34933 78.2454 4.828C77.6561 4.30667 77.3614 3.62667 77.3614 2.788C77.3614 1.972 77.6561 1.30333 78.2454 0.782C78.8574 0.260666 79.6054 0 80.4894 0C81.3508 0 82.0761 0.260666 82.6654 0.782C83.2774 1.30333 83.5834 1.972 83.5834 2.788C83.5834 3.62667 83.2774 4.30667 82.6654 4.828C82.0761 5.34933 81.3508 5.61 80.4894 5.61ZM77.7354 27.098V7.718H83.2434V27.098H77.7354Z" fill="currentColor"/>
+<path d="M57.4502 27.098V1.59802H62.9582V9.96202C63.5702 9.07802 64.3182 8.39802 65.2022 7.92202C66.0862 7.44602 67.0722 7.20802 68.1602 7.20802C69.6108 7.20802 70.8688 7.51402 71.9342 8.12602C72.9995 8.73802 73.8155 9.58802 74.3822 10.676C74.9715 11.764 75.2662 13.022 75.2662 14.45V27.098H69.7582V15.572C69.7582 14.4614 69.4522 13.5774 68.8402 12.92C68.2508 12.2627 67.4348 11.934 66.3922 11.934C65.3268 11.934 64.4882 12.3194 63.8762 13.09C63.2642 13.838 62.9582 14.8354 62.9582 16.082V27.098H57.4502Z" fill="currentColor"/>
+<path d="M37.235 27.098L43.525 17.544L36.589 7.71802H42.879L46.857 13.498L50.495 7.71802H56.411L49.781 17.714L56.241 27.098H50.257L46.449 21.692L43.049 27.098H37.235Z" fill="currentColor"/>
+<path d="M28.7324 27.608C26.7604 27.608 25.0491 27.2 23.5984 26.384C22.1477 25.5453 21.0144 24.3667 20.1984 22.848C19.4051 21.3067 19.0084 19.4933 19.0084 17.408C19.0084 15.3227 19.4051 13.5207 20.1984 12.002C20.9917 10.4833 22.1024 9.30467 23.5304 8.46601C24.9811 7.62734 26.6811 7.20801 28.6304 7.20801C30.6477 7.20801 32.3591 7.66134 33.7644 8.56801C35.1924 9.47468 36.2577 10.7893 36.9604 12.512C37.6857 14.2347 37.9917 16.3087 37.8784 18.734H24.5504C24.7317 20.1847 25.2077 21.318 25.9784 22.134C26.7491 22.95 27.7464 23.358 28.9704 23.358C29.9677 23.358 30.7837 23.12 31.4184 22.644C32.0531 22.1453 32.4497 21.5447 32.6084 20.842H37.7424C37.5157 22.2473 36.9831 23.46 36.1444 24.48C35.3284 25.4773 34.2857 26.248 33.0164 26.792C31.7471 27.336 30.3191 27.608 28.7324 27.608ZM28.6644 11.424C27.5537 11.424 26.6357 11.7867 25.9104 12.512C25.1851 13.2147 24.7317 14.1667 24.5504 15.368H32.4384C32.3477 13.94 31.9284 12.9313 31.1804 12.342C30.4324 11.73 29.5937 11.424 28.6644 11.424Z" fill="currentColor"/>
+<path d="M0 27.098V15.708C0 13.9627 0.351333 12.4553 1.054 11.186C1.77933 9.91667 2.79933 8.94201 4.114 8.26201C5.42867 7.55934 6.98133 7.20801 8.772 7.20801C10.5627 7.20801 12.1153 7.55934 13.43 8.26201C14.7447 8.94201 15.7533 9.91667 16.456 11.186C17.1813 12.4553 17.544 13.9627 17.544 15.708V27.098H12.036V15.776C12.036 14.552 11.73 13.6113 11.118 12.954C10.5287 12.2967 9.74667 11.968 8.772 11.968C7.82 11.968 7.038 12.2967 6.426 12.954C5.814 13.6113 5.508 14.552 5.508 15.776V27.098H0Z" fill="currentColor"/></svg>
+        </a>
+        <p class="fb-desc">Rede de recrutamento potencializada por IA. Hunters especialistas, curadoria humana e tecnologia — a nova forma de contratar melhor e mais rápido.</p>
+        <div class="fb-social">
+          <a class="social-btn" href="https://linkedin.com/company/nexhire" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a>
+          <a class="social-btn" href="https://x.com/nexhire" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+          <a class="social-btn" href="https://instagram.com/nexhire" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+        </div>
+      </div>
+      <div class="fc-"><h5>Produto</h5><ul><li><a href="index.html#plataforma">Plataforma</a></li><li><a href="sobre.html">IA e Scoring</a></li><li><a href="index.html">Integrações</a></li><li><a href="blog.html">Changelog</a></li></ul></div>
+      <div class="fc-"><h5>Soluções</h5><ul><li><a href="empresas.html">Para startups</a></li><li><a href="empresas.html">Para scale-ups</a></li><li><a href="empresas.html">Enterprise</a></li><li><a href="empresas.html">Executive search</a></li></ul></div>
+      <div class="fc-"><h5>Recrutadores</h5><ul><li><a href="recrutadores.html">Entrar na rede</a></li><li><a href="index.html#como-funciona">Como funciona</a></li><li><a href="faq.html">Calculadora</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div class="fc-"><h5>Empresa</h5><ul><li><a href="sobre.html">Sobre</a></li><li><a href="sobre.html">Carreiras</a></li><li><a href="blog.html">Blog</a></li><li><a href="faq.html">Contato</a></li></ul></div>
+    </div>
+    <div class="fbot">
+      <p>© 2026 Nexhire AI, Inc. · Todos os direitos reservados.</p>
+      <div class="flinks"><a href="faq.html#ia-dados">Privacidade</a><a href="faq.html">Termos</a><a href="faq.html#ia-dados">LGPD</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// NAV
+(()=>{
+  const n=document.getElementById('nav');
+  window.addEventListener('scroll',()=>n.classList.toggle('stuck',window.scrollY>8),{passive:true});
+})();
+
+// REVEAL
+(()=>{
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();
+
+// MARQUEE LOGOS
+(()=>{
+  const brands=['Northwind','Lumen','Orbital','Paragon','Vektor','Hyperion','Soliduum','Nimbus','Arcadia','Keystone','Stratus','Covalent'];
+  const t=document.getElementById('mtrack');
+  if(!t)return;
+  [...brands,...brands].forEach(n=>{
+    const d=document.createElement('div');
+    d.className='logo-item';
+    d.innerHTML=`<div class="logo-ico"></div><span class="logo-name">${n}</span>`;
+    t.appendChild(d);
+  });
+})();
+
+// PIPE BARS
+(()=>{
+  const h=[14,18,24,26,22,28,32,34,31,38,42,46,40,48,52,54];
+  const c=document.getElementById('pbars');
+  if(!c)return;
+  h.forEach((v,i)=>{
+    const d=document.createElement('div');
+    d.className='pb';
+    d.style.cssText=`height:${v}px;opacity:${(.16+i/h.length*.75).toFixed(2)}`;
+    c.appendChild(d);
+  });
+})();
+</script>
+</body>
+</html>

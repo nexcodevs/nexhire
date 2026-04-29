@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Recrutadores — Nexhire | Ganhe com recrutamento por performance</title>
+<meta name="description" content="Acesse vagas reais, envie candidatos qualificados e construa reputação em uma rede que premia consistência, velocidade e qualidade. Entre para a rede Nexhire.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --f900:#052E16;--f800:#064E1F;--f700:#0F6B35;
+  --g600:#16A34A;--g500:#22C55E;--neon:#00E676;
+  --m100:#ECFDF5;--m200:#D1FAE5;
+  --bg:#FAFAFA;--cream:#F7F6F2;--bg-mint:#F0FDF4;--surf:#FFFFFF;
+  --text:#052E16;--text2:#374151;--muted:#6B7280;--subtle:#9CA3AF;
+  --border:#E5E7EB;--border2:#D1D5DB;--border-g:#BBF7D0;
+  --grad:linear-gradient(135deg,#052E16 0%,#16A34A 100%);
+  --grad-ai:linear-gradient(135deg,#16A34A 0%,#00E676 100%);
+  --s1:0 1px 2px rgba(5,46,22,.05);
+  --s2:0 4px 16px rgba(5,46,22,.08),0 2px 6px rgba(5,46,22,.04);
+  --s3:0 12px 40px rgba(5,46,22,.10),0 4px 12px rgba(5,46,22,.05);
+  --s4:0 24px 60px rgba(5,46,22,.12),0 8px 24px rgba(5,46,22,.06);
+  --sg:0 8px 24px rgba(5,46,22,.12);
+  --s-neon:0 0 32px rgba(0,230,118,.18);
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --max:1180px;--narrow:860px;
+  --r-lg:24px;--r-xl:28px;
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden}
+
+.it{font-family:var(--serif);font-style:italic;font-weight:400}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.container{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
+.container-narrow{max-width:var(--narrow);margin:0 auto;padding:0 1.5rem}
+@media(min-width:768px){.container,.container-narrow{padding:0 2.5rem}}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}.d5{transition-delay:.35s}
+
+/* TYPE */
+.eye{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--g600);margin-bottom:.875rem}
+.eye::before{content:'/ ';color:var(--border2)}
+.eye.c{display:flex;justify-content:center}.eye.inv{color:var(--m200)}
+.h2{font-size:clamp(24px,3.6vw,46px);font-weight:700;line-height:1.1;letter-spacing:-.035em;color:var(--text)}
+.h2 .it{color:var(--f900)}.h2.inv{color:#F7F6F2}.h2.inv .it{color:var(--neon)}.h2.c{text-align:center}
+.lead{font-size:17px;font-weight:300;color:var(--muted);line-height:1.73;max-width:560px}
+.lead.c{text-align:center;margin:0 auto}.lead.w{max-width:680px}
+@media(max-width:767px){.lead{font-size:15.5px}}
+
+/* SECTIONS */
+.section{padding:96px 0}.section-sm{padding:72px 0}
+@media(max-width:767px){.section{padding:68px 0}.section-sm{padding:52px 0}}
+.s-white{background:var(--surf)}.s-cream{background:var(--cream)}.s-mint{background:var(--bg-mint)}.s-dark{background:var(--f900)}
+
+.section-head{margin-bottom:3rem}
+.section-head.c{text-align:center;display:flex;flex-direction:column;align-items:center}
+.section-head .h2{margin-bottom:.875rem}
+
+/* GRIDS */
+.g2{display:grid;gap:3rem;align-items:center}
+.g3{display:grid;gap:1.125rem}.g4{display:grid;gap:1rem}
+@media(min-width:768px){.g2{grid-template-columns:1fr 1fr}}
+@media(min-width:768px){.g2.asym{grid-template-columns:4fr 5fr}}
+@media(min-width:640px){.g3{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.g3{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:600px){.g4{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.g4{grid-template-columns:repeat(4,1fr)}}
+.g2.rev>:first-child{order:2}.g2.rev>:last-child{order:1}
+@media(max-width:767px){.g2.rev>*{order:unset}}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:46px;padding:0 22px;border-radius:999px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:all .18s;border:none;font-family:var(--sans);white-space:nowrap;-webkit-tap-highlight-color:transparent;letter-spacing:-.01em}
+.btn:focus-visible{outline:2px solid var(--neon);outline-offset:3px}
+.btn:active{transform:scale(.975)}
+.btn-dark{background:var(--f900);color:#F7F6F2;box-shadow:var(--sg)}
+.btn-dark:hover{background:var(--f800);transform:translateY(-1px);box-shadow:0 12px 36px rgba(5,46,22,.25)}
+.btn-out{background:transparent;color:var(--text);border:1.5px solid var(--border2)}
+.btn-out:hover{background:var(--m100);border-color:var(--border-g);transform:translateY(-1px)}
+.btn-mint{background:var(--neon);color:var(--f900);font-weight:600}
+.btn-mint:hover{background:#00d166;transform:translateY(-1px);box-shadow:var(--s-neon)}
+.btn-inv{background:rgba(255,255,255,.12);color:#F7F6F2;border:1.5px solid rgba(255,255,255,.2)}
+.btn-inv:hover{background:rgba(255,255,255,.2)}
+.btn-lg{height:52px;padding:0 28px;font-size:15px}
+.btn-sm{height:38px;padding:0 16px;font-size:13px}
+.btn-full{width:100%}
+.arr{display:inline-block;transition:transform .18s}
+.btn:hover .arr{transform:translateX(3px)}
+.btn-row{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+@media(max-width:480px){.btn-row.hero-btns{flex-direction:column;align-items:center}.btn-row.hero-btns .btn{width:100%;max-width:320px}}
+.text-cta{font-size:14px;font-weight:500;color:var(--f900);text-decoration:none;display:inline-flex;align-items:center;gap:4px;border-bottom:1px solid transparent;transition:all .15s;padding-bottom:1px}
+.text-cta:hover{border-color:var(--g600);color:var(--g600)}
+.text-cta:focus-visible{outline:2px solid var(--neon);outline-offset:2px;border-radius:3px}
+
+/* NAV */
+.nav{position:fixed;top:0;inset-x:0;z-index:200;padding:.875rem 0;transition:padding .3s,background .3s,border-color .3s,box-shadow .3s}
+.nav.stuck{padding:.625rem 0;background:rgba(250,250,250,.94);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:var(--s1)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
+@media(min-width:768px){.nav-inner{padding:0 2.5rem;gap:1.5rem}}
+.logo{display:flex;align-items:center;text-decoration:none}
+.logo:focus-visible{outline:2px solid var(--neon);outline-offset:3px;border-radius:4px}
+.nav-links{display:none;list-style:none;gap:0;justify-content:center}
+@media(min-width:1024px){.nav-links{display:flex}}
+.nav-links a{padding:8px 13px;border-radius:8px;text-decoration:none;font-size:13.5px;color:var(--muted);transition:all .14s}
+.nav-links a:hover{color:var(--text);background:rgba(5,46,22,.06)}
+.nav-links a.active{color:var(--f900);font-weight:500}
+.nav-links a:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+.nav-end{display:flex;gap:8px;align-items:center;justify-content:flex-end}
+.nav-burger{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;border-radius:8px}
+@media(min-width:1024px){.nav-burger{display:none}}
+.nav-burger span{display:block;width:20px;height:2px;background:var(--text);border-radius:2px;transition:all .2s}
+.nav-burger:focus-visible{outline:2px solid var(--neon)}
+
+/* STICKY TABS */
+.sticky-tabs{position:sticky;top:60px;z-index:100;background:rgba(250,250,250,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.sticky-tabs-inner{max-width:var(--max);margin:0 auto;padding:0 1.5rem;display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.sticky-tabs-inner::-webkit-scrollbar{display:none}
+@media(min-width:768px){.sticky-tabs-inner{padding:0 2.5rem}}
+.stab{padding:.875rem 1.125rem;font-size:13.5px;font-weight:400;color:var(--muted);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:all .15s;flex-shrink:0}
+.stab:hover{color:var(--text)}.stab.active{color:var(--f900);border-bottom-color:var(--f900);font-weight:500}
+.stab:focus-visible{outline:2px solid var(--neon);outline-offset:-2px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:136px 0 0;background:linear-gradient(180deg,#E8FAF0 0%,#F4FBF6 46%,var(--surf) 80%)}
+@media(max-width:767px){.hero{padding:108px 0 0}}
+.hero-halo{position:absolute;inset-x:0;top:0;height:90%;pointer-events:none;
+  background:radial-gradient(ellipse 55% 50% at 72% 2%,rgba(0,230,118,.13) 0%,transparent 55%),
+             radial-gradient(ellipse 40% 38% at 15% 18%,rgba(5,46,22,.06) 0%,transparent 50%);
+  filter:blur(28px)}
+.hero-grid{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(5,46,22,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(5,46,22,.025) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.4) 0%,transparent 66%);
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.4) 0%,transparent 66%)}
+.hero-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:flex-start;padding-bottom:0}
+@media(max-width:1023px){.hero-inner{grid-template-columns:1fr;text-align:center;gap:3rem}}
+.hero-left{padding-top:1rem}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;padding:5px 14px 5px 9px;border-radius:999px;background:var(--surf);border:1px solid var(--border);box-shadow:var(--s1);font-size:12px;font-weight:500;color:var(--muted);margin-bottom:1.625rem}
+.hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--neon);animation:blink 2.2s infinite;box-shadow:0 0 8px rgba(0,230,118,.5);flex-shrink:0}
+.hero-h1{font-size:clamp(30px,4.4vw,56px);font-weight:700;line-height:1.08;letter-spacing:-.04em;color:var(--text);margin-bottom:1.25rem}
+.hero-h1 .it{color:var(--f900)}
+.hero-sub{font-size:17px;font-weight:300;color:var(--muted);line-height:1.72;max-width:456px;margin-bottom:2rem}
+@media(max-width:1023px){.hero-sub{margin-left:auto;margin-right:auto}}
+@media(max-width:767px){.hero-sub{font-size:15.5px}}
+.hero-micro{font-size:12.5px;color:var(--subtle);display:flex;align-items:center;gap:6px;margin-top:.875rem;font-weight:300}
+@media(max-width:1023px){.hero-micro{justify-content:center}}
+.hero-micro-ico{width:14px;height:14px;border-radius:50%;background:rgba(0,230,118,.15);border:1px solid rgba(0,230,118,.35);display:grid;place-items:center;flex-shrink:0}
+
+/* HUNTER PERFORMANCE CARD */
+.hero-right{position:relative;padding-top:.5rem}
+@media(max-width:1023px){.hero-right{max-width:540px;margin:0 auto}}
+
+/* Float card */
+.fc{position:absolute;background:var(--surf);border:1px solid var(--border);border-radius:20px;box-shadow:var(--s3);padding:12px 15px;z-index:10;animation:floatY 4.5s ease-in-out infinite}
+.fc-a{bottom:-16px;left:-40px;width:180px;animation-delay:.5s}
+@media(max-width:1023px){.fc-a{left:-12px;bottom:-10px}}
+
+.hpc{background:var(--surf);border:1px solid var(--border);border-radius:22px;box-shadow:var(--s4);overflow:hidden;position:relative;z-index:2}
+.hpc-head{padding:1.25rem 1.375rem;border-bottom:1px solid var(--border);background:linear-gradient(135deg,var(--f900) 0%,var(--f800) 100%);position:relative;overflow:hidden}
+.hpc-head-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(221,245,234,.07) 1px,transparent 1px);background-size:12px 12px;pointer-events:none}
+.hpc-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#f97316,#facc15);display:grid;place-items:center;font-size:15px;font-weight:700;color:#fff;margin-bottom:.875rem;flex-shrink:0}
+.hpc-name{font-size:15px;font-weight:600;color:#F7F6F2;margin-bottom:2px;letter-spacing:-.01em}
+.hpc-role{font-size:12px;color:rgba(251,248,241,.6);margin-bottom:.875rem}
+.hpc-badges{display:flex;gap:.5rem;flex-wrap:wrap}
+.hpc-badge{padding:3px 10px;border-radius:999px;font-size:10.5px;font-weight:600}
+.hpc-badge-top{background:var(--neon);color:var(--f900)}
+.hpc-badge-spec{background:rgba(255,255,255,.14);color:rgba(251,248,241,.9);border:1px solid rgba(255,255,255,.2)}
+.hpc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border)}
+.hpc-stat{background:var(--surf);padding:.875rem 1rem}
+.hpc-stat-l{font-size:10px;color:var(--subtle);margin-bottom:3px;text-transform:uppercase;letter-spacing:.08em}
+.hpc-stat-n{font-size:22px;font-weight:700;letter-spacing:-.04em;color:var(--text);line-height:1;font-family:var(--mono)}
+.hpc-stat-n.g{color:var(--g600)}.hpc-stat-n.neon{color:var(--f900);background:rgba(0,230,118,.12);border:1px solid rgba(0,230,118,.3);border-radius:999px;padding:2px 10px;font-size:14px;display:inline-block}
+.hpc-metrics{padding:1.125rem 1.375rem;display:flex;flex-direction:column;gap:.625rem;border-bottom:1px solid var(--border)}
+.hpc-metric-row{display:flex;align-items:center;justify-content:space-between;gap:.75rem}
+.hpc-metric-lbl{font-size:12.5px;color:var(--muted);font-weight:300;flex-shrink:0}
+.hpc-metric-bar{flex:1;height:6px;background:rgba(5,46,22,.09);border-radius:3px;overflow:hidden}
+.hpc-metric-fill{height:100%;border-radius:3px;background:var(--grad-ai)}
+.hpc-metric-val{font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--f900);width:26px;text-align:right;flex-shrink:0}
+.hpc-briefings{padding:1.125rem 1.375rem}
+.hpc-brief-lbl{font-size:11px;color:var(--muted);margin-bottom:.875rem;font-weight:300}
+.hpc-job-row{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border:1px solid var(--border);border-radius:10px;margin-bottom:.5rem;cursor:pointer;transition:all .15s;text-decoration:none}
+.hpc-job-row:last-child{margin-bottom:0}
+.hpc-job-row:hover{border-color:var(--border-g);background:var(--m100);transform:translateX(2px)}
+.hpc-job-left{display:flex;align-items:center;gap:.75rem}
+.hpc-job-ico{width:30px;height:30px;border-radius:8px;background:var(--cream);border:1px solid var(--border);display:grid;place-items:center;font-size:11px;font-weight:700;color:var(--muted);flex-shrink:0;font-family:var(--mono)}
+.hpc-job-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:1px}
+.hpc-job-meta{font-size:10.5px;color:var(--subtle)}
+.hpc-job-tag{padding:2px 8px;border-radius:999px;font-size:9.5px;font-weight:600;white-space:nowrap}
+.hpc-job-tag.excl{background:var(--f900);color:var(--neon)}
+.hpc-job-tag.open{background:rgba(0,230,118,.12);color:var(--f900);border:1px solid rgba(0,230,118,.3)}
+
+/* LOGOS */
+.logos-bar{background:var(--surf);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.75rem 0;margin-top:4.5rem}
+.logos-lbl{font-size:11.5px;color:var(--subtle);text-align:center;margin-bottom:1.125rem;font-weight:300}
+.marquee-wrap{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:2.75rem;width:max-content;animation:marquee 52s linear infinite}
+.mq-item{display:flex;align-items:center;gap:7px;flex-shrink:0}
+.mq-ico{width:15px;height:15px;border-radius:4px;background:rgba(5,46,22,.22)}
+.mq-name{font-size:14.5px;font-weight:700;letter-spacing:-.3px;color:rgba(5,46,22,.36);white-space:nowrap}
+
+/* VALUE PROP CARDS */
+.val-card{background:var(--surf);border:1px solid var(--border);border-radius:var(--r-lg);padding:2rem;box-shadow:var(--s1);transition:all .2s;position:relative;overflow:hidden}
+.val-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-ai);opacity:0;transition:opacity .2s}
+.val-card:hover{box-shadow:var(--s3);transform:translateY(-2px);border-color:var(--border-g)}
+.val-card:hover::before{opacity:1}
+.val-ico{width:42px;height:42px;border-radius:12px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.28);display:grid;place-items:center;margin-bottom:1.125rem}
+.val-ico svg{width:19px;height:19px;stroke:var(--f900);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.val-card h3{font-size:17px;font-weight:600;color:var(--text);margin-bottom:.5rem;letter-spacing:-.2px;line-height:1.3}
+.val-card p{font-size:14px;color:var(--muted);font-weight:300;line-height:1.68}
+
+/* PROCESS STEPS */
+.steps-list{display:flex;flex-direction:column;gap:0;position:relative;padding-left:2.5rem}
+.steps-list::before{content:'';position:absolute;left:13px;top:8px;bottom:8px;width:1px;background:var(--border)}
+.step{position:relative;padding-bottom:2.5rem}
+.step:last-child{padding-bottom:0}
+.step::before{content:'';position:absolute;left:-2.5rem;top:5px;width:13px;height:13px;border-radius:50%;background:var(--surf);border:2px solid var(--border);transition:all .2s}
+.step.done::before{background:var(--f900);border-color:var(--f900)}
+.step.active::before{background:var(--neon);border-color:var(--neon);box-shadow:0 0 10px rgba(0,230,118,.4)}
+.step-n{font-family:var(--mono);font-size:10.5px;color:var(--subtle);letter-spacing:.12em;margin-bottom:.5rem}
+.step h3{font-size:17px;font-weight:600;color:var(--text);margin-bottom:.375rem;letter-spacing:-.02em}
+.step p{font-size:14px;color:var(--muted);font-weight:300;line-height:1.7;max-width:440px}
+
+/* RANKING TIERS */
+.tier-grid{display:grid;gap:1rem;margin-top:2.5rem}
+@media(min-width:640px){.tier-grid{grid-template-columns:repeat(3,1fr)}}
+.tier-card{background:var(--surf);border:2px solid var(--border);border-radius:var(--r-xl);padding:2rem;transition:all .2s;position:relative;overflow:hidden}
+.tier-card:hover{box-shadow:var(--s3);transform:translateY(-2px)}
+.tier-card.featured{border-color:var(--neon);background:linear-gradient(180deg,rgba(0,230,118,.04) 0%,var(--surf) 100%)}
+.tier-card.featured::after{content:'Mais vagas';position:absolute;top:1rem;right:1rem;background:var(--neon);color:var(--f900);font-size:10px;font-weight:700;padding:2px 9px;border-radius:999px}
+.tier-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:600;margin-bottom:1.25rem}
+.tier-badge.ini{background:var(--cream);color:var(--muted);border:1px solid var(--border)}
+.tier-badge.esp{background:var(--m100);color:var(--f900);border:1px solid var(--border-g)}
+.tier-badge.top{background:var(--f900);color:var(--neon)}
+.tier-badge-dot{width:7px;height:7px;border-radius:50%}
+.tier-badge.ini .tier-badge-dot{background:var(--subtle)}
+.tier-badge.esp .tier-badge-dot{background:var(--g600)}
+.tier-badge.top .tier-badge-dot{background:var(--neon)}
+.tier-card h3{font-size:20px;font-weight:600;color:var(--text);margin-bottom:.5rem;letter-spacing:-.025em}
+.tier-card p{font-size:14px;color:var(--muted);font-weight:300;line-height:1.6;margin-bottom:1.375rem}
+.tier-criteria{display:flex;flex-direction:column;gap:.5rem}
+.tier-criterion{display:flex;align-items:center;gap:.75rem;font-size:13.5px;color:var(--text2);font-weight:300}
+.tier-check{width:18px;height:18px;border-radius:50%;flex-shrink:0;display:grid;place-items:center}
+.tier-check.ini{background:var(--cream);border:1px solid var(--border)}
+.tier-check.ini svg{stroke:var(--subtle)}
+.tier-check.esp{background:var(--m100);border:1px solid var(--border-g)}
+.tier-check.esp svg{stroke:var(--g600)}
+.tier-check.top{background:var(--f900)}
+.tier-check.top svg{stroke:var(--neon)}
+.tier-check svg{width:9px;height:9px;fill:none;stroke-width:2.2;stroke-linecap:round}
+
+/* IA CARDS */
+.ia-card{background:var(--surf);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.875rem;transition:all .2s;box-shadow:var(--s1);position:relative;overflow:hidden}
+.ia-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-ai);opacity:0;transition:opacity .2s}
+.ia-card:hover{box-shadow:var(--s2);transform:translateY(-2px);border-color:var(--border-g)}
+.ia-card:hover::before{opacity:1}
+.ia-ico{width:40px;height:40px;border-radius:11px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.28);display:grid;place-items:center;margin-bottom:1.125rem}
+.ia-ico svg{width:18px;height:18px;stroke:var(--f900);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.ia-card h3{font-size:16px;font-weight:600;color:var(--text);margin-bottom:.5rem;letter-spacing:-.2px;line-height:1.3}
+.ia-card p{font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.65}
+
+/* RULES GRID */
+.rule-item{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--border)}
+.rule-item:first-child{border-top:1px solid var(--border)}
+.rule-ico{width:36px;height:36px;border-radius:10px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.28);display:grid;place-items:center;flex-shrink:0;margin-top:1px}
+.rule-ico svg{width:16px;height:16px;stroke:var(--f900);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.rule-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:2px;letter-spacing:-.01em}
+.rule-desc{font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.6}
+.rule-pill{display:inline-block;margin-top:.5rem;padding:2px 9px;border-radius:999px;font-size:10.5px;font-weight:500;background:rgba(0,230,118,.1);color:var(--f800);border:1px solid rgba(0,230,118,.25)}
+
+/* PERFIL IDEAL */
+.ideal-list{display:flex;flex-direction:column;gap:.625rem;margin-top:2rem}
+.ideal-item{display:flex;align-items:flex-start;gap:.875rem;padding:.875rem 1rem;border:1px solid var(--border);border-radius:12px;background:var(--surf);transition:all .15s}
+.ideal-item:hover{border-color:var(--border-g);background:var(--m100)}
+.ideal-check{width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:1px;background:rgba(0,230,118,.12);border:1px solid rgba(0,230,118,.35);display:grid;place-items:center}
+.ideal-check svg{width:9px;height:9px;stroke:var(--f900);stroke-width:2.2;fill:none;stroke-linecap:round}
+.ideal-item p{font-size:14.5px;color:var(--text2);font-weight:300;line-height:1.5}
+
+/* APPROVAL STEPS */
+.appr-steps{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--s1)}
+@media(min-width:640px){.appr-steps{grid-template-columns:repeat(5,1fr)}}
+.appr-step{background:var(--surf);padding:1.75rem 1.5rem;text-align:center;transition:background .18s}
+.appr-step:hover{background:var(--cream)}
+.appr-step-n{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--border);background:var(--cream);display:grid;place-items:center;font-family:var(--mono);font-size:13px;font-weight:600;color:var(--muted);margin:0 auto 1rem}
+.appr-step h4{font-size:14px;font-weight:600;color:var(--text);margin-bottom:.375rem;letter-spacing:-.01em;line-height:1.3}
+.appr-step p{font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.55}
+
+/* FORM */
+.form-card{background:var(--surf);border:1px solid var(--border);border-radius:var(--r-xl);padding:2.5rem;box-shadow:var(--s3)}
+@media(max-width:640px){.form-card{padding:1.5rem;border-radius:var(--r-lg)}}
+.form-title{font-size:22px;font-weight:600;color:var(--text);margin-bottom:.375rem;letter-spacing:-.025em}
+.form-subtitle{font-size:14px;color:var(--muted);font-weight:300;margin-bottom:2rem;line-height:1.6}
+.form-steps-bar{display:flex;align-items:center;gap:0;margin-bottom:2rem}
+.fsb-item{display:flex;align-items:center;flex:1}
+.fsb-dot{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;font-size:12px;font-weight:600;border:2px solid var(--border);color:var(--subtle);background:var(--surf);transition:all .2s;font-family:var(--mono)}
+.fsb-item.done .fsb-dot{background:var(--f900);border-color:var(--f900);color:var(--neon)}
+.fsb-item.active .fsb-dot{border-color:var(--f900);color:var(--f900)}
+.fsb-line{flex:1;height:1px;background:var(--border);margin:0 6px}
+.fsb-item.done .fsb-line{background:var(--border-g)}
+.form-row{display:grid;gap:1rem;margin-bottom:1rem}
+@media(min-width:600px){.form-row.c2{grid-template-columns:1fr 1fr}}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:1rem}
+.form-group:last-of-type{margin-bottom:0}
+.form-label{font-size:13px;font-weight:500;color:var(--text2)}
+.form-label .req{color:var(--g600);font-size:12px}
+.form-input,.form-select,.form-textarea{width:100%;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-family:var(--sans);font-size:15px;padding:11px 14px;outline:none;transition:border-color .18s,box-shadow .18s;-webkit-appearance:none}
+@media(max-width:767px){.form-input,.form-select,.form-textarea{font-size:16px}}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--subtle)}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--g600);box-shadow:0 0 0 3px rgba(22,163,74,.1)}
+.form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239CA3AF' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px;cursor:pointer}
+.form-textarea{resize:vertical;min-height:96px;line-height:1.6}
+.form-hint{font-size:12px;color:var(--subtle);margin-top:4px}
+.spec-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:6px}
+.spec-tag{padding:6px 15px;border:1.5px solid var(--border);border-radius:999px;font-size:13px;color:var(--muted);background:var(--bg);cursor:pointer;transition:all .15s;user-select:none;min-height:38px;display:inline-flex;align-items:center;-webkit-tap-highlight-color:transparent}
+.spec-tag:hover{border-color:var(--border-g);color:var(--text)}
+.spec-tag.on{background:var(--m100);border-color:var(--border-g);color:var(--f900);font-weight:500}
+.spec-tag:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+.form-checkbox{display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;font-size:14px;color:var(--text2);font-weight:300}
+.form-checkbox input[type="checkbox"]{appearance:none;-webkit-appearance:none;width:20px;height:20px;border-radius:5px;border:1.5px solid var(--border2);background:var(--bg);cursor:pointer;flex-shrink:0;margin-top:1px;transition:all .15s}
+.form-checkbox input:checked{background:var(--f900);border-color:var(--f900);background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none'%3E%3Cpath d='M1 4l3 3 5-6' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.form-checkbox input:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+.form-upload{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:1.875rem 1.5rem;border:1.5px dashed var(--border);border-radius:10px;background:var(--bg);cursor:pointer;transition:all .18s;text-align:center;-webkit-tap-highlight-color:transparent}
+.form-upload:hover,.form-upload:focus-visible{border-color:var(--border-g);background:var(--m100);outline:none}
+.form-upload-ico{width:40px;height:40px;border-radius:10px;background:var(--cream);border:1px solid var(--border);display:grid;place-items:center}
+.form-upload-ico svg{width:18px;height:18px;stroke:var(--muted);fill:none;stroke-width:1.7;stroke-linecap:round}
+.form-upload-lbl{font-size:13.5px;color:var(--text2)}
+.form-upload-hint{font-size:12px;color:var(--subtle)}
+.form-submit{margin-top:1.5rem}
+.form-footer-txt{margin-top:1rem;font-size:12px;color:var(--subtle);text-align:center;font-weight:300;line-height:1.6}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.375rem 0;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--sans);font-size:15.5px;font-weight:500;color:var(--text);transition:color .15s;-webkit-tap-highlight-color:transparent}
+.faq-q:hover{color:var(--f900)}
+.faq-q:focus-visible{outline:none;color:var(--f900)}
+.faq-icon{width:28px;height:28px;border-radius:50%;flex-shrink:0;border:1px solid var(--border);background:var(--cream);display:grid;place-items:center;transition:all .2s}
+.faq-icon svg{width:12px;height:12px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;transition:transform .25s ease,stroke .2s}
+.faq-item.open .faq-icon{background:var(--f900);border-color:var(--f900)}
+.faq-item.open .faq-icon svg{stroke:var(--neon);transform:rotate(45deg)}
+.faq-a{font-size:14.5px;color:var(--muted);font-weight:300;line-height:1.75;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease,opacity .25s ease;opacity:0;padding-bottom:0}
+.faq-item.open .faq-a{max-height:600px;opacity:1;padding-bottom:1.375rem}
+@media(max-width:767px){.faq-q{font-size:14.5px;padding:1.125rem 0}}
+
+/* CTA DARK */
+.cta-outer{padding:2rem 1.5rem 4rem;background:var(--cream)}
+@media(min-width:768px){.cta-outer{padding:2rem 2.5rem 4rem}}
+.cta-box{max-width:var(--max);margin:0 auto;background:var(--f900);border-radius:var(--r-xl);padding:5rem;position:relative;overflow:hidden;box-shadow:var(--sg)}
+@media(max-width:1023px){.cta-box{padding:4rem 3rem}}
+@media(max-width:767px){.cta-box{padding:3rem 1.75rem}}
+.cta-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 18% 20%,rgba(0,230,118,.18),transparent 38%),radial-gradient(circle at 82% 80%,rgba(0,230,118,.08),transparent 38%)}
+.cta-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(221,245,234,.09) 1px,transparent 1px);background-size:14px 14px}
+.cta-badge{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);font-size:12px;color:rgba(251,248,241,.7);margin-bottom:1.5rem;position:relative;z-index:1}
+.cta-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--neon);box-shadow:0 0 8px rgba(0,230,118,.6);flex-shrink:0}
+.cta-box h2{font-size:clamp(28px,5vw,60px);font-weight:700;line-height:1.06;letter-spacing:-.04em;color:#F7F6F2;margin-bottom:1.125rem;position:relative;z-index:1;max-width:700px}
+.cta-box h2 .it{color:var(--neon)}
+.cta-box p{font-size:17px;font-weight:300;color:rgba(251,248,241,.55);max-width:460px;line-height:1.72;margin-bottom:2.5rem;position:relative;z-index:1}
+.cta-btns{display:flex;gap:.875rem;flex-wrap:wrap;position:relative;z-index:1}
+@media(max-width:480px){.cta-box p{font-size:15.5px}.cta-btns{flex-direction:column}.cta-btns .btn{width:100%;max-width:320px}}
+
+/* FOOTER */
+.footer{background:var(--cream);border-top:1px solid var(--border);padding:4rem 1.5rem 2.25rem}
+@media(min-width:768px){.footer{padding:4.5rem 2.5rem 2.25rem}}
+.footer-inner{max-width:var(--max);margin:0 auto}
+.footer-top{display:grid;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border);margin-bottom:2rem}
+@media(min-width:1024px){.footer-top{grid-template-columns:1.8fr repeat(4,1fr)}}
+@media(min-width:640px) and (max-width:1023px){.footer-top{grid-template-columns:1fr 1fr}}
+.footer-brand p{font-size:13px;color:var(--muted);font-weight:300;line-height:1.7;max-width:210px;margin-top:.875rem}
+.footer-social{display:flex;gap:.5rem;margin-top:1.25rem}
+.fsocial-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);display:grid;place-items:center;font-family:var(--mono);font-size:9.5px;color:var(--muted);text-decoration:none;transition:all .12s}
+.fsocial-btn:hover{color:var(--text);border-color:var(--border2)}
+.fsocial-btn:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+.footer-col h5{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--text);margin-bottom:.875rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.footer-col a{font-size:13.5px;color:var(--muted);text-decoration:none;font-weight:300;transition:color .12s}
+.footer-col a:hover{color:var(--text)}
+.footer-col a:focus-visible{outline:2px solid var(--neon);outline-offset:2px;border-radius:3px}
+.footer-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-bot p{font-size:12px;color:var(--subtle);font-weight:300}
+.footer-links{display:flex;gap:1.25rem}
+.footer-links a{font-size:12px;color:var(--subtle);text-decoration:none}
+.footer-links a:hover{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html" aria-label="Nexhire">
+      <svg width="91" height="22" viewBox="0 0 116 28" fill="none" style="display:block;color:var(--f900)" aria-hidden="true"><path d="M106.766 27.608C104.794 27.608 103.083 27.2 101.632 26.384C100.182 25.5453 99.0484 24.3667 98.2324 22.848C97.439 21.3067 97.0424 19.4933 97.0424 17.408C97.0424 15.3227 97.439 13.5207 98.2324 12.002C99.0257 10.4833 100.136 9.30467 101.564 8.46601C103.015 7.62734 104.715 7.20801 106.664 7.20801C108.682 7.20801 110.393 7.66134 111.798 8.56801C113.226 9.47468 114.292 10.7893 114.994 12.512C115.72 14.2347 116.026 16.3087 115.912 18.734H102.584C102.766 20.1847 103.242 21.318 104.012 22.134C104.783 22.95 105.78 23.358 107.004 23.358C108.002 23.358 108.818 23.12 109.452 22.644C110.087 22.1453 110.484 21.5447 110.642 20.842H115.776C115.55 22.2473 115.017 23.46 114.178 24.48C113.362 25.4773 112.32 26.248 111.05 26.792C109.781 27.336 108.353 27.608 106.766 27.608ZM106.698 11.424C105.588 11.424 104.67 11.7867 103.944 12.512C103.219 13.2147 102.766 14.1667 102.584 15.368H110.472C110.382 13.94 109.962 12.9313 109.214 12.342C108.466 11.73 107.628 11.424 106.698 11.424Z" fill="currentColor"/>
+<path d="M85.3766 27.098V15.878C85.3766 13.09 86.1247 10.948 87.6207 9.45201C89.1393 7.95601 91.304 7.20801 94.1147 7.20801C94.4093 7.20801 94.874 7.23067 95.5087 7.27601C96.1433 7.29867 96.778 7.37801 97.4127 7.51401V12.24C96.982 12.172 96.574 12.1153 96.1887 12.07C95.8033 12.002 95.3727 11.968 94.8967 11.968C94.194 11.968 93.5367 12.07 92.9247 12.274C92.3127 12.478 91.814 12.8633 91.4286 13.43C91.066 13.9967 90.8847 14.824 90.8847 15.912V27.098H85.3766Z" fill="currentColor"/>
+<path d="M80.4894 5.61C79.6054 5.61 78.8574 5.34933 78.2454 4.828C77.6561 4.30667 77.3614 3.62667 77.3614 2.788C77.3614 1.972 77.6561 1.30333 78.2454 0.782C78.8574 0.260666 79.6054 0 80.4894 0C81.3508 0 82.0761 0.260666 82.6654 0.782C83.2774 1.30333 83.5834 1.972 83.5834 2.788C83.5834 3.62667 83.2774 4.30667 82.6654 4.828C82.0761 5.34933 81.3508 5.61 80.4894 5.61ZM77.7354 27.098V7.718H83.2434V27.098H77.7354Z" fill="currentColor"/>
+<path d="M57.4502 27.098V1.59802H62.9582V9.96202C63.5702 9.07802 64.3182 8.39802 65.2022 7.92202C66.0862 7.44602 67.0722 7.20802 68.1602 7.20802C69.6108 7.20802 70.8688 7.51402 71.9342 8.12602C72.9995 8.73802 73.8155 9.58802 74.3822 10.676C74.9715 11.764 75.2662 13.022 75.2662 14.45V27.098H69.7582V15.572C69.7582 14.4614 69.4522 13.5774 68.8402 12.92C68.2508 12.2627 67.4348 11.934 66.3922 11.934C65.3268 11.934 64.4882 12.3194 63.8762 13.09C63.2642 13.838 62.9582 14.8354 62.9582 16.082V27.098H57.4502Z" fill="currentColor"/>
+<path d="M37.235 27.098L43.525 17.544L36.589 7.71802H42.879L46.857 13.498L50.495 7.71802H56.411L49.781 17.714L56.241 27.098H50.257L46.449 21.692L43.049 27.098H37.235Z" fill="currentColor"/>
+<path d="M28.7324 27.608C26.7604 27.608 25.0491 27.2 23.5984 26.384C22.1477 25.5453 21.0144 24.3667 20.1984 22.848C19.4051 21.3067 19.0084 19.4933 19.0084 17.408C19.0084 15.3227 19.4051 13.5207 20.1984 12.002C20.9917 10.4833 22.1024 9.30467 23.5304 8.46601C24.9811 7.62734 26.6811 7.20801 28.6304 7.20801C30.6477 7.20801 32.3591 7.66134 33.7644 8.56801C35.1924 9.47468 36.2577 10.7893 36.9604 12.512C37.6857 14.2347 37.9917 16.3087 37.8784 18.734H24.5504C24.7317 20.1847 25.2077 21.318 25.9784 22.134C26.7491 22.95 27.7464 23.358 28.9704 23.358C29.9677 23.358 30.7837 23.12 31.4184 22.644C32.0531 22.1453 32.4497 21.5447 32.6084 20.842H37.7424C37.5157 22.2473 36.9831 23.46 36.1444 24.48C35.3284 25.4773 34.2857 26.248 33.0164 26.792C31.7471 27.336 30.3191 27.608 28.7324 27.608ZM28.6644 11.424C27.5537 11.424 26.6357 11.7867 25.9104 12.512C25.1851 13.2147 24.7317 14.1667 24.5504 15.368H32.4384C32.3477 13.94 31.9284 12.9313 31.1804 12.342C30.4324 11.73 29.5937 11.424 28.6644 11.424Z" fill="currentColor"/>
+<path d="M0 27.098V15.708C0 13.9627 0.351333 12.4553 1.054 11.186C1.77933 9.91667 2.79933 8.94201 4.114 8.26201C5.42867 7.55934 6.98133 7.20801 8.772 7.20801C10.5627 7.20801 12.1153 7.55934 13.43 8.26201C14.7447 8.94201 15.7533 9.91667 16.456 11.186C17.1813 12.4553 17.544 13.9627 17.544 15.708V27.098H12.036V15.776C12.036 14.552 11.73 13.6113 11.118 12.954C10.5287 12.2967 9.74667 11.968 8.772 11.968C7.82 11.968 7.038 12.2967 6.426 12.954C5.814 13.6113 5.508 14.552 5.508 15.776V27.098H0Z" fill="currentColor"/></svg>
+    </a>
+    <ul class="nav-links" role="navigation" aria-label="Navegação principal">
+      <li><a href="index.html#como-funciona">Como funciona</a></li>
+      <li><a href="empresas.html">Para empresas</a></li>
+      <li><a href="recrutadores.html" class="active" aria-current="page">Para recrutadores</a></li>
+      <li><a href="vagas.html">Vagas</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <div class="nav-end">
+      <a class="btn btn-out btn-sm" href="empresas.html">Entrar</a>
+      <a class="btn btn-dark btn-sm" href="empresas.html">Abrir vaga <span class="arr" aria-hidden="true">→</span></a>
+      <button class="nav-burger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo" aria-labelledby="hero-h1">
+  <div class="hero-halo" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <!-- Left -->
+      <div class="hero-left">
+        <div class="hero-tag" role="note" style="animation:fadeUp .4s ease both">
+          <div class="hero-tag-dot" aria-hidden="true"></div>
+          Para recrutadores
+        </div>
+        <h1 class="hero-h1" id="hero-h1" style="animation:fadeUp .5s .08s ease both">
+          Ganhe com recrutamento<br>por <span class="it">performance.</span>
+        </h1>
+        <p class="hero-sub" style="animation:fadeUp .5s .16s ease both">
+          Acesse vagas reais, envie candidatos qualificados e construa reputação em uma rede que premia consistência, velocidade e qualidade.
+        </p>
+        <div class="btn-row hero-btns" style="animation:fadeUp .5s .22s ease both">
+          <a class="btn btn-dark btn-lg" href="#aplicar">Quero ser hunter parceiro <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-out btn-lg" href="#como-funciona">Ver como funciona</a>
+        </div>
+        <div class="hero-micro" style="animation:fadeUp .5s .28s ease both">
+          <div class="hero-micro-ico" aria-hidden="true">
+            <svg viewBox="0 0 10 10" fill="none" width="9" height="9" aria-hidden="true"><path d="M2 5.5 4 7.5 8 3" stroke="#00E676" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          A entrada na rede passa por validação da Nexhire.
+        </div>
+      </div>
+
+      <!-- Right — Hunter Performance Card -->
+      <div class="hero-right" style="animation:fadeUp .6s .18s ease both">
+        <!-- Float: oportunidade exclusiva -->
+        <div class="fc fc-a" aria-hidden="true">
+          <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle);margin-bottom:6px">Nova oportunidade</div>
+          <div style="font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:3px">Head de Design · Berlim</div>
+          <div style="font-size:11px;color:var(--muted);margin-bottom:7px;font-weight:300">€140–170k · Top Hunter exclusiva</div>
+          <div style="display:inline-flex;align-items:center;gap:4px;background:var(--f900);color:var(--neon);border-radius:999px;font-size:9.5px;font-weight:700;padding:2px 9px">TOP HUNTER</div>
+        </div>
+
+        <div class="hpc" role="img" aria-label="Card de performance do hunter Sofia Moretti: Top Hunter, nível 3, taxa de aprovação 94%, 38 candidatos contratados">
+          <!-- Header dark -->
+          <div class="hpc-head">
+            <div class="hpc-head-dots" aria-hidden="true"></div>
+            <div style="display:flex;align-items:center;gap:.875rem;margin-bottom:.875rem">
+              <div class="hpc-avatar" aria-hidden="true">SM</div>
+              <div>
+                <div class="hpc-name">Sofia Moretti</div>
+                <div class="hpc-role">Recrutadora tech · Milão · Parceira desde 2023</div>
+              </div>
+            </div>
+            <div class="hpc-badges">
+              <span class="hpc-badge hpc-badge-top">Top Hunter</span>
+              <span class="hpc-badge hpc-badge-spec">Tecnologia</span>
+              <span class="hpc-badge hpc-badge-spec">Design de Produto</span>
+            </div>
+          </div>
+          <!-- Stats -->
+          <div class="hpc-stats" aria-label="Estatísticas de performance" role="group">
+            <div class="hpc-stat">
+              <div class="hpc-stat-l">Contratados</div>
+              <div class="hpc-stat-n g">38</div>
+            </div>
+            <div class="hpc-stat">
+              <div class="hpc-stat-l">Taxa de aprovação</div>
+              <div class="hpc-stat-n">94%</div>
+            </div>
+            <div class="hpc-stat">
+              <div class="hpc-stat-l">Nível</div>
+              <div class="hpc-stat-n neon">3</div>
+            </div>
+          </div>
+          <!-- Metrics bars -->
+          <div class="hpc-metrics" aria-label="Métricas de qualidade" role="group">
+            <div class="hpc-metric-row">
+              <div class="hpc-metric-lbl">Taxa de entrevista</div>
+              <div class="hpc-metric-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="92%"><div class="hpc-metric-fill" style="width:92%"></div></div>
+              <div class="hpc-metric-val" aria-hidden="true">92%</div>
+            </div>
+            <div class="hpc-metric-row">
+              <div class="hpc-metric-lbl">Qualidade dos envios</div>
+              <div class="hpc-metric-bar" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100" aria-label="96%"><div class="hpc-metric-fill" style="width:96%"></div></div>
+              <div class="hpc-metric-val" aria-hidden="true">96%</div>
+            </div>
+            <div class="hpc-metric-row">
+              <div class="hpc-metric-lbl">Cumprimento de prazo</div>
+              <div class="hpc-metric-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="100%"><div class="hpc-metric-fill" style="width:100%"></div></div>
+              <div class="hpc-metric-val" aria-hidden="true">100%</div>
+            </div>
+          </div>
+          <!-- Briefings -->
+          <div class="hpc-briefings">
+            <div class="hpc-brief-lbl">Vagas disponíveis para você hoje</div>
+            <a class="hpc-job-row" href="#aplicar">
+              <div class="hpc-job-left">
+                <div class="hpc-job-ico">N</div>
+                <div>
+                  <div class="hpc-job-title">Engenheiro de ML Staff</div>
+                  <div class="hpc-job-meta">Remoto · R$ 32–40k · 7d prazo</div>
+                </div>
+              </div>
+              <span class="hpc-job-tag open">Aberta</span>
+            </a>
+            <a class="hpc-job-row" href="#aplicar">
+              <div class="hpc-job-left">
+                <div class="hpc-job-ico">N</div>
+                <div>
+                  <div class="hpc-job-title">Head de Design</div>
+                  <div class="hpc-job-meta">Berlim · €140–170k · 5d prazo</div>
+                </div>
+              </div>
+              <span class="hpc-job-tag excl">Exclusiva</span>
+            </a>
+            <a class="hpc-job-row" href="#aplicar">
+              <div class="hpc-job-left">
+                <div class="hpc-job-ico">N</div>
+                <div>
+                  <div class="hpc-job-title">iOS Engineer Senior</div>
+                  <div class="hpc-job-meta">Remoto · R$ 27–32k · 6d prazo</div>
+                </div>
+              </div>
+              <span class="hpc-job-tag open">Aberta</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logos bar -->
+    <div class="logos-bar">
+      <p class="logos-lbl">Empresas onde hunters Nexhire fecharam vagas</p>
+      <div class="marquee-wrap"><div class="marquee-track" id="mtrack" aria-hidden="true"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY TABS -->
+<nav class="sticky-tabs" aria-label="Seções desta página">
+  <div class="sticky-tabs-inner">
+    <a href="#proposta" class="stab">Proposta</a>
+    <a href="#como-funciona" class="stab">Como funciona</a>
+    <a href="#ranking" class="stab">Ranking</a>
+    <a href="#ia" class="stab">IA para hunters</a>
+    <a href="#regras" class="stab">Regras</a>
+    <a href="#perfil" class="stab">Perfil ideal</a>
+    <a href="#aprovacao" class="stab">Aprovação</a>
+    <a href="#aplicar" class="stab">Aplicar</a>
+  </div>
+</nav>
+
+<!-- 2. PROPOSTA DE VALOR -->
+<section class="section s-white" id="proposta" aria-labelledby="prop-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="eye reveal">Proposta de valor</div>
+      <h2 class="h2 reveal d1" id="prop-title">Transforme sua rede de talentos<br>em <span class="it">receita.</span></h2>
+      <p class="lead reveal d2">Na Nexhire, bons recrutadores acessam vagas reais, trabalham com regras claras e são recompensados quando seus candidatos são contratados.</p>
+    </div>
+    <div class="g4">
+      <div class="val-card reveal d1">
+        <div class="val-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <h3>Vagas reais</h3>
+        <p>Posições abertas de empresas que já passaram pela validação do HR Manager Nexhire. Sem ghosting, sem perda de tempo com vagas fictícias.</p>
+      </div>
+      <div class="val-card reveal d2">
+        <div class="val-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div>
+        <h3>Escolha sua especialidade</h3>
+        <p>Acesse oportunidades compatíveis com sua área de atuação. Tecnologia, contabilidade, indústria, construção, logística e mais.</p>
+      </div>
+      <div class="val-card reveal d3">
+        <div class="val-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Ganhe por resultado</h3>
+        <p>A remuneração acontece quando seu candidato é contratado. Nenhuma taxa de inscrição, nenhum custo para entrar na rede.</p>
+      </div>
+      <div class="val-card reveal d4">
+        <div class="val-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <h3>Construa reputação</h3>
+        <p>Cada resultado positivo fortalece seu ranking. Top Hunters acessam vagas exclusivas com melhores condições e maior visibilidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. COMO FUNCIONA -->
+<section class="section s-cream" id="como-funciona" aria-labelledby="how-title">
+  <div class="container">
+    <div class="g2">
+      <div>
+        <div class="eye reveal">Como funciona</div>
+        <h2 class="h2 reveal d1" id="how-title">Um fluxo claro para<br>quem entrega <span class="it">qualidade.</span></h2>
+        <p class="lead reveal d2">Do cadastro ao pagamento — cada etapa tem regras claras e critérios transparentes.</p>
+        <div style="margin-top:2rem" class="reveal d3">
+          <a class="btn btn-dark" href="#aplicar">Começar agora <span class="arr" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <div class="steps-list" role="list" aria-label="Passos para entrar na rede">
+          <div class="step done" role="listitem">
+            <div class="step-n">PASSO 01</div>
+            <h3>Cadastre seu perfil</h3>
+            <p>Envie informações profissionais, áreas de especialidade, LinkedIn e currículo. O processo começa com dados reais sobre sua experiência.</p>
+          </div>
+          <div class="step active" role="listitem">
+            <div class="step-n">PASSO 02</div>
+            <h3>Passe pela validação</h3>
+            <p>O time Nexhire avalia seu perfil e realiza entrevista antes de liberar acesso. A rede é seletiva por design — isso protege a qualidade para todos.</p>
+          </div>
+          <div class="step" role="listitem">
+            <div class="step-n">PASSO 03</div>
+            <h3>Acesse vagas compatíveis</h3>
+            <p>Veja oportunidades abertas, prazos, regras e condições de remuneração. Filtre por área, nível e tipo de posição.</p>
+          </div>
+          <div class="step" role="listitem">
+            <div class="step-n">PASSO 04</div>
+            <h3>Envie candidatos qualificados</h3>
+            <p>Cada vaga tem limite e prazo de envio. O padrão é até 3 perfis por hunter em 7 dias, com resumo de entrevista obrigatório.</p>
+          </div>
+          <div class="step" role="listitem">
+            <div class="step-n">PASSO 05</div>
+            <h3>Ganhe quando seu candidato for contratado</h3>
+            <p>O hunter responsável pelo candidato contratado recebe remuneração conforme a regra da vaga. Pagamento por resultado, sem ambiguidade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. RANKING E TOP HUNTERS -->
+<section class="section s-white" id="ranking" aria-labelledby="rank-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="eye reveal">Ranking de hunters</div>
+      <h2 class="h2 reveal d1" id="rank-title">Os melhores hunters ganham<br>mais <span class="it">oportunidades.</span></h2>
+      <p class="lead reveal d2">A Nexhire classifica hunters por qualidade, consistência e resultado. Quem entrega bons candidatos ganha mais visibilidade e acesso a vagas exclusivas.</p>
+    </div>
+    <div class="tier-grid">
+      <div class="tier-card reveal d1" aria-label="Nível Iniciante">
+        <div class="tier-badge ini"><div class="tier-badge-dot"></div>Iniciante</div>
+        <h3>Primeiros passos</h3>
+        <p>Acessa as vagas abertas da rede e constrói histórico de envios. O foco é aprender as regras e calibrar a qualidade dos perfis enviados.</p>
+        <div class="tier-criteria" aria-label="Critérios para manter o nível">
+          <div class="tier-criterion"><div class="tier-check ini" aria-hidden="true"><svg viewBox="0 0 9 9"><path d="M1.5 4.5l2 2 4-4" stroke-linecap="round"/></svg></div>Acesso a vagas abertas</div>
+          <div class="tier-criterion"><div class="tier-check ini" aria-hidden="true"><svg viewBox="0 0 9 9"><path d="M1.5 4.5l2 2 4-4" stroke-linecap="round"/></svg></div>Até 3 candidatos por vaga</div>
+          <div class="tier-criterion"><div class="tier-check ini" aria-hidden="true"><svg viewBox="0 0 9 9"><path d="M1.5 4.5l2 2 4-4" stroke-linecap="round"/></svg></div>Prazo padrão de 7 dias</div>
+        </div>
+      </div>
+      <div class="tier-card featured reveal d2" aria-label="Nível Especialista">
+        <div class="tier-badge esp"><div class="tier-badge-dot"></div>Especialista</div>
+        <h3>Consistência comprovada</h3>
+        <p>Histórico positivo de envios e aprovações. Acessa um volume maior de vagas e recebe notificações prioritárias de novas oportunidades na sua área.</p>
+        <div class="tier-criteria" aria-label="Critérios para o nível Especialista">
+          <div class="tier-criterion"><div class="tier-check esp" aria-hidden="true"><svg viewBox="0 0 9 9"><path d="M1.5 4.5l2 2 4-4" stroke-linecap="round"/></svg></div>Taxa de aprovação acima de 60%</div>
+          <div class="tier-criterion"><div class="tier-check esp" aria-hidden="true"><svg viewBox="0 0 9 9"><path d="M1.5 4.5l2 2 4-4" stroke-linecap="round"/></svg></div>Cumprimento de prazo consistente</div>
+          <div class="tier-criterion"><div class="tier-check esp" aria-hidden="true"><svg viewBox="0 0 9 9"><path d="M1.5 4.5l2 2 4-4" stroke-linecap="round"/></svg></div>Baixo índice de duplicidade</div>
+          <div class="tier-criterion"><div class="tier-check esp" aria-hidden="true"><svg viewBox="0 0 9 9"><path d="M1.5 4.5l2 2 4-4" stroke-linecap="round"/></svg></div>Notificações prioritárias</div>
+        </div>
+      </div>
+      <div class="tier-card reveal d3" aria-label="Nível Top Hunter">
+        <div class="tier-badge top"><div class="tier-badge-dot"></div>Top Hunter</div>
+        <h3>Referência na rede</h3>
+        <p>Alta taxa de contratação e reputação consolidada. Acessa vagas exclusivas com melhores condições, maior visibilidade e suporte dedicado do HR Manager.</p>
+        <div class="tier-criteria" aria-label="Critérios para o nível Top Hunter">
+          <div class="tier-criterion"><div class="tier-check top" aria-hidden="true"><svg viewBox="0 0 9 9"><path d="M1.5 4.5l2 2 4-4" stroke-linecap="round"/></svg></div>Taxa de contratação elevada</div>
+          <div class="tier-criterion"><div class="tier-check top" aria-hidden="true"><svg viewBox="0 0 9 9"><path d="M1.5 4.5l2 2 4-4" stroke-linecap="round"/></svg></div>Vagas exclusivas de alto valor</div>
+          <div class="tier-criterion"><div class="tier-check top" aria-hidden="true"><svg viewBox="0 0 9 9"><path d="M1.5 4.5l2 2 4-4" stroke-linecap="round"/></svg></div>Suporte dedicado do HR Partner</div>
+          <div class="tier-criterion"><div class="tier-check top" aria-hidden="true"><svg viewBox="0 0 9 9"><path d="M1.5 4.5l2 2 4-4" stroke-linecap="round"/></svg></div>Badge público na plataforma</div>
+        </div>
+      </div>
+    </div>
+    <!-- Critérios do ranking -->
+    <div style="margin-top:2.5rem;padding:2rem;background:var(--cream);border:1px solid var(--border);border-radius:var(--r-lg)" class="reveal">
+      <div style="font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--g600);margin-bottom:1.25rem">Como o ranking é calculado</div>
+      <div style="display:grid;gap:1rem" class="g2">
+        <div style="display:flex;flex-direction:column;gap:.75rem">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px;gap:1rem"><span style="color:var(--muted);font-weight:300">Taxa de aprovação pelo HR</span><span style="color:var(--text);font-weight:600;font-family:var(--mono)">Alta relevância</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px;gap:1rem"><span style="color:var(--muted);font-weight:300">Taxa de entrevista agendada</span><span style="color:var(--text);font-weight:600;font-family:var(--mono)">Alta relevância</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px;gap:1rem"><span style="color:var(--muted);font-weight:300">Taxa de contratação</span><span style="color:var(--text);font-weight:600;font-family:var(--mono)">Alta relevância</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px;gap:1rem"><span style="color:var(--muted);font-weight:300">Qualidade do resumo de entrevista</span><span style="color:var(--text);font-weight:600;font-family:var(--mono)">Relevante</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:.75rem">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px;gap:1rem"><span style="color:var(--muted);font-weight:300">Aderência média dos candidatos</span><span style="color:var(--text);font-weight:600;font-family:var(--mono)">Relevante</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px;gap:1rem"><span style="color:var(--muted);font-weight:300">Cumprimento de prazo de envio</span><span style="color:var(--text);font-weight:600;font-family:var(--mono)">Relevante</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px;gap:1rem"><span style="color:var(--muted);font-weight:300">Índice de duplicidade</span><span style="color:var(--text);font-weight:600;font-family:var(--mono)">Penaliza se alto</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px;gap:1rem"><span style="color:var(--muted);font-weight:300">Respeito às regras da vaga</span><span style="color:var(--text);font-weight:600;font-family:var(--mono)">Obrigatório</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. IA PARA HUNTERS -->
+<section class="section s-cream" id="ia" aria-labelledby="ia-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="eye reveal">IA para hunters</div>
+      <h2 class="h2 reveal d1" id="ia-title">Use IA para enviar<br>candidatos <span class="it">melhores.</span></h2>
+      <p class="lead reveal d2">A Nexhire oferece ferramentas de IA para ajudar hunters a estruturar melhor cada submissão — sem substituir a qualidade do seu julgamento.</p>
+    </div>
+    <div class="g3">
+      <div class="ia-card reveal d1">
+        <div class="ia-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Perguntas sugeridas para entrevista</h3>
+        <p>Receba um roteiro personalizado baseado nos critérios da vaga e nas responsabilidades da posição — antes de falar com o candidato.</p>
+      </div>
+      <div class="ia-card reveal d2">
+        <div class="ia-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Análise de fit com a vaga</h3>
+        <p>Compare o perfil do candidato com os requisitos da posição antes de enviar. Identifique pontos fortes e gaps que precisam ser abordados na entrevista.</p>
+      </div>
+      <div class="ia-card reveal d3">
+        <div class="ia-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Checklist de envio</h3>
+        <p>Não deixe passar nenhuma informação obrigatória. A IA verifica se seu envio está completo antes de submeter o candidato à curadoria do HR Manager.</p>
+      </div>
+      <div class="ia-card reveal d1">
+        <div class="ia-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="13 2 13 9 20 9"/></svg></div>
+        <h3>Resumo estruturado do candidato</h3>
+        <p>A IA ajuda a formatar o resumo de entrevista de forma padronizada — tornando mais fácil para o HR Manager avaliar e aprovar o perfil.</p>
+      </div>
+      <div class="ia-card reveal d2">
+        <div class="ia-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <h3>Alertas de gaps</h3>
+        <p>Receba alertas quando o candidato não atende a um requisito obrigatório da vaga — antes de investir tempo em uma entrevista que não vai avançar.</p>
+      </div>
+      <div class="ia-card reveal d3">
+        <div class="ia-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+        <h3>Melhoria do envio</h3>
+        <p>Sugestões para melhorar a qualidade da submissão antes de enviar — com base nos critérios que o HR Manager usa para aprovar ou reprovar candidatos.</p>
+      </div>
+    </div>
+    <div style="margin-top:2.5rem;padding:1.5rem 2rem;background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.2);border-radius:var(--r-lg);max-width:600px" class="reveal" role="note">
+      <p style="font-size:15px;color:var(--f900);line-height:1.65"><strong>A IA ajuda você a estruturar melhor cada submissão.</strong> Mas a qualidade da abordagem, do relacionamento com o candidato e do julgamento sobre o fit continua sendo a sua vantagem.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. REGRAS DA REDE -->
+<section class="section s-white" id="regras" aria-labelledby="regras-title">
+  <div class="container">
+    <div class="g2">
+      <div>
+        <div class="eye reveal">Regras da rede</div>
+        <h2 class="h2 reveal d1" id="regras-title">Performance com<br><span class="it">regras claras.</span></h2>
+        <p class="lead reveal d2">Saber exatamente como o jogo funciona é o que permite jogar bem. Aqui estão as regras que valem para todos os hunters da rede.</p>
+      </div>
+      <div class="reveal d2">
+        <div class="rule-item" role="article">
+          <div class="rule-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+          <div>
+            <div class="rule-title">Limite de candidatos por vaga</div>
+            <div class="rule-desc">Cada hunter pode enviar até 3 candidatos por vaga, por padrão. O HR Manager pode configurar esse limite para cima ou para baixo em vagas específicas.</div>
+            <div class="rule-pill">Padrão: 3 perfis por hunter</div>
+          </div>
+        </div>
+        <div class="rule-item" role="article">
+          <div class="rule-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div>
+            <div class="rule-title">Prazo de envio</div>
+            <div class="rule-desc">O prazo padrão para enviar candidatos é de 7 dias após a publicação da vaga. Após esse prazo, novos envios são bloqueados automaticamente.</div>
+            <div class="rule-pill">Padrão: 7 dias por vaga</div>
+          </div>
+        </div>
+        <div class="rule-item" role="article">
+          <div class="rule-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div>
+            <div class="rule-title">Ownership do candidato</div>
+            <div class="rule-desc">O primeiro envio válido de um candidato para uma vaga garante o ownership daquele hunter, com validade configurável. Em disputa, o HR Manager decide com base no histórico.</div>
+            <div class="rule-pill">Primeiro envio válido garante</div>
+          </div>
+        </div>
+        <div class="rule-item" role="article">
+          <div class="rule-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
+          <div>
+            <div class="rule-title">Duplicidade bloqueada</div>
+            <div class="rule-desc">A plataforma detecta automaticamente candidatos repetidos por e-mail, telefone e LinkedIn. Envios duplicados são bloqueados antes de chegar ao HR Manager.</div>
+            <div class="rule-pill">Detecção automática</div>
+          </div>
+        </div>
+        <div class="rule-item" role="article">
+          <div class="rule-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.75h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.4a16 16 0 0 0 6 6l1.27-.89a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg></div>
+          <div>
+            <div class="rule-title">Feedback de status</div>
+            <div class="rule-desc">Você recebe notificações quando seu candidato avança ou é reprovado em cada etapa — HR curadoria, aprovação do cliente, entrevista agendada e contratação.</div>
+            <div class="rule-pill">Notificações automáticas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. PERFIL IDEAL -->
+<section class="section s-cream" id="perfil" aria-labelledby="perfil-title">
+  <div class="container">
+    <div class="g2 rev">
+      <div class="reveal d2" style="background:var(--surf);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--s3)">
+        <div style="padding:1.5rem;border-bottom:1px solid var(--border);background:var(--f900);position:relative;overflow:hidden">
+          <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(221,245,234,.06) 1px,transparent 1px);background-size:12px 12px;pointer-events:none"></div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--m200);margin-bottom:.875rem;position:relative">Critérios de validação</div>
+          <p style="font-size:15px;color:rgba(251,248,241,.7);font-weight:300;line-height:1.65;position:relative">A Nexhire é uma rede seletiva. A validação inicial existe para proteger a qualidade para empresas e para os próprios hunters que já fazem parte da rede.</p>
+        </div>
+        <div style="padding:1.5rem">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div style="padding:1rem;background:var(--cream);border-radius:12px;border:1px solid var(--border)">
+              <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:.375rem">Aprovados</div>
+              <div style="font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.5">Recrutadores com experiência real em pelo menos um dos segmentos atendidos.</div>
+            </div>
+            <div style="padding:1rem;background:var(--cream);border-radius:12px;border:1px solid var(--border)">
+              <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:.375rem">Aprovados</div>
+              <div style="font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.5">Hunters com rede ativa de talentos e histórico de entrevistas iniciais conduzidas.</div>
+            </div>
+            <div style="padding:1rem;background:var(--cream);border-radius:12px;border:1px solid var(--border)">
+              <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:.375rem">Aprovados</div>
+              <div style="font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.5">Consultores independentes com especialidade declarada e CV relevante.</div>
+            </div>
+            <div style="padding:1rem;background:#fef2f2;border-radius:12px;border:1px solid #fecaca">
+              <div style="font-size:13px;font-weight:600;color:#b91c1c;margin-bottom:.375rem">Não aprovados</div>
+              <div style="font-size:12.5px;color:#dc2626;font-weight:300;line-height:1.5;opacity:.8">Profissionais sem experiência em recrutamento ou sem rede ativa de candidatos.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="eye reveal">Perfil ideal</div>
+        <h2 class="h2 reveal d1" id="perfil-title">Quem estamos<br><span class="it">buscando.</span></h2>
+        <p class="lead reveal d2">A Nexhire não é uma comunidade aberta. Buscamos recrutadores que já provaram que entregam resultado — e que querem continuar crescendo com base nele.</p>
+        <div class="ideal-list reveal d3" role="list">
+          <div class="ideal-item" role="listitem">
+            <div class="ideal-check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <p>Recrutadores com experiência real em pelo menos um segmento — não apenas gestão de ATS.</p>
+          </div>
+          <div class="ideal-item" role="listitem">
+            <div class="ideal-check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <p>Especialistas em nichos — tech, finanças, indústria, construção, operações ou vendas.</p>
+          </div>
+          <div class="ideal-item" role="listitem">
+            <div class="ideal-check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <p>Profissionais que conduzem entrevistas iniciais e entregam resumos estruturados.</p>
+          </div>
+          <div class="ideal-item" role="listitem">
+            <div class="ideal-check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <p>Hunters com senso de urgência — que respeitam prazos e tratam vagas como prioridade.</p>
+          </div>
+          <div class="ideal-item" role="listitem">
+            <div class="ideal-check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <p>Pessoas que priorizam qualidade sobre volume — e entendem que 2 candidatos ótimos valem mais que 10 mediocres.</p>
+          </div>
+          <div class="ideal-item" role="listitem">
+            <div class="ideal-check" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5L8.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <p>Recrutadores com boa comunicação — que sabem apresentar um candidato de forma clara, honesta e objetiva.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. PROCESSO DE APROVAÇÃO -->
+<section class="section s-white" id="aprovacao" aria-labelledby="appr-title">
+  <div class="container">
+    <div class="section-head c">
+      <div class="eye c reveal">Processo de aprovação</div>
+      <h2 class="h2 c reveal d1" id="appr-title">Como entrar na<br><span class="it">rede Nexhire.</span></h2>
+      <p class="lead c reveal d2">Cinco etapas. Do cadastro à primeira vaga disponível.</p>
+    </div>
+    <div class="appr-steps reveal d2" role="list" aria-label="Etapas do processo de aprovação">
+      <div class="appr-step" role="listitem">
+        <div class="appr-step-n" aria-hidden="true">01</div>
+        <h4>Preencha o formulário</h4>
+        <p>Dados profissionais, áreas de especialidade e LinkedIn.</p>
+      </div>
+      <div class="appr-step" role="listitem">
+        <div class="appr-step-n" aria-hidden="true">02</div>
+        <h4>Envie seus dados</h4>
+        <p>Currículo e descrição da sua experiência em recrutamento.</p>
+      </div>
+      <div class="appr-step" role="listitem">
+        <div class="appr-step-n" aria-hidden="true">03</div>
+        <h4>Entrevista com HR Partner</h4>
+        <p>Conversa para entender seu histórico, especialidades e expectativas.</p>
+      </div>
+      <div class="appr-step" role="listitem">
+        <div class="appr-step-n" aria-hidden="true">04</div>
+        <h4>Assine o contrato</h4>
+        <p>Termos de parceiro, regras da rede e condições de remuneração.</p>
+      </div>
+      <div class="appr-step" role="listitem">
+        <div class="appr-step-n" aria-hidden="true">05</div>
+        <h4>Acesse a plataforma</h4>
+        <p>Vagas disponíveis, briefings e ferramentas de IA para hunters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section class="section s-cream" id="faq" aria-labelledby="faq-title">
+  <div class="container-narrow">
+    <div class="section-head">
+      <div class="eye reveal">Perguntas frequentes</div>
+      <h2 class="h2 reveal d1" id="faq-title">O que recrutadores<br>perguntam antes de <span class="it">entrar.</span></h2>
+    </div>
+    <div class="faq-list reveal" role="list">
+      <div class="faq-item open" role="listitem">
+        <button class="faq-q" aria-expanded="true" aria-controls="faq1-a">
+          Qualquer recrutador pode entrar na rede?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq1-a" role="region">
+          <p>Não. A entrada na rede passa por um processo de validação conduzido pelo time Nexhire. Avaliamos experiência anterior em recrutamento, especialidades declaradas, qualidade do perfil e alinhamento com os valores da plataforma. A rede é seletiva para proteger a qualidade para todos os participantes.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq2-a">
+          Como sou remunerado?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq2-a" role="region">
+          <p>A remuneração acontece quando o candidato que você enviou é contratado pela empresa. O valor e as condições são definidos por vaga, de acordo com o contrato de parceiro firmado no processo de aprovação. Não há taxas de inscrição nem custos para participar da rede.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq3-a">
+          Posso enviar quantos candidatos quiser por vaga?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq3-a" role="region">
+          <p>Não. Cada vaga tem um limite de envio por hunter — o padrão é 3 candidatos por vaga em até 7 dias. O HR Manager pode configurar esse número para mais ou menos dependendo da posição. O limite existe para forçar seleção cuidadosa, não volume.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq4-a">
+          O que é um Top Hunter e como me torno um?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq4-a" role="region">
+          <p>Top Hunter é o nível mais alto do ranking da Nexhire. Para chegar lá, você precisa acumular histórico positivo de aprovação pelo HR Manager, entrevistas agendadas e contratações confirmadas. O ranking é calculado automaticamente com base em métricas de qualidade e resultado — não há atalhos.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq5-a">
+          Como funciona o ownership do candidato?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq5-a" role="region">
+          <p>O primeiro hunter a enviar um candidato válido para uma vaga garante o ownership daquele candidato naquela vaga, com validade configurável. Se o candidato for enviado por outro hunter na mesma vaga após isso, o envio duplicado é bloqueado. Em casos de disputa, o HR Manager decide com base no registro histórico da plataforma.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq6-a">
+          Como sei se meu candidato foi aprovado ou reprovado?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq6-a" role="region">
+          <p>A plataforma envia notificações em cada etapa do processo — curadoria do HR Manager, aprovação ou reprovação pelo cliente, entrevista agendada e contratação. Você tem visibilidade completa do status de cada candidato que enviou.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq7-a">
+          Posso falar diretamente com o cliente?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq7-a" role="region">
+          <p>Não. A comunicação com o cliente é gerenciada exclusivamente pelo HR Manager Nexhire. Isso protege o processo, evita conflitos de informação e garante que o cliente tenha uma experiência consistente — o que, por sua vez, aumenta a taxa de aprovação dos candidatos enviados.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq8-a">
+          Que tipo de vaga estará disponível para mim?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 3v8M3 7h8" stroke-linecap="round"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq8-a" role="region">
+          <p>A plataforma exibe vagas compatíveis com as especialidades declaradas no seu perfil. São posições em empresas reais, validadas pelo HR Manager antes de serem publicadas. Os segmentos incluem tecnologia, contabilidade, indústria, construção civil, logística, operações, vendas e administrativo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. FORMULÁRIO DE APLICAÇÃO -->
+<section class="section s-white" id="aplicar" aria-labelledby="form-title">
+  <div class="container">
+    <div class="g2 rev" style="align-items:start">
+      <!-- Form -->
+      <div class="form-card reveal d1">
+        <div class="form-title" id="form-title">Aplicar para a rede de hunters</div>
+        <div class="form-subtitle">Preencha com atenção. Avaliamos cada perfil individualmente antes de dar acesso à plataforma.</div>
+        <!-- Step bar -->
+        <div class="form-steps-bar" aria-label="Progresso do formulário">
+          <div class="fsb-item done"><div class="fsb-dot" aria-label="Etapa 1 completa">1</div><div class="fsb-line"></div></div>
+          <div class="fsb-item active"><div class="fsb-dot" aria-label="Etapa 2 atual">2</div><div class="fsb-line"></div></div>
+          <div class="fsb-item"><div class="fsb-dot" aria-label="Etapa 3">3</div></div>
+        </div>
+        <div class="form-row c2">
+          <div class="form-group">
+            <label class="form-label" for="f-nome">Nome completo <span class="req">*</span></label>
+            <input class="form-input" id="f-nome" type="text" placeholder="Seu nome completo" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-email">E-mail <span class="req">*</span></label>
+            <input class="form-input" id="f-email" type="email" placeholder="voce@email.com" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="form-row c2">
+          <div class="form-group">
+            <label class="form-label" for="f-tel">Telefone / WhatsApp <span class="req">*</span></label>
+            <input class="form-input" id="f-tel" type="tel" placeholder="+55 (11) 99999-0000" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-cidade">Cidade / País <span class="req">*</span></label>
+            <input class="form-input" id="f-cidade" type="text" placeholder="São Paulo, Brasil" autocomplete="address-level2">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-linkedin">LinkedIn <span class="req">*</span></label>
+          <input class="form-input" id="f-linkedin" type="url" placeholder="linkedin.com/in/seuperfil">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-exp">Anos de experiência em recrutamento <span class="req">*</span></label>
+          <select class="form-select" id="f-exp" required>
+            <option value="">Selecione</option>
+            <option>Menos de 2 anos</option>
+            <option>2 a 5 anos</option>
+            <option>5 a 10 anos</option>
+            <option>Mais de 10 anos</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Áreas de especialidade <span class="req">*</span></label>
+          <div class="spec-tags" role="group" aria-label="Selecione suas especialidades">
+            <button class="spec-tag on" type="button" aria-pressed="true">Tecnologia</button>
+            <button class="spec-tag" type="button" aria-pressed="false">Contabilidade</button>
+            <button class="spec-tag" type="button" aria-pressed="false">Indústria</button>
+            <button class="spec-tag" type="button" aria-pressed="false">Construção Civil</button>
+            <button class="spec-tag" type="button" aria-pressed="false">Logística</button>
+            <button class="spec-tag" type="button" aria-pressed="false">Vendas</button>
+            <button class="spec-tag" type="button" aria-pressed="false">Operações</button>
+            <button class="spec-tag" type="button" aria-pressed="false">Financeiro</button>
+            <button class="spec-tag" type="button" aria-pressed="false">Design</button>
+            <button class="spec-tag" type="button" aria-pressed="false">Marketing</button>
+          </div>
+          <div class="form-hint">Selecione as áreas onde você tem experiência real em recrutamento.</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-desc">Conte sobre sua experiência em recrutamento <span class="req">*</span></label>
+          <textarea class="form-textarea" id="f-desc" rows="4" placeholder="Descreva: onde atuou, que tipo de vagas fechou, como conduz entrevistas iniciais e o que diferencia sua abordagem..." required></textarea>
+          <div class="form-hint">Seja específico. Avaliamos a clareza e a experiência real descrita.</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Currículo / portfólio</label>
+          <div class="form-upload" tabindex="0" role="button" aria-label="Clique para fazer upload do currículo">
+            <div class="form-upload-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            </div>
+            <div class="form-upload-lbl">Arraste ou clique para enviar</div>
+            <div class="form-upload-hint">PDF ou DOCX — máx. 10MB</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-checkbox">
+            <input type="checkbox" required>
+            <span>Li e concordo com os <a href="faq.html" style="color:var(--g600)">Termos de Parceiro</a> da Nexhire e entendo que a aprovação está sujeita à validação do time.</span>
+          </label>
+        </div>
+        <div class="form-submit">
+          <button class="btn btn-dark btn-lg btn-full" type="button">
+            Enviar minha aplicação <span class="arr" aria-hidden="true">→</span>
+          </button>
+        </div>
+        <div class="form-footer-txt">Sua candidatura será avaliada pelo time Nexhire em até 3 dias úteis. Você receberá um e-mail com os próximos passos.</div>
+      </div>
+
+      <!-- Info lateral -->
+      <div class="reveal d2">
+        <div style="font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--g600);margin-bottom:1.25rem">Por que a entrada é validada?</div>
+        <p style="font-size:15px;color:var(--muted);font-weight:300;line-height:1.73;margin-bottom:2rem">A Nexhire é uma rede seletiva. Validar cada hunter antes de dar acesso às vagas protege a qualidade para todos — para as empresas que confiam nos candidatos recebidos e para os hunters que já fazem parte da rede.</p>
+        <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem">
+          <div style="display:flex;align-items:flex-start;gap:.875rem;padding:1rem;border:1px solid var(--border);border-radius:12px;background:var(--surf)">
+            <div style="width:32px;height:32px;border-radius:9px;background:var(--f900);color:var(--cream2);display:grid;place-items:center;font-size:12px;font-weight:700;flex-shrink:0;font-family:var(--mono)">1</div>
+            <div><div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px">Avaliação do perfil</div><div style="font-size:13px;color:var(--muted);font-weight:300;line-height:1.5">Análise do formulário, LinkedIn e experiência declarada em até 3 dias úteis.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:.875rem;padding:1rem;border:1px solid var(--border);border-radius:12px;background:var(--surf)">
+            <div style="width:32px;height:32px;border-radius:9px;background:var(--f900);color:var(--cream2);display:grid;place-items:center;font-size:12px;font-weight:700;flex-shrink:0;font-family:var(--mono)">2</div>
+            <div><div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px">Entrevista com HR Partner</div><div style="font-size:13px;color:var(--muted);font-weight:300;line-height:1.5">Conversa por videochamada de 30 minutos para entender sua experiência e expectativas.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:.875rem;padding:1rem;border:1px solid var(--border);border-radius:12px;background:var(--surf)">
+            <div style="width:32px;height:32px;border-radius:9px;background:var(--f900);color:var(--cream2);display:grid;place-items:center;font-size:12px;font-weight:700;flex-shrink:0;font-family:var(--mono)">3</div>
+            <div><div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px">Acesso à plataforma</div><div style="font-size:13px;color:var(--muted);font-weight:300;line-height:1.5">Assinatura do contrato de parceiro e acesso imediato às vagas compatíveis.</div></div>
+          </div>
+        </div>
+        <div style="padding:1.375rem;background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.2);border-radius:var(--r-lg)" role="note">
+          <div style="font-size:13px;font-weight:600;color:var(--f900);margin-bottom:.375rem">Prazo de resposta</div>
+          <div style="font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.6">Avaliamos todas as aplicações em até <strong style="color:var(--text)">3 dias úteis</strong>. Se seu perfil avançar, você receberá um convite para a entrevista com o HR Partner.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-outer">
+  <div class="cta-box">
+    <div class="cta-glow" aria-hidden="true"></div>
+    <div class="cta-dots" aria-hidden="true"></div>
+    <div class="cta-badge" role="note"><div class="cta-badge-dot" aria-hidden="true"></div>Rede seletiva · performance valorizada</div>
+    <h2>Se você entrega bons candidatos,<br>queremos você <span class="it">na rede.</span></h2>
+    <p>Entre para uma plataforma que valoriza qualidade, velocidade e resultado — com vagas reais e regras claras.</p>
+    <div class="cta-btns">
+      <a class="btn btn-mint btn-lg" href="#aplicar">Quero ser hunter parceiro <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn btn-inv btn-lg" href="#como-funciona">Ver como funciona</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" aria-label="Nexhire — Início">
+          <svg width="83" height="20" viewBox="0 0 116 28" fill="none" style="display:block;color:var(--f900)" aria-hidden="true"><path d="M106.766 27.608C104.794 27.608 103.083 27.2 101.632 26.384C100.182 25.5453 99.0484 24.3667 98.2324 22.848C97.439 21.3067 97.0424 19.4933 97.0424 17.408C97.0424 15.3227 97.439 13.5207 98.2324 12.002C99.0257 10.4833 100.136 9.30467 101.564 8.46601C103.015 7.62734 104.715 7.20801 106.664 7.20801C108.682 7.20801 110.393 7.66134 111.798 8.56801C113.226 9.47468 114.292 10.7893 114.994 12.512C115.72 14.2347 116.026 16.3087 115.912 18.734H102.584C102.766 20.1847 103.242 21.318 104.012 22.134C104.783 22.95 105.78 23.358 107.004 23.358C108.002 23.358 108.818 23.12 109.452 22.644C110.087 22.1453 110.484 21.5447 110.642 20.842H115.776C115.55 22.2473 115.017 23.46 114.178 24.48C113.362 25.4773 112.32 26.248 111.05 26.792C109.781 27.336 108.353 27.608 106.766 27.608ZM106.698 11.424C105.588 11.424 104.67 11.7867 103.944 12.512C103.219 13.2147 102.766 14.1667 102.584 15.368H110.472C110.382 13.94 109.962 12.9313 109.214 12.342C108.466 11.73 107.628 11.424 106.698 11.424Z" fill="currentColor"/>
+<path d="M85.3766 27.098V15.878C85.3766 13.09 86.1247 10.948 87.6207 9.45201C89.1393 7.95601 91.304 7.20801 94.1147 7.20801C94.4093 7.20801 94.874 7.23067 95.5087 7.27601C96.1433 7.29867 96.778 7.37801 97.4127 7.51401V12.24C96.982 12.172 96.574 12.1153 96.1887 12.07C95.8033 12.002 95.3727 11.968 94.8967 11.968C94.194 11.968 93.5367 12.07 92.9247 12.274C92.3127 12.478 91.814 12.8633 91.4286 13.43C91.066 13.9967 90.8847 14.824 90.8847 15.912V27.098H85.3766Z" fill="currentColor"/>
+<path d="M80.4894 5.61C79.6054 5.61 78.8574 5.34933 78.2454 4.828C77.6561 4.30667 77.3614 3.62667 77.3614 2.788C77.3614 1.972 77.6561 1.30333 78.2454 0.782C78.8574 0.260666 79.6054 0 80.4894 0C81.3508 0 82.0761 0.260666 82.6654 0.782C83.2774 1.30333 83.5834 1.972 83.5834 2.788C83.5834 3.62667 83.2774 4.30667 82.6654 4.828C82.0761 5.34933 81.3508 5.61 80.4894 5.61ZM77.7354 27.098V7.718H83.2434V27.098H77.7354Z" fill="currentColor"/>
+<path d="M57.4502 27.098V1.59802H62.9582V9.96202C63.5702 9.07802 64.3182 8.39802 65.2022 7.92202C66.0862 7.44602 67.0722 7.20802 68.1602 7.20802C69.6108 7.20802 70.8688 7.51402 71.9342 8.12602C72.9995 8.73802 73.8155 9.58802 74.3822 10.676C74.9715 11.764 75.2662 13.022 75.2662 14.45V27.098H69.7582V15.572C69.7582 14.4614 69.4522 13.5774 68.8402 12.92C68.2508 12.2627 67.4348 11.934 66.3922 11.934C65.3268 11.934 64.4882 12.3194 63.8762 13.09C63.2642 13.838 62.9582 14.8354 62.9582 16.082V27.098H57.4502Z" fill="currentColor"/>
+<path d="M37.235 27.098L43.525 17.544L36.589 7.71802H42.879L46.857 13.498L50.495 7.71802H56.411L49.781 17.714L56.241 27.098H50.257L46.449 21.692L43.049 27.098H37.235Z" fill="currentColor"/>
+<path d="M28.7324 27.608C26.7604 27.608 25.0491 27.2 23.5984 26.384C22.1477 25.5453 21.0144 24.3667 20.1984 22.848C19.4051 21.3067 19.0084 19.4933 19.0084 17.408C19.0084 15.3227 19.4051 13.5207 20.1984 12.002C20.9917 10.4833 22.1024 9.30467 23.5304 8.46601C24.9811 7.62734 26.6811 7.20801 28.6304 7.20801C30.6477 7.20801 32.3591 7.66134 33.7644 8.56801C35.1924 9.47468 36.2577 10.7893 36.9604 12.512C37.6857 14.2347 37.9917 16.3087 37.8784 18.734H24.5504C24.7317 20.1847 25.2077 21.318 25.9784 22.134C26.7491 22.95 27.7464 23.358 28.9704 23.358C29.9677 23.358 30.7837 23.12 31.4184 22.644C32.0531 22.1453 32.4497 21.5447 32.6084 20.842H37.7424C37.5157 22.2473 36.9831 23.46 36.1444 24.48C35.3284 25.4773 34.2857 26.248 33.0164 26.792C31.7471 27.336 30.3191 27.608 28.7324 27.608ZM28.6644 11.424C27.5537 11.424 26.6357 11.7867 25.9104 12.512C25.1851 13.2147 24.7317 14.1667 24.5504 15.368H32.4384C32.3477 13.94 31.9284 12.9313 31.1804 12.342C30.4324 11.73 29.5937 11.424 28.6644 11.424Z" fill="currentColor"/>
+<path d="M0 27.098V15.708C0 13.9627 0.351333 12.4553 1.054 11.186C1.77933 9.91667 2.79933 8.94201 4.114 8.26201C5.42867 7.55934 6.98133 7.20801 8.772 7.20801C10.5627 7.20801 12.1153 7.55934 13.43 8.26201C14.7447 8.94201 15.7533 9.91667 16.456 11.186C17.1813 12.4553 17.544 13.9627 17.544 15.708V27.098H12.036V15.776C12.036 14.552 11.73 13.6113 11.118 12.954C10.5287 12.2967 9.74667 11.968 8.772 11.968C7.82 11.968 7.038 12.2967 6.426 12.954C5.814 13.6113 5.508 14.552 5.508 15.776V27.098H0Z" fill="currentColor"/></svg>
+        </a>
+        <p>Rede de recrutamento potencializada por IA. Hunters especialistas, curadoria humana e tecnologia.</p>
+        <div class="footer-social" aria-label="Redes sociais">
+          <a class="fsocial-btn" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a>
+          <a class="fsocial-btn" href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+          <a class="fsocial-btn" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Produto</h5><ul><li><a href="index.html#plataforma">Plataforma</a></li><li><a href="sobre.html">IA e Scoring</a></li><li><a href="index.html">Integrações</a></li><li><a href="blog.html">Changelog</a></li></ul></div>
+      <div class="footer-col"><h5>Recrutadores</h5><ul><li><a href="recrutadores.html">Para recrutadores</a></li><li><a href="#como-funciona">Como funciona</a></li><li><a href="#ranking">Ranking</a></li><li><a href="#aplicar">Aplicar</a></li></ul></div>
+      <div class="footer-col"><h5>Empresas</h5><ul><li><a href="empresas.html">Para empresas</a></li><li><a href="vagas.html">Vagas abertas</a></li><li><a href="index.html#como-funciona">Como funciona</a></li><li><a href="faq.html">Contato</a></li></ul></div>
+      <div class="footer-col"><h5>Legal</h5><ul><li><a href="faq.html#ia-dados">Privacidade</a></li><li><a href="faq.html">Termos de uso</a></li><li><a href="faq.html">Termos do parceiro</a></li><li><a href="faq.html#ia-dados">LGPD</a></li></ul></div>
+    </div>
+    <div class="footer-bot">
+      <p>© 2026 Nexhire AI, Inc. · Todos os direitos reservados.</p>
+      <nav class="footer-links" aria-label="Links legais">
+        <a href="faq.html#ia-dados">Privacidade</a>
+        <a href="faq.html">Termos</a>
+        <a href="faq.html#ia-dados">LGPD</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(()=>{
+  // NAV
+  const nav = document.getElementById('nav');
+  const tick = () => nav && nav.classList.toggle('stuck', window.scrollY > 8);
+  window.addEventListener('scroll', tick, { passive: true });
+  tick();
+
+  // REVEAL
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .08, rootMargin: '0px 0px -36px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // STICKY TABS sync
+  const tabs = document.querySelectorAll('.stab');
+  const sects = document.querySelectorAll('section[id]');
+  const tabIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        tabs.forEach(t => t.classList.toggle('active', t.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { rootMargin: '-64px 0px -60% 0px' });
+  sects.forEach(s => tabIO.observe(s));
+  tabs.forEach(tab => {
+    tab.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(tab.getAttribute('href'));
+      if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 128, behavior: 'smooth' });
+    });
+  });
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    const toggle = () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      btn.closest('.faq-list').querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    };
+    btn.addEventListener('click', toggle);
+    btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+
+  // Specialty tags toggle
+  document.querySelectorAll('.spec-tag').forEach(tag => {
+    const toggle = () => {
+      const isOn = tag.classList.toggle('on');
+      tag.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+    };
+    tag.addEventListener('click', toggle);
+    tag.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+
+  // Marquee logos
+  const brands = ['Northwind','Lumen','Orbital','Paragon','Vektor','Hyperion','Soliduum','Nimbus','Arcadia','Keystone','Stratus','Covalent'];
+  const track = document.getElementById('mtrack');
+  if (track) [...brands, ...brands].forEach(n => {
+    const d = document.createElement('div'); d.className = 'mq-item';
+    d.innerHTML = '<div class="mq-ico"></div><span class="mq-name">' + n + '</span>';
+    track.appendChild(d);
+  });
+})();
+</script>
+</body>
+</html>
